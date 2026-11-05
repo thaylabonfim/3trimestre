@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre | Thayla</title>
+  <link rel="stylesheet" href="style.css?v=4">
+</head>
+<body>
+  <!--header é a parte do cabeçalho do site, é o topo da página-->
+  <header class="cabecalho-itens">
+    <img class="cabecalho_imagem" src="logo.png" alt="Logo da Página">
+    <h1 class="titulo_site">Sobre</h1>
+    <div class="sociais">
+      <img class="sociais-icone" src="WhatsApp Image 2026-11-06 at 11.25.32.jpeg" alt="Facebook da Escola">
+      <img class="sociais-icone" src="WhatsApp Image 2026-11-06 at 11.25.25.jpeg" alt="WhatsApp da Escola">
+      <img class="sociais-icone" src="WhatsApp Image 2026-11-06 at 11.25.23.jpeg" alt="Instagram da Escola">
+    </div>
+  </header>
+
+  <header>
+    <nav class="nav-principal">
+      <ul class="navbar-horizontal">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html" aria-current="page">Sobre</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li class="item-hamburguer">
+          <button
+            type="button"
+            class="btn-hamburguer"
+            id="btn-menu-vertical"
+            aria-expanded="false"
+            aria-controls="menu-vertical"
+            aria-label="Abrir menu com Jogo e Certificados"
+          >
+            ☰
+          </button>
+        </li>
+      </ul>
+
+      <ul id="menu-vertical" class="navbar-vertical">
+        <li><a href="jogo.html">Jogo</a></li>
+        <li><a href="certificados.html">Certificados</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="conteudo-principal pagina-sobre">
+    <section class="apresentacao">
+      <div class="perfil-sobre">
+        <img class="foto-perfil" src="eu.png" alt="Foto da Thayla">
+        <div class="perfil-texto">
+          <h1>THAYLA</h1>
+          <h2>Quem sou eu</h2>
+          <p>
+            Olá! Meu nome é Thayla, sou estudante da escola Professor Júlio Szymanski e estou cursando Desenvolvimento de Sistemas. Estou no 2º ano e espero passar para o terceiro. Estou começando minha caminhada na programação e aprendendo a criar páginas com HTML e CSS nas aulas da escola.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="grade-cards">
+      <section class="card">
+        <h2>Meus Projetos</h2>
+        <p>
+          Ao longo dessa caminhada, já fiz vários trabalhos da escola, como páginas pessoais e joguinhos. Um deles foi um jogo de Tetris que criei usando HTML, CSS e JavaScript.
+        </p>
+        <p class="card-acao">
+          <a href="jogo.html">Jogar na aba Jogo →</a>
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Meus Objetivos</h2>
+        <p>
+          Meu principal objetivo é ser fisioterapeuta.
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <!--Seção rodapé é a parte final da paragrafo 3 da página-->
+  <footer class="escola">
+    <img class="logo_rodape" src="WhatsApp Image 2026-11-06 at 11.25.25.jpeg" alt="Logo do WhatsApp">
+    <h2 class="escola-titulo">Mais informações entre em contato <a class="link" href="https://wa.me/5541999999999">41 9.9927-7308</a></h2>
+    <p class="rodape-texto">©2026 | Curso de DS | Todos os Direitos Reservados. Política de Privacidade | Proteção de dados | Encarregado de dados</p>
+  </footer>
+
+  <script src="menu.js?v=1"></script>
+</body>
+</html>
