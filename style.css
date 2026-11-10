@@ -169,6 +169,7 @@ header {
   position: relative;
 }
 
+/* Barra de navegacao horizontal (W3Schools - css_navbar.asp) */
 .navbar-horizontal {
   list-style-type: none;
   margin: 0;
@@ -224,7 +225,8 @@ header {
   background-color: #d81b60;
 }
 
-/* Navbar vertical no padrão W3Schools (css_navbar_vertical.asp) */
+/* Menu suspenso com base no exemplo de navbar vertical do W3Schools
+   https://www.w3schools.com/css/css_navbar_vertical.asp */
 .navbar-vertical {
   display: none;
   list-style-type: none;
@@ -262,19 +264,19 @@ header {
   color: #ffffff;
 }
 
-/* Paleta de cores escolhida:
-   - Rosa Fundo Suave: #FFF0F5
-   - Rosa Pastel (Cartões): #FFE4EC
-   - Rosa Médio (Bordas/Detalhes): #F48FB1
-   - Rosa Escuro/Vinho (Títulos): #880E4F
-   - Cinza Escuro (Texto para boa leitura): #4A4A4A
+/* paleta de cores do site
+   fundo suave:  #FFF0F5
+   cartoes:      #FFE4EC
+   bordas:       #F48FB1
+   titulos:      #880E4F
+   texto:        #4A4A4A
 */
 
 .conteudo-principal {
   width: 100%;
-  max-width: 900px; /* Limita a largura para não ficar esticado em telas grandes */
-  margin: 40px auto; /* Centraliza o bloco no meio da tela e dá espaço do cabeçalho/rodapé */
-  padding: 0 20px; /* Espaço nas laterais para não colar na borda do celular */
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #4A4A4A;
 }
@@ -282,7 +284,7 @@ header {
 /* Bloco principal de apresentação */
 .apresentacao {
   background-color: #FFF0F5;
-  border-left: 6px solid #D81B60; /* Detalhe elegante na lateral */
+  border-left: 6px solid #D81B60;
   padding: 30px;
   border-radius: 12px;
   margin-bottom: 30px;
@@ -297,7 +299,7 @@ header {
   letter-spacing: 2px;
 }
 
-/* Layout da página pessoal (Sobre) */
+/* pagina sobre */
 .perfil-sobre {
   display: flex;
   align-items: center;
@@ -319,15 +321,15 @@ header {
   flex: 1;
 }
 
-/* Grade para deixar Projetos e Objetivos lado a lado */
+/* cartoes lado a lado */
 .grade-cards {
   display: flex;
-  gap: 25px; /* Espaço entre os dois cartões */
-  flex-wrap: wrap; /* Faz um ir para baixo do outro em telas de celular */
+  gap: 25px;
+  flex-wrap: wrap;
 }
 
 .card {
-  flex: 1; /* Faz os dois cartões terem o mesmo tamanho */
+  flex: 1;
   min-width: 280px;
   background-color: #FFE4EC;
   padding: 25px;
@@ -342,7 +344,7 @@ header {
   box-shadow: 0 8px 18px rgba(216, 27, 96, 0.14);
 }
 
-/* Estilo dos subtítulos */
+/* subtitulos */
 .conteudo-principal h2 {
   color: #AD1457;
   font-size: 1.4rem;
@@ -352,10 +354,10 @@ header {
   padding-bottom: 8px;
 }
 
-/* Estilo dos parágrafos */
+/* paragrafos */
 .conteudo-principal p {
-  line-height: 1.7; /* Espaçamento entre linhas para leitura confortável */
-  text-align: justify; /* Texto alinhado dos dois lados */
+  line-height: 1.7;
+  text-align: justify;
   margin: 0;
   font-size: 1.05rem;
 }
@@ -375,7 +377,7 @@ header {
   text-decoration: underline;
 }
 
-/* Estilos do Jogo da Memória */
+/* jogo da memoria */
 .jogo-container {
   margin-top: 24px;
 }
@@ -458,6 +460,15 @@ header {
 }
 
 @media (max-width: 768px) {
+  .apresentacao {
+    padding: 22px;
+  }
+
+  .foto-perfil {
+    width: 160px;
+    height: 210px;
+  }
+
   .cabecalho-itens {
     flex-wrap: wrap;
     gap: 12px;
