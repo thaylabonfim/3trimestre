@@ -7,37 +7,30 @@
   <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
-  <!--header é a parte do cabeçalho do site, é o topo da página-->
-  <header class="cabecalho-itens">
-    <img class="cabecalho_imagem" src="logo.png" alt="Logo da Página">
-    <h1 class="titulo_site">Jogo</h1>
-    <div class="sociais">
-      <img class="sociais-icone" src="WhatsApp Image 2026-11-06 at 11.25.32.jpeg" alt="Facebook da Escola">
-      <img class="sociais-icone" src="WhatsApp Image 2026-11-06 at 11.25.25.jpeg" alt="WhatsApp da Escola">
-      <img class="sociais-icone" src="WhatsApp Image 2026-11-06 at 11.25.23.jpeg" alt="Instagram da Escola">
-    </div>
-  </header>
-
+  <!-- cabecalho do site -->
   <header>
+    <div class="cabecalho-itens">
+      <img class="cabecalho_imagem" src="logo.png" alt="Logo da Página">
+      <h1 class="titulo_site">Jogo</h1>
+      <div class="sociais">
+        <img class="sociais-icone" src="WhatsApp Image 2026-11-06 at 11.25.32.jpeg" alt="Facebook da Escola">
+        <img class="sociais-icone" src="WhatsApp Image 2026-11-06 at 11.25.25.jpeg" alt="WhatsApp da Escola">
+        <img class="sociais-icone" src="WhatsApp Image 2026-11-06 at 11.25.23.jpeg" alt="Instagram da Escola">
+      </div>
+    </div>
+
+    <!-- menu de navegacao -->
     <nav class="nav-principal">
       <ul class="navbar-horizontal">
         <li><a href="index.html">Início</a></li>
         <li><a href="sobre.html">Sobre</a></li>
         <li><a href="contato.html">Contato</a></li>
         <li class="item-hamburguer">
-          <button
-            type="button"
-            class="btn-hamburguer menu-ativo"
-            id="btn-menu-vertical"
-            aria-expanded="false"
-            aria-controls="menu-vertical"
-            aria-label="Abrir menu com Jogo e Certificados"
-          >
+          <button type="button" class="btn-hamburguer menu-ativo" id="btn-menu-vertical" aria-expanded="false" aria-controls="menu-vertical" aria-label="Abrir menu com Jogo e Certificados">
             ☰
           </button>
         </li>
       </ul>
-
       <ul id="menu-vertical" class="navbar-vertical">
         <li><a href="jogo.html" aria-current="page">Jogo</a></li>
         <li><a href="certificados.html">Certificados</a></li>
@@ -55,7 +48,7 @@
       <div class="jogo-container">
         <div class="jogo-placar">
           <span>Tentativas: <strong id="tentativas">0</strong></span>
-          <span>Pares: <strong id="pares">0</strong> / 8</span>
+          <span>Pares: <strong id="pares">0</strong> / <strong id="total-pares">8</strong></span>
           <button type="button" id="btn-reiniciar" class="jogo-botao">Reiniciar Jogo</button>
         </div>
 
@@ -66,7 +59,7 @@
     </section>
   </main>
 
-  <!--Seção rodapé é a parte final da paragrafo 3 da página-->
+  <!-- rodape -->
   <footer class="escola">
     <img class="logo_rodape" src="WhatsApp Image 2026-11-06 at 11.25.25.jpeg" alt="Logo do WhatsApp">
     <h2 class="escola-titulo">Mais informações entre em contato <a class="link" href="https://wa.me/5541999999999">41 9.9927-7308</a></h2>

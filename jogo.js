@@ -1,9 +1,11 @@
+// simbolos usados nas cartas (cada um aparece duas vezes)
 const simbolos = ["🌸", "💖", "⭐", "🎀", "🦋", "🍓", "🎮", "🎓"];
 
 const tabuleiro = document.getElementById("tabuleiro");
 const tentativasEl = document.getElementById("tentativas");
 const paresEl = document.getElementById("pares");
 const mensagemEl = document.getElementById("mensagem-vitoria");
+const totalParesEl = document.getElementById("total-pares");
 const btnReiniciar = document.getElementById("btn-reiniciar");
 
 let cartasViradas = [];
@@ -11,6 +13,7 @@ let bloqueado = false;
 let tentativas = 0;
 let paresEncontrados = 0;
 
+// mistura as cartas usando o algoritmo de Fisher-Yates
 function embaralhar(lista) {
   const copia = [...lista];
   for (let i = copia.length - 1; i > 0; i--) {
@@ -20,6 +23,7 @@ function embaralhar(lista) {
   return copia;
 }
 
+// monta o tabuleiro do zero
 function criarTabuleiro() {
   tabuleiro.innerHTML = "";
   cartasViradas = [];
@@ -46,6 +50,7 @@ function criarTabuleiro() {
   });
 }
 
+// vira uma carta e guarda na lista de cartas viradas
 function virarCarta(carta) {
   if (
     bloqueado ||
@@ -67,6 +72,7 @@ function virarCarta(carta) {
   }
 }
 
+// confere se as duas cartas viradas formam um par
 function verificarPar() {
   const [primeira, segunda] = cartasViradas;
   const deuMatch = primeira.dataset.simbolo === segunda.dataset.simbolo;
@@ -98,5 +104,6 @@ function verificarPar() {
   }
 }
 
+totalParesEl.textContent = String(simbolos.length);
 btnReiniciar.addEventListener("click", criarTabuleiro);
 criarTabuleiro();
