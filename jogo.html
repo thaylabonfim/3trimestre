@@ -3,70 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jogo | Thayla</title>
-  <link rel="stylesheet" href="style.css?v=4">
+  <title>Jogo da Memória | Thayla Amaral</title>
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
-  <!-- cabecalho do site -->
-  <header>
-    <div class="cabecalho-itens">
-      <img class="cabecalho_imagem" src="logo.png" alt="Logo da Página">
-      <h1 class="titulo_site">Jogo</h1>
-      <div class="sociais">
-        <img class="sociais-icone" src="WhatsApp Image 2026-11-06 at 11.25.32.jpeg" alt="Facebook da Escola">
-        <img class="sociais-icone" src="WhatsApp Image 2026-11-06 at 11.25.25.jpeg" alt="WhatsApp da Escola">
-        <img class="sociais-icone" src="WhatsApp Image 2026-11-06 at 11.25.23.jpeg" alt="Instagram da Escola">
-      </div>
+  <!-- topo do site -->
+  <header class="cabecalho-itens">
+    <img class="cabecalho_imagem" src="logo.png" alt="Logo do site">
+    <h1 class="titulo_site">Jogo da Memória</h1>
+    <div class="sociais">
+      <a href="https://www.facebook.com" target="_blank" rel="noopener">
+        <img class="sociais-icone" src="icone-facebook.jpeg" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com" target="_blank" rel="noopener">
+        <img class="sociais-icone" src="icone-instagram.jpeg" alt="Instagram">
+      </a>
+      <a href="https://wa.me/5541999277308" target="_blank" rel="noopener">
+        <img class="sociais-icone" src="icone-whatsapp.jpeg" alt="WhatsApp">
+      </a>
     </div>
-
-    <!-- menu de navegacao -->
-    <nav class="nav-principal">
-      <ul class="navbar-horizontal">
-        <li><a href="index.html">Início</a></li>
-        <li><a href="sobre.html">Sobre</a></li>
-        <li><a href="contato.html">Contato</a></li>
-        <li class="item-hamburguer">
-          <button type="button" class="btn-hamburguer menu-ativo" id="btn-menu-vertical" aria-expanded="false" aria-controls="menu-vertical" aria-label="Abrir menu com Jogo e Certificados">
-            ☰
-          </button>
-        </li>
-      </ul>
-      <ul id="menu-vertical" class="navbar-vertical">
-        <li><a href="jogo.html" aria-current="page">Jogo</a></li>
-        <li><a href="certificados.html">Certificados</a></li>
-      </ul>
-    </nav>
   </header>
 
-  <main class="conteudo-principal">
-    <section class="apresentacao">
-      <h2>Jogo da Memória</h2>
-      <p>
-        Encontre todos os pares de cartas! Clique em duas cartas para virá-las e testar sua memória.
-      </p>
+  <!-- menu principal (igual em todas as páginas) -->
+  <nav class="menu">
+    <ul class="menu-lista">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="index.html#sobre">Sobre mim</a></li>
+      <li><a href="index.html#localizacao">Localização</a></li>
+      <li><a href="index.html#videos">Vídeos</a></li>
+      <li><a href="index.html#contato">Contato</a></li>
+      <li class="dropdown">
+        <button type="button" class="btn-dropdown" id="btn-dropdown" aria-expanded="false" aria-controls="submenu">
+          Projetos ▾
+        </button>
+        <ul class="submenu" id="submenu">
+          <li><a href="jogo.html" aria-current="page">Jogo da Memória</a></li>
+          <li><a href="certificados.html">Certificados</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
 
-      <div class="jogo-container">
-        <div class="jogo-placar">
-          <span>Tentativas: <strong id="tentativas">0</strong></span>
-          <span>Pares: <strong id="pares">0</strong> / <strong id="total-pares">8</strong></span>
-          <button type="button" id="btn-reiniciar" class="jogo-botao">Reiniciar Jogo</button>
-        </div>
+  <main class="pagina-conteudo">
+    <h2>Jogo da Memória</h2>
+    <p>
+      Este jogo foi um dos trabalhos das aulas de JavaScript. Clique em duas
+      cartas para virá-las e tente encontrar todos os pares com o menor número
+      de tentativas.
+    </p>
 
-        <div id="tabuleiro" class="jogo-tabuleiro" aria-label="Tabuleiro do Jogo da Memória"></div>
+    <div class="jogo-placar">
+      <span>Tentativas: <strong id="tentativas">0</strong></span>
+      <span>Pares: <strong id="pares">0</strong> / <strong id="total-pares">8</strong></span>
+      <button type="button" id="btn-reiniciar" class="jogo-botao">Reiniciar jogo</button>
+    </div>
 
-        <p id="mensagem-vitoria" class="jogo-mensagem" aria-live="polite"></p>
-      </div>
-    </section>
+    <div id="tabuleiro" class="jogo-tabuleiro" aria-label="Tabuleiro do Jogo da Memória"></div>
+
+    <p id="mensagem-vitoria" class="jogo-mensagem" aria-live="polite"></p>
+
+    <a class="voltar" href="index.html">← Voltar para o início</a>
   </main>
 
-  <!-- rodape -->
-  <footer class="escola">
-    <img class="logo_rodape" src="WhatsApp Image 2026-11-06 at 11.25.25.jpeg" alt="Logo do WhatsApp">
-    <h2 class="escola-titulo">Mais informações entre em contato <a class="link" href="https://wa.me/5541999999999">41 9.9927-7308</a></h2>
-    <p class="rodape-texto">©2026 | Curso de DS | Todos os Direitos Reservados. Política de Privacidade | Proteção de dados | Encarregado de dados</p>
+  <!-- rodapé -->
+  <footer class="rodape">
+    <h2 class="rodape-titulo">Thayla Amaral</h2>
+    <p class="rodape-texto">Site pessoal desenvolvido nas aulas de Desenvolvimento de Sistemas</p>
+    <p class="rodape-texto">©2026 | Curso de DS | Todos os Direitos Reservados</p>
   </footer>
 
-  <script src="menu.js?v=1"></script>
-  <script src="jogo.js?v=1"></script>
+  <script src="script.js?v=1"></script>
+  <script src="jogo.js?v=2"></script>
 </body>
 </html>

@@ -1,386 +1,494 @@
+/* =========================================================
+   style.css - estilos do site pessoal da Thayla
+   Cores principais:
+     rosa escuro (títulos e menu) .... #8E1B4F
+     rosa médio (destaques) .......... #D81B60
+     rosa claro (fundo das seções) ... #FFF0F5
+     branco (cartões) ................ #FFFFFF
+     cinza escuro (texto) ............ #444444
+   ========================================================= */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
-  min-height: 100vh;
+html {
+  scroll-behavior: smooth;   /* faz o link "#secao" deslizar até a seção */
+}
+
+/* o menu é fixo no topo, então o scroll precisa parar um pouco antes
+   para o título da seção não ficar escondido atrás dele */
+section[id] {
+  scroll-margin-top: 90px;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #444444;
+  background-color: #FFFFFF;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
 main {
   flex: 1;
 }
 
-header {
-  background-color: hsl(329, 95%, 76%);
-  color: white;
-  width: 100%;
-  padding: 20px;
-}
+/* ---------------- cabeçalho ---------------- */
 
 .cabecalho-itens {
-  max-width: 1980px;
-  margin: 0 auto;
+  background-color: #F48FB1;
+  color: #FFFFFF;
+  padding: 16px 20px;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 16px;
 }
 
 .cabecalho_imagem {
-  width: 10%;
-  max-width: 90px;
-  min-width: 56px;
-  height: auto;
-  border-radius: 8px;
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 10px;
+  background-color: #FFFFFF;
 }
 
 .titulo_site {
-  padding: 20px;
+  font-size: 28px;
+  letter-spacing: 1px;
+  flex: 1;
   text-align: center;
-  width: 50%;
-  font-size: 30px;
 }
 
 .sociais {
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
   gap: 10px;
-  width: 25%;
-  padding-right: 30px;
+}
+
+.sociais a {
+  display: inline-flex;
 }
 
 .sociais-icone {
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   object-fit: cover;
   border-radius: 8px;
+  border: 2px solid #FFFFFF;
+  transition: transform 0.2s ease;
 }
+
+.sociais-icone:hover {
+  transform: scale(1.15);
+}
+
+/* ---------------- menu de navegação ----------------
+   Base feita com o tutorial do W3Schools:
+   https://www.w3schools.com/css/css_navbar.asp
+   (menu horizontal) e
+   https://www.w3schools.com/css/css_dropdowns.asp
+   (menu suspenso)                                          */
+
+.menu {
+  background-color: #8E1B4F;
+  position: sticky;   /* o menu acompanha a rolagem da página */
+  top: 0;
+  z-index: 10;
+}
+
+.menu-lista {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.menu-lista > li {
+  position: relative;
+}
+
+.menu-lista a,
+.btn-dropdown {
+  display: block;
+  color: #FFFFFF;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 16px;
+  padding: 14px 22px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* efeito :hover dos itens do menu */
+.menu-lista a:hover,
+.btn-dropdown:hover {
+  background-color: #D81B60;
+  color: #FFFFFF;
+}
+
+/* link da página atual fica destacado */
+.menu-lista a[aria-current="page"] {
+  background-color: #FFFFFF;
+  color: #8E1B4F;
+  font-weight: 600;
+}
+
+/* ---------------- menu suspenso (dropdown) ---------------- */
+
+.submenu {
+  display: none;              /* fica escondido até o mouse passar por cima */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  list-style-type: none;
+  background-color: #FFFFFF;
+  border: 1px solid #F48FB1;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown:hover .submenu {
+  display: block;             /* mostra o submenu no hover */
+}
+
+/* no celular (sem mouse) o submenu abre pelo clique, com a classe .aberto */
+.dropdown.aberto .submenu {
+  display: block;
+}
+
+.submenu li a {
+  color: #8E1B4F;
+  padding: 12px 18px;
+  text-align: left;
+}
+
+.submenu li a:hover {
+  background-color: #FFF0F5;
+  color: #D81B60;
+}
+
+/* ---------------- banner ---------------- */
 
 .banner1 {
   display: flex;
   justify-content: center;
 }
 
-.escola-imagem {
+.banner-imagem {
   width: 100%;
-  max-width: 1584px;
+  max-width: 1200px;
   height: auto;
   display: block;
 }
 
-.estudante {
-  background-color: #ffffff;
-  padding: 24px 0;
-}
+/* ---------------- seções em geral ---------------- */
 
-.estudante_titulo {
-  padding: 50px 20px;
-  text-align: center;
-  font-size: 2rem;
-}
-
-.estudante-div {
-  text-align: center;
-  padding: 24px 0;
-}
-
-.estudante-imagem {
-  width: 120px;
-  height: auto;
-}
-
-.estudante-nome {
-  text-align: center;
-  margin: 8px 0;
-}
-
-.estudante-icones {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-}
-
-.estudante-icones a {
-  display: inline-flex;
-}
-
-.estudante-icone {
-  width: 24px;
-  height: 24px;
-  object-fit: cover;
-  transition: transform 0.2s ease;
-}
-
-.estudante-icones a:hover .estudante-icone {
-  transform: scale(1.12);
-}
-
-.estudantes_todos {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 24px;
-}
-
-.escola {
-  background-image: linear-gradient(#ff93ed, #f534d5);
-  color: white;
-  padding: 24px 16px;
-  text-align: center;
-  display: block;
-}
-
-.escola-titulo {
-  padding: 20px 10px;
-  text-align: center;
-}
-
-.logo_rodape {
-  height: 80px;
-  padding: 12px 0;
-  display: block;
+.secao {
+  max-width: 1000px;
   margin: 0 auto;
-  border-radius: 16px;
+  padding: 50px 20px;
 }
 
-.rodape-texto {
-  margin-top: 8px;
-}
-
-.link {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-.link:hover {
-  text-decoration: underline;
-}
-
-.nav-principal {
-  position: relative;
-}
-
-/* Barra de navegacao horizontal (W3Schools - css_navbar.asp) */
-.navbar-horizontal {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333333;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
-}
-
-.navbar-horizontal li a {
-  display: block;
-  color: white;
+.secao h2 {
+  color: #8E1B4F;
+  font-size: 28px;
   text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  transition: background-color 0.2s ease;
+  margin-bottom: 26px;
+  padding-bottom: 8px;
+  border-bottom: 3px solid #F48FB1;
 }
 
-.navbar-horizontal li a:hover {
-  background-color: #111111;
+.texto-secao {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 30px auto;
+  line-height: 1.6;
 }
 
-.navbar-horizontal li a[aria-current="page"] {
-  background-color: #d81b60;
-}
+/* ---------------- sobre mim ---------------- */
 
-.item-hamburguer {
-  margin-left: auto;
-  display: flex;
-}
-
-.btn-hamburguer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #333333;
-  color: white;
-  border: none;
-  padding: 0 18px;
-  font-size: 20px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.btn-hamburguer:hover {
-  background-color: #111111;
-}
-
-.btn-hamburguer.menu-ativo,
-.btn-hamburguer[aria-expanded="true"] {
-  background-color: #d81b60;
-}
-
-/* Menu suspenso com base no exemplo de navbar vertical do W3Schools
-   https://www.w3schools.com/css/css_navbar_vertical.asp */
-.navbar-vertical {
-  display: none;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 200px;
-  background-color: #f1f1f1;
-  border: 1px solid #cccccc;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
-  position: absolute;
-  top: 100%;
-  right: 0;
-  z-index: 1000;
-}
-
-.navbar-vertical.aberto {
-  display: block;
-}
-
-.navbar-vertical li a {
-  display: block;
-  color: #000000;
-  padding: 10px 16px;
-  text-decoration: none;
-  text-align: left;
-}
-
-.navbar-vertical li a[aria-current="page"] {
-  background-color: #d81b60;
-  color: #ffffff;
-}
-
-.navbar-vertical li a:hover:not([aria-current="page"]) {
-  background-color: #555555;
-  color: #ffffff;
-}
-
-/* paleta de cores do site
-   fundo suave:  #FFF0F5
-   cartoes:      #FFE4EC
-   bordas:       #F48FB1
-   titulos:      #880E4F
-   texto:        #4A4A4A
-*/
-
-.conteudo-principal {
-  width: 100%;
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 0 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #4A4A4A;
-}
-
-/* Bloco principal de apresentação */
-.apresentacao {
-  background-color: #FFF0F5;
-  border-left: 6px solid #D81B60;
-  padding: 30px;
-  border-radius: 12px;
-  margin-bottom: 30px;
-  box-shadow: 0 4px 10px rgba(216, 27, 96, 0.08);
-}
-
-.apresentacao h1 {
-  color: #880E4F;
-  font-size: 2.2rem;
-  margin-top: 0;
-  margin-bottom: 10px;
-  letter-spacing: 2px;
-}
-
-/* pagina sobre */
-.perfil-sobre {
+.perfil {
   display: flex;
   align-items: center;
   gap: 28px;
+  background-color: #FFF0F5;
+  border-left: 6px solid #D81B60;
+  border-radius: 12px;
+  padding: 26px;
 }
 
 .foto-perfil {
-  width: 190px;
-  height: 250px;
-  object-fit: cover;
-  object-position: top;
+  width: 180px;
+  height: auto;
   border-radius: 12px;
   border: 3px solid #F48FB1;
-  box-shadow: 0 4px 12px rgba(216, 27, 96, 0.15);
   flex-shrink: 0;
 }
 
-.perfil-texto {
-  flex: 1;
+.perfil-texto p {
+  line-height: 1.7;
+  margin-bottom: 12px;
+  text-align: justify;
 }
 
-/* cartoes lado a lado */
-.grade-cards {
+/* ---------------- localização ---------------- */
+
+.localizacao-caixa {
   display: flex;
-  gap: 25px;
-  flex-wrap: wrap;
+  gap: 24px;
+  align-items: center;
+  background-color: #FFF0F5;
+  border-radius: 12px;
+  padding: 24px;
 }
 
-.card {
+.localizacao-texto {
   flex: 1;
-  min-width: 280px;
-  background-color: #FFE4EC;
-  padding: 25px;
+}
+
+.localizacao-texto h3 {
+  color: #D81B60;
+  margin-bottom: 10px;
+}
+
+.localizacao-texto p {
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.endereco {
+  background-color: #FFFFFF;
+  border-left: 4px solid #F48FB1;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  color: #8E1B4F;
+}
+
+.localizacao-imagem {
+  width: 320px;
+  max-width: 100%;
   border-radius: 12px;
+  border: 3px solid #F48FB1;
+}
+
+.botao {
+  display: inline-block;
+  background-color: #D81B60;
+  color: #FFFFFF;
+  padding: 12px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.botao:hover {
+  background-color: #8E1B4F;
+  transform: translateY(-2px);
+}
+
+/* ---------------- vídeos ---------------- */
+
+.videos-grade {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 26px;
+  justify-content: center;
+}
+
+.video-card {
+  flex: 1 1 380px;
+  max-width: 460px;
+  background-color: #FFFFFF;
+  border: 1px solid #F48FB1;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 10px rgba(216, 27, 96, 0.1);
+}
+
+.video-card h3 {
+  color: #8E1B4F;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.video-moldura {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;   /* 16:9 - mantém a proporção do vídeo */
+  height: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #000000;
+}
+
+.video-moldura iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-card p {
+  margin-top: 12px;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+/* ---------------- amigos ---------------- */
+
+.amigos-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.amigo-card {
+  flex: 1 1 240px;
+  max-width: 280px;
+  background-color: #FFF0F5;
   border: 1px solid #F8BBD0;
-  box-shadow: 0 4px 10px rgba(216, 27, 96, 0.08);
+  border-radius: 12px;
+  padding: 18px;
+  text-align: center;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(216, 27, 96, 0.14);
+.amigo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(216, 27, 96, 0.16);
 }
 
-/* subtitulos */
-.conteudo-principal h2 {
-  color: #AD1457;
-  font-size: 1.4rem;
-  margin-top: 0;
-  margin-bottom: 15px;
-  border-bottom: 2px solid #F48FB1;
-  padding-bottom: 8px;
+.amigo-foto {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #F48FB1;
+  margin-bottom: 10px;
 }
 
-/* paragrafos */
-.conteudo-principal p {
-  line-height: 1.7;
-  text-align: justify;
-  margin: 0;
-  font-size: 1.05rem;
+.amigo-card h3 {
+  color: #8E1B4F;
+  margin-bottom: 6px;
 }
 
-.conteudo-principal p.card-acao {
-  margin-top: 14px;
-  text-align: left;
+.amigo-card p {
+  font-size: 15px;
+  line-height: 1.5;
 }
 
-.conteudo-principal a {
-  color: #880E4F;
+/* ---------------- contato ---------------- */
+
+.contato-caixa {
+  background-color: #FFF0F5;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+}
+
+.contato-caixa p {
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+
+.contato-lista {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 28px;
+}
+
+.contato-lista li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contato-icone {
+  width: 26px;
+  height: 26px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.contato-lista a {
+  color: #8E1B4F;
   font-weight: 600;
   text-decoration: none;
 }
 
-.conteudo-principal a:hover {
+.contato-lista a:hover {
+  text-decoration: underline;
+  color: #D81B60;
+}
+
+/* ---------------- rodapé ---------------- */
+
+.rodape {
+  background-image: linear-gradient(#F48FB1, #D81B60);
+  color: #FFFFFF;
+  text-align: center;
+  padding: 26px 16px;
+}
+
+.rodape-titulo {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.rodape-texto {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ---------------- páginas internas (jogo e certificados) ----------------
+   Elas usam a mesma estrutura, mas com o conteúdo dentro de um bloco branco  */
+
+.pagina-conteudo {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 28px;
+  background-color: #FFF0F5;
+  border-radius: 12px;
+  border-left: 6px solid #D81B60;
+}
+
+.pagina-conteudo h2 {
+  color: #8E1B4F;
+  margin-bottom: 14px;
+}
+
+.pagina-conteudo p {
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.voltar {
+  display: inline-block;
+  margin-top: 18px;
+  color: #8E1B4F;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.voltar:hover {
   text-decoration: underline;
 }
 
-/* jogo da memoria */
-.jogo-container {
-  margin-top: 24px;
-}
+/* ---------------- jogo da memória ---------------- */
 
 .jogo-placar {
   display: flex;
@@ -388,28 +496,27 @@ header {
   justify-content: space-between;
   align-items: center;
   gap: 12px;
-  background-color: #FFE4EC;
+  background-color: #FFFFFF;
   border: 1px solid #F8BBD0;
   border-radius: 10px;
   padding: 14px 18px;
-  margin-bottom: 20px;
-  font-size: 1.05rem;
+  margin-bottom: 22px;
 }
 
 .jogo-botao {
   background-color: #D81B60;
-  color: #ffffff;
+  color: #FFFFFF;
   border: none;
   border-radius: 8px;
   padding: 10px 18px;
-  font-size: 0.95rem;
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
 
 .jogo-botao:hover {
-  background-color: #AD1457;
+  background-color: #8E1B4F;
 }
 
 .jogo-tabuleiro {
@@ -422,17 +529,15 @@ header {
 
 .carta {
   aspect-ratio: 1 / 1;
-  background-color: #FFE4EC;
+  background-color: #FFFFFF;
   border: 2px solid #F48FB1;
   border-radius: 10px;
-  font-size: 2rem;
-  font-weight: 700;
-  color: #880E4F;
+  font-size: 32px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.15s ease, background-color 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.15s ease, background-color 0.2s ease;
 }
 
 .carta:hover:not(:disabled) {
@@ -441,68 +546,108 @@ header {
 }
 
 .carta.virada {
-  background-color: #ffffff;
+  background-color: #FFF0F5;
   border-color: #D81B60;
 }
 
 .carta.combinada {
   background-color: #F8BBD0;
-  border-color: #880E4F;
+  border-color: #8E1B4F;
   cursor: default;
 }
 
-.conteudo-principal p.jogo-mensagem {
+.jogo-mensagem {
   margin-top: 18px;
   text-align: center;
   font-weight: 700;
-  color: #880E4F;
+  color: #8E1B4F;
   min-height: 1.7em;
 }
 
+/* ---------------- certificados ---------------- */
+
+.lista-certificados {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.lista-certificados li {
+  background-color: #FFFFFF;
+  border-left: 4px solid #F48FB1;
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+
+/* ---------------- celular ---------------- */
+
 @media (max-width: 768px) {
-  .apresentacao {
-    padding: 22px;
-  }
-
-  .foto-perfil {
-    width: 160px;
-    height: 210px;
-  }
-
   .cabecalho-itens {
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 10px;
+    text-align: center;
   }
 
   .titulo_site {
-    width: auto;
-    flex: 1;
-    padding: 10px;
-    font-size: 24px;
+    font-size: 22px;
+    flex: 1 1 100%;
+    order: 3;
   }
 
   .sociais {
-    width: 100%;
-    justify-content: center;
-    padding-right: 0;
+    margin-left: auto;
   }
 
-  .perfil-sobre {
+  /* no celular os links do menu ficam um embaixo do outro */
+  .menu-lista {
+    flex-direction: column;
+  }
+
+  .menu-lista a,
+  .btn-dropdown {
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  /* o submenu passa a empurrar o conteúdo, em vez de flutuar */
+  .submenu {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    border: none;
+  }
+
+  .perfil {
     flex-direction: column;
     text-align: center;
   }
 
-  .perfil-sobre .perfil-texto p {
-    text-align: justify;
+  .perfil-texto p {
+    text-align: left;
+  }
+
+  .localizacao-caixa {
+    flex-direction: column;
+  }
+
+  .localizacao-imagem {
+    width: 100%;
   }
 }
 
 @media (max-width: 480px) {
+  .secao {
+    padding: 36px 14px;
+  }
+
   .jogo-tabuleiro {
     gap: 8px;
   }
 
   .carta {
-    font-size: 1.6rem;
+    font-size: 24px;
   }
 }

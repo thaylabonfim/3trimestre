@@ -1,11 +1,13 @@
-// simbolos usados nas cartas (cada um aparece duas vezes)
+// jogo.js - jogo da memória
+// Cada símbolo aparece duas vezes no tabuleiro. O objetivo é achar os pares.
+
 const simbolos = ["🌸", "💖", "⭐", "🎀", "🦋", "🍓", "🎮", "🎓"];
 
 const tabuleiro = document.getElementById("tabuleiro");
 const tentativasEl = document.getElementById("tentativas");
 const paresEl = document.getElementById("pares");
-const mensagemEl = document.getElementById("mensagem-vitoria");
 const totalParesEl = document.getElementById("total-pares");
+const mensagemEl = document.getElementById("mensagem-vitoria");
 const btnReiniciar = document.getElementById("btn-reiniciar");
 
 let cartasViradas = [];
@@ -13,7 +15,7 @@ let bloqueado = false;
 let tentativas = 0;
 let paresEncontrados = 0;
 
-// mistura as cartas usando o algoritmo de Fisher-Yates
+// mistura as cartas (algoritmo de Fisher-Yates)
 function embaralhar(lista) {
   const copia = [...lista];
   for (let i = copia.length - 1; i > 0; i--) {
@@ -50,7 +52,7 @@ function criarTabuleiro() {
   });
 }
 
-// vira uma carta e guarda na lista de cartas viradas
+// vira uma carta e guarda na lista das cartas viradas
 function virarCarta(carta) {
   if (
     bloqueado ||
@@ -62,7 +64,7 @@ function virarCarta(carta) {
 
   carta.classList.add("virada");
   carta.textContent = carta.dataset.simbolo;
-  carta.setAttribute("aria-label", `Carta ${carta.dataset.simbolo}`);
+  carta.setAttribute("aria-label", "Carta " + carta.dataset.simbolo);
   cartasViradas.push(carta);
 
   if (cartasViradas.length === 2) {
@@ -74,7 +76,8 @@ function virarCarta(carta) {
 
 // confere se as duas cartas viradas formam um par
 function verificarPar() {
-  const [primeira, segunda] = cartasViradas;
+  const primeira = cartasViradas[0];
+  const segunda = cartasViradas[1];
   const deuMatch = primeira.dataset.simbolo === segunda.dataset.simbolo;
 
   if (deuMatch) {
@@ -87,7 +90,8 @@ function verificarPar() {
     paresEl.textContent = String(paresEncontrados);
 
     if (paresEncontrados === simbolos.length) {
-      mensagemEl.textContent = `Parabéns! Você encontrou todos os pares em ${tentativas} tentativas!`;
+      mensagemEl.textContent =
+        "Parabéns! Você encontrou todos os pares em " + tentativas + " tentativas!";
     }
   } else {
     bloqueado = true;
