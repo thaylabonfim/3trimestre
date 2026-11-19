@@ -116,3 +116,73 @@ ul li a {
 ul li a:hover {
   background-color: #111111;
 }
+
+
+/* Paleta de cores escolhida:
+   - Rosa Fundo Suave: #FFF0F5
+   - Rosa Pastel (Cartões): #FFE4EC
+   - Rosa Médio (Bordas/Detalhes): #F48FB1
+   - Rosa Escuro/Vinho (Títulos): #880E4F
+   - Cinza Escuro (Texto para boa leitura): #4A4A4A
+*/
+
+.conteudo-principal {
+  max-width: 900px; /* Limita a largura para não ficar esticado em telas grandes */
+  margin: 40px auto; /* Centraliza o bloco no meio da tela e dá espaço do cabeçalho/rodapé */
+  padding: 0 20px; /* Espaço nas laterais para não colar na borda do celular */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #4A4A4A;
+}
+
+/* Bloco principal de apresentação */
+.apresentacao {
+  background-color: #FFF0F5;
+  border-left: 6px solid #D81B60; /* Detalhe elegante na lateral */
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 10px rgba(216, 27, 96, 0.08);
+}
+
+.apresentacao h1 {
+  color: #880E4F;
+  font-size: 2.2rem;
+  margin-top: 0;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+/* Grade para deixar Projetos e Objetivos lado a lado */
+.grade-cards {
+  display: flex;
+  gap: 25px; /* Espaço entre os dois cartões */
+  flex-wrap: wrap; /* Faz um ir para baixo do outro em telas de celular */
+}
+
+.card {
+  flex: 1; /* Faz os dois cartões terem o mesmo tamanho */
+  min-width: 280px;
+  background-color: #FFE4EC;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #F8BBD0;
+  box-shadow: 0 4px 10px rgba(216, 27, 96, 0.08);
+}
+
+/* Estilo dos subtítulos */
+.conteudo-principal h2 {
+  color: #AD1457;
+  font-size: 1.4rem;
+  margin-top: 0;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #F48FB1;
+  padding-bottom: 8px;
+}
+
+/* Estilo dos parágrafos */
+.conteudo-principal p {
+  line-height: 1.7; /* Espaçamento entre linhas para leitura confortável */
+  text-align: justify; /* Texto alinhado dos dois lados */
+  margin: 0;
+  font-size: 1.05rem;
+}
