@@ -1,7 +1,7 @@
 # Site pessoal - Thayla Amaral
 
 Trabalho de Desenvolvimento de Sistemas (Se Liga 2026) - site pessoal com
-menu de navegação, localização fictícia, vídeos do YouTube e menu suspenso.
+menu de navegação, localização fictícia, vídeos e menu suspenso.
 
 ## Páginas
 
