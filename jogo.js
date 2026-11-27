@@ -1,5 +1,4 @@
-// jogo.js - jogo da memória
-// Cada símbolo aparece duas vezes no tabuleiro. O objetivo é achar os pares.
+// jogo.js - jogo da memoria
 
 const simbolos = ["🌸", "💖", "⭐", "🎀", "🦋", "🍓", "🎮", "🎓"];
 
@@ -15,7 +14,7 @@ let bloqueado = false;
 let tentativas = 0;
 let paresEncontrados = 0;
 
-// mistura as cartas (algoritmo de Fisher-Yates)
+// mistura as cartas
 function embaralhar(lista) {
   const copia = [...lista];
   for (let i = copia.length - 1; i > 0; i--) {
@@ -25,7 +24,7 @@ function embaralhar(lista) {
   return copia;
 }
 
-// monta o tabuleiro do zero
+// monta o tabuleiro
 function criarTabuleiro() {
   tabuleiro.innerHTML = "";
   cartasViradas = [];
@@ -52,7 +51,7 @@ function criarTabuleiro() {
   });
 }
 
-// vira uma carta e guarda na lista das cartas viradas
+// vira a carta
 function virarCarta(carta) {
   if (
     bloqueado ||
@@ -74,7 +73,7 @@ function virarCarta(carta) {
   }
 }
 
-// confere se as duas cartas viradas formam um par
+// confere o par
 function verificarPar() {
   const primeira = cartasViradas[0];
   const segunda = cartasViradas[1];

@@ -326,7 +326,7 @@ main {
   margin-bottom: 12px;
 }
 
-/* a capa é uma imagem com um "play" em cima, e o cartão inteiro é o link */
+/* a capa é a imagem do vídeo com um "play" em cima, e a imagem é o link */
 .video-capa {
   display: block;
   position: relative;
@@ -486,8 +486,7 @@ main {
   line-height: 1.6;
 }
 
-/* ---------------- páginas internas (jogo e certificados) ----------------
-   Elas usam a mesma estrutura, mas com o conteúdo dentro de um bloco branco  */
+/* ---------------- páginas internas (jogo e certificados) ---------------- */
 
 .pagina-conteudo {
   max-width: 900px;

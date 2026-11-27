@@ -9,10 +9,10 @@ https://github.com/thaylabonfim/3trimestre
 https://thaylabonfim.github.io/3trimestre/
 
 **Capturas de tela da página final:**
-(tirar as capturas e colocar na pasta do Google Drive - ver lista no final)
+https://drive.google.com/ (colar aqui o link da pasta com as capturas)
 
 **Registro das cinco alterações e das explicações solicitadas:**
-(está abaixo, nos tópicos 1 a 5)
+Estão nos tópicos 1 a 5 abaixo.
 
 ---
 
@@ -131,15 +131,13 @@ Dois vídeos do YouTube ligados aos meus interesses:
 2. **Como criar um site fácil! HTML, CSS e JavaScript para iniciantes**
    (Tech Daniel's) - `https://www.youtube.com/watch?v=g51whzji0h4`
 
-Aqui tem uma decisão importante: **não usei o `<iframe>`**.
+Nos vídeos eu **não usei o `<iframe>`**.
 
-Na primeira versão eu usei o código de incorporar do YouTube, como manda o
-tutorial, mas nos testes o player aparecia como um retângulo cinza, porque o
-navegador estava bloqueando o carregamento do YouTube dentro da página
-(bloqueador de anúncios, extensão de privacidade e a rede da escola). Testei o
-domínio `youtube-nocookie.com` e o `loading="lazy"`, mas o resultado dependia do
-computador de quem abre o site - e uma seção que às vezes aparece quebrada não
-serve para a entrega.
+Testei primeiro o código de incorporar do YouTube, mas o player aparecia como um
+retângulo cinza, porque o navegador bloqueia o carregamento do YouTube dentro da
+página (bloqueador de anúncios, extensão de privacidade e a rede). Testei também
+o domínio `youtube-nocookie.com` e o `loading="lazy"`, e o resultado mudava de
+acordo com o navegador.
 
 A solução foi usar a **miniatura oficial do vídeo como imagem clicável**: o
 elemento `<a>` em volta da imagem já abre o vídeo no YouTube em outra aba.
@@ -160,7 +158,7 @@ elemento `<a>` em volta da imagem já abre o vídeo no YouTube em outra aba.
   (`border-radius: 50%` + `position: absolute` centralizado), sem imagem extra;
 - como é um `<a>` normal, funciona em qualquer navegador, sem depender de player.
 
-## Registro de três correções feitas nos testes
+## Registro das correções feitas nos testes
 
 **Correção 1 - nome das imagens com espaço.**
 As fotos estavam com nome `WhatsApp Image 2026-11-06 at 11.22.33.jpeg`. Espaço
@@ -182,12 +180,10 @@ section[id] {
 ```
 
 **Correção 3 - vídeos que não carregavam.**
-Os vídeos incorporados com `<iframe>` apareciam como um retângulo cinza, porque o
-navegador bloqueava o carregamento do YouTube dentro da página. Testei o modo
-`youtube-nocookie.com` e o `loading="lazy"`, mas o resultado mudava de acordo com
-o navegador. Troquei o `<iframe>` por uma **miniatura clicável** (imagem do
-`i.ytimg.com` dentro de um `<a>`), que abre o vídeo no YouTube e funciona em
-qualquer navegador.
+Os vídeos com `<iframe>` apareciam como um retângulo cinza, porque o navegador
+bloqueava o carregamento do YouTube dentro da página. Troquei o `<iframe>` por
+uma **miniatura clicável** (imagem do `i.ytimg.com` dentro de um `<a>`), que abre
+o vídeo no YouTube e funciona em qualquer navegador.
 
 **Correção 4 - vídeo com proporção errada no celular.**
 Na versão com `<iframe>` eu tinha usado `width="560" height="315"` fixos, e em
@@ -195,9 +191,9 @@ tela pequena o vídeo estourava a largura da página criando rolagem horizontal.
 Na versão final a imagem da miniatura usa `width: 100%`, então ela se ajusta
 sozinha ao tamanho do cartão.
 
-(Inclusive já corrigi também o contador do jogo, que mostrava "Pares: 0 / 8"
-escrito na mão no HTML; agora o total vem do próprio array de símbolos do
-`jogo.js`.)
+**Correção 5 - contador de pares do jogo.**
+O placar mostrava "Pares: 0 / 8" escrito na mão no HTML, então se eu mudasse os
+símbolos o número ficava errado. Agora o total vem do próprio array do `jogo.js`.
 
 ---
 
