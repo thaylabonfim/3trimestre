@@ -609,28 +609,6 @@ main {
   font-size: 14px;
 }
 
-/* endereco do certificado mostrado no cartao, para poder copiar */
-.certificado-url {
-  margin-bottom: 4px !important;
-  font-size: 13px;
-  font-weight: 600;
-  color: #D81B60;
-}
-
-.link-certificado {
-  display: block;
-  margin-bottom: 14px;
-  font-size: 13px;
-  color: #8E1B4F;
-  word-break: break-all;   /* o link é longo, então quebra a linha */
-  text-decoration: underline;
-}
-
-.link-certificado:hover {
-  color: #D81B60;
-  background-color: #FFF0F5;
-}
-
 /* ---------------- celular ---------------- */
 
 @media (max-width: 768px) {
