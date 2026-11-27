@@ -127,10 +127,16 @@ Usar `search/?api=1&query=` funciona sem precisar de chave de API, e o
 Dois vídeos do YouTube incorporados com `<iframe>`, copiados do botão
 "Compartilhar → Incorporar" do próprio YouTube:
 
-1. **Por que ser Fisioterapeuta? Tudo sobre a profissão.** (UNIP) -
-   `https://www.youtube.com/embed/tQ0UJHNbIUs`
+1. **5 coisas que você precisa saber sobre a Fisioterapia** (Anatomia e etc.) -
+   `https://www.youtube.com/embed/4QGZk_PrQ1o`
 2. **Como criar um site fácil! HTML, CSS e JavaScript para iniciantes**
    (Tech Daniel's) - `https://www.youtube.com/embed/g51whzji0h4`
+
+Na primeira tentativa usei um vídeo da UNIP sobre a profissão, mas ele era uma
+**live gravada** e o YouTube não libera a incorporação de transmissões ao vivo
+(o player mostrava "erro"). Por isso troquei por um vídeo normal sobre o mesmo
+assunto, e acrescentei `?rel=0` para o player não sugerir vídeos de outros
+canais no final.
 
 O `embed` é obrigatório na URL (a URL do `watch?v=` não funciona dentro do
 iframe). Para o vídeo não quebrar o layout e ficar sempre em 16:9, usei a
@@ -173,7 +179,13 @@ section[id] {
 }
 ```
 
-**Correção 3 - vídeo esticado no celular.**
+**Correção 3 - vídeo com erro de reprodução.**
+O primeiro vídeo escolhido (uma live da UNIP) aparecia com mensagem de erro
+dentro do iframe, porque o YouTube bloqueia a incorporação de transmissões ao
+vivo. Troquei por um vídeo comum sobre fisioterapia e testei os dois links no
+endereço `/embed/` antes de publicar.
+
+**Correção 4 - vídeo esticado no celular.**
 Na primeira versão o `<iframe>` tinha `width="560" height="315"` fixos e, em
 tela pequena, ele estourava a largura da página criando uma barra de rolagem
 horizontal. Troquei as medidas fixas pela "caixa" proporcional mostrada no item
