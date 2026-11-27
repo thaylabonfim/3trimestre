@@ -22,11 +22,12 @@ O menu antigo só tinha Início, Sobre, Contato e um "☰" escondendo duas pági
 Foi refeito com base no tutorial de navbar do W3Schools
 (<https://www.w3schools.com/css/css_navbar.asp>) e agora tem:
 
-**Início · Sobre mim · Localização · Contato · Projetos ▾**
+**Início · Sobre mim · Localização · Vídeos · Contato · Projetos ▾**
 
 - **Início** → abre o arquivo `index.html`;
-- **Sobre mim / Localização / Contato** → são âncoras (`#sobre`,
-  `#localizacao`, `#contato`), que rolam até a seção dentro da própria página;
+- **Sobre mim / Localização / Vídeos / Contato** → são âncoras (`#sobre`,
+  `#localizacao`, `#videos`, `#contato`), que rolam até a seção dentro da própria
+  página;
 - **Projetos ▾** → é o menu suspenso (dropdown) com **Jogo da Memória** e
   **Certificados**, que abrem os arquivos `jogo.html` e `certificados.html`.
 
@@ -121,17 +122,43 @@ O botão "Abrir no Google Maps" é um link normal que usa a busca do Maps:
 Usar `search/?api=1&query=` funciona sem precisar de chave de API, e o
 `target="_blank"` abre em outra aba para não fazer o visitante perder o site.
 
-## 5. Testes feitos com a seção de vídeos
+## 5. Seção de vídeos (Etapa 2)
 
-Cheguei a montar uma seção com dois vídeos incorporados por `<iframe>`, mas nos
-testes os players apareciam como um retângulo cinza (o navegador não carregava o
-vídeo dentro da página). Descobri que o problema não estava no código de
-incorporação e sim no bloqueio do domínio do YouTube (bloqueador de anúncios,
-extensão de privacidade e a própria rede). Também tinha usado no começo um vídeo
-que era uma *live* gravada, e o YouTube não permite incorporar transmissões ao
-vivo. Como a seção não funcionava de forma confiável para quem abre o site,
-removi a seção e o item "Vídeos" do menu, e deixei a página com as seções que
-funcionam 100% do tempo: Sobre mim, Localização, Meus Amigos e Contato.
+Dois vídeos do YouTube ligados aos meus interesses:
+
+1. **5 coisas que você precisa saber sobre a Fisioterapia** (canal Anatomia e
+   etc.) - `https://www.youtube.com/watch?v=4QGZk_PrQ1o`
+2. **Como criar um site fácil! HTML, CSS e JavaScript para iniciantes**
+   (Tech Daniel's) - `https://www.youtube.com/watch?v=g51whzji0h4`
+
+Aqui tem uma decisão importante: **não usei o `<iframe>`**.
+
+Na primeira versão eu usei o código de incorporar do YouTube, como manda o
+tutorial, mas nos testes o player aparecia como um retângulo cinza, porque o
+navegador estava bloqueando o carregamento do YouTube dentro da página
+(bloqueador de anúncios, extensão de privacidade e a rede da escola). Testei o
+domínio `youtube-nocookie.com` e o `loading="lazy"`, mas o resultado dependia do
+computador de quem abre o site - e uma seção que às vezes aparece quebrada não
+serve para a entrega.
+
+A solução foi usar a **miniatura oficial do vídeo como imagem clicável**: o
+elemento `<a>` em volta da imagem já abre o vídeo no YouTube em outra aba.
+
+```html
+<a class="video-capa" href="https://www.youtube.com/watch?v=4QGZk_PrQ1o" target="_blank" rel="noopener">
+  <img src="https://i.ytimg.com/vi/4QGZk_PrQ1o/hqdefault.jpg"
+       alt="Miniatura do vídeo 5 coisas que você precisa saber sobre a Fisioterapia">
+  <span class="video-play">▶</span>
+</a>
+```
+
+- `https://i.ytimg.com/vi/ID/hqdefault.jpg` é a miniatura que o próprio YouTube
+  guarda para cada vídeo - só troca o `ID` para usar outro vídeo;
+- `target="_blank"` abre em outra aba e `rel="noopener"` é a boa prática de
+  segurança para links externos;
+- o `<span class="video-play">▶</span>` é o botão de play desenhado com CSS
+  (`border-radius: 50%` + `position: absolute` centralizado), sem imagem extra;
+- como é um `<a>` normal, funciona em qualquer navegador, sem depender de player.
 
 ## Registro de três correções feitas nos testes
 
@@ -154,12 +181,19 @@ section[id] {
 }
 ```
 
-**Correção 3 - seção de vídeos removida.**
-Os vídeos incorporados apareciam como um retângulo cinza, porque o navegador
-estava bloqueando o carregamento do YouTube dentro da página. Testei o modo
-`youtube-nocookie.com` e o `loading="lazy"`, mas o resultado não era garantido em
-todos os navegadores. Para a página não ficar com um espaço quebrado, removi a
-seção de vídeos e o item do menu, e retirei o CSS que ficou sem uso.
+**Correção 3 - vídeos que não carregavam.**
+Os vídeos incorporados com `<iframe>` apareciam como um retângulo cinza, porque o
+navegador bloqueava o carregamento do YouTube dentro da página. Testei o modo
+`youtube-nocookie.com` e o `loading="lazy"`, mas o resultado mudava de acordo com
+o navegador. Troquei o `<iframe>` por uma **miniatura clicável** (imagem do
+`i.ytimg.com` dentro de um `<a>`), que abre o vídeo no YouTube e funciona em
+qualquer navegador.
+
+**Correção 4 - vídeo com proporção errada no celular.**
+Na versão com `<iframe>` eu tinha usado `width="560" height="315"` fixos, e em
+tela pequena o vídeo estourava a largura da página criando rolagem horizontal.
+Na versão final a imagem da miniatura usa `width: 100%`, então ela se ajusta
+sozinha ao tamanho do cartão.
 
 (Inclusive já corrigi também o contador do jogo, que mostrava "Pares: 0 / 8"
 escrito na mão no HTML; agora o total vem do próprio array de símbolos do
@@ -183,5 +217,6 @@ escrito na mão no HTML; agora o total vem do próprio array de símbolos do
 1. `01-menu.png` - menu completo com os 5 itens + Projetos
 2. `02-submenu.png` - menu suspenso aberto
 3. `03-localizacao.png` - seção de localização com o endereço e o botão
-4. `04-pagina-final.png` - página inteira (pode usar a opção "página inteira"
+4. `04-videos.png` - a seção de vídeos com as duas miniaturas
+5. `05-pagina-final.png` - página inteira (pode usar a opção "página inteira"
    do print do navegador)

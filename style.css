@@ -295,6 +295,88 @@ main {
   transform: translateY(-2px);
 }
 
+/* ---------------- vídeos ---------------- */
+
+.videos-grade {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 26px;
+  justify-content: center;
+}
+
+.video-card {
+  flex: 1 1 380px;
+  max-width: 460px;
+  background-color: #FFFFFF;
+  border: 1px solid #F48FB1;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 10px rgba(216, 27, 96, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.video-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(216, 27, 96, 0.16);
+}
+
+.video-card h3 {
+  color: #8E1B4F;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+/* a capa é uma imagem com um "play" em cima, e o cartão inteiro é o link */
+.video-capa {
+  display: block;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #000000;
+}
+
+.video-capa img {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 0.9;
+  transition: opacity 0.2s ease, transform 0.3s ease;
+}
+
+.video-capa:hover img {
+  opacity: 1;
+  transform: scale(1.03);
+}
+
+.video-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background-color: rgba(216, 27, 96, 0.9);
+  color: #FFFFFF;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 4px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.video-capa:hover .video-play {
+  background-color: #8E1B4F;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.video-card p {
+  margin-top: 12px;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
 /* ---------------- amigos ---------------- */
 
 .amigos-lista {

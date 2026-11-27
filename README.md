@@ -1,12 +1,12 @@
 # Site pessoal - Thayla Amaral
 
 Trabalho de Desenvolvimento de Sistemas (Se Liga 2026) - site pessoal com
-menu de navegação, localização fictícia e menu suspenso.
+menu de navegação, localização fictícia, vídeos e menu suspenso.
 
 ## Páginas
 
-- `index.html` - página inicial: banner, Sobre mim, Localização, Meus Amigos
-  e Contato
+- `index.html` - página inicial: banner, Sobre mim, Localização, Vídeos,
+  Meus Amigos e Contato
 - `jogo.html` - jogo da memória feito em JavaScript
 - `certificados.html` - lista de certificados
 

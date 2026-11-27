@@ -24,13 +24,14 @@
     </div>
   </header>
 
-  <!-- menu principal: Início, Sobre mim, Localização, Contato
+  <!-- menu principal: Início, Sobre mim, Localização, Vídeos, Contato
        e o menu suspenso (dropdown) com Jogo e Certificados -->
   <nav class="menu">
     <ul class="menu-lista">
       <li><a href="index.html" aria-current="page">Início</a></li>
       <li><a href="#sobre">Sobre mim</a></li>
       <li><a href="#localizacao">Localização</a></li>
+      <li><a href="#videos">Vídeos</a></li>
       <li><a href="#contato">Contato</a></li>
       <li class="dropdown">
         <button type="button" class="btn-dropdown" id="btn-dropdown" aria-expanded="false" aria-controls="submenu">
@@ -95,6 +96,51 @@
     </section>
 
     <!-- Amigos -->
+    <!-- Vídeos: a miniatura é um link, então o vídeo abre no YouTube.
+         Assim a página não depende do player incorporado para funcionar. -->
+    <section class="secao" id="videos">
+      <h2>Vídeos</h2>
+      <p class="texto-secao">
+        Separei dois vídeos do YouTube que têm a ver com o que eu quero para o
+        futuro: um fala sobre a profissão de fisioterapeuta e o outro ensina a
+        criar sites com HTML e CSS. Clique na imagem para assistir.
+      </p>
+
+      <div class="videos-grade">
+        <article class="video-card">
+          <h3>5 coisas que você precisa saber sobre a Fisioterapia</h3>
+          <a class="video-capa" href="https://www.youtube.com/watch?v=4QGZk_PrQ1o" target="_blank" rel="noopener">
+            <img
+              src="https://i.ytimg.com/vi/4QGZk_PrQ1o/hqdefault.jpg"
+              alt="Miniatura do vídeo 5 coisas que você precisa saber sobre a Fisioterapia"
+            >
+            <span class="video-play">▶</span>
+          </a>
+          <p>
+            Vídeo do canal Anatomia e etc. que fala das especializações da
+            fisioterapia, de como é a faculdade e do dia a dia da profissão que eu
+            quero seguir.
+          </p>
+        </article>
+
+        <article class="video-card">
+          <h3>Como criar um site com HTML, CSS e JavaScript</h3>
+          <a class="video-capa" href="https://www.youtube.com/watch?v=g51whzji0h4" target="_blank" rel="noopener">
+            <img
+              src="https://i.ytimg.com/vi/g51whzji0h4/hqdefault.jpg"
+              alt="Miniatura do vídeo Como criar um site fácil com HTML, CSS e JavaScript"
+            >
+            <span class="video-play">▶</span>
+          </a>
+          <p>
+            Aula do canal Tech Daniel's com os primeiros passos para montar um
+            site do zero, usando as mesmas linguagens que aprendo nas aulas de
+            Desenvolvimento de Sistemas.
+          </p>
+        </article>
+      </div>
+    </section>
+
     <section class="secao" id="amigos">
       <h2>Meus Amigos</h2>
       <div class="amigos-lista">
