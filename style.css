@@ -345,6 +345,20 @@ main {
   font-size: 15px;
 }
 
+/* link de reserva, caso o video nao carregue dentro do site */
+.link-video {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #8E1B4F;
+  text-decoration: underline;
+}
+
+.link-video:hover {
+  color: #D81B60;
+}
+
 /* ---------------- amigos ---------------- */
 
 .amigos-lista {
