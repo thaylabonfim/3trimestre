@@ -96,6 +96,31 @@ https://thaylabonfim.github.io/3trimestre/
 
 ---
 
+## Menu lateral (duas versões)
+
+O mesmo HTML gera duas experiências, controladas apenas por CSS e um único botão
+no cabeçalho:
+
+| Tela | Comportamento |
+| --- | --- |
+| **PC / notebook** (≥ 1100px) | Coluna fixa de 244px à esquerda, abaixo do cabeçalho, com rolagem própria (`position: sticky` + `overflow-y: auto`). O conteúdo ocupa o restante da largura. |
+| **Celular / tablet** (< 1100px) | O menu sai da tela e vira uma gaveta lateral aberta pelo botão hambúrguer, com fundo escurecido, trava de rolagem do corpo, foco preso dentro do menu e fechamento por `Esc`, toque fora ou clique em um link. |
+
+Detalhes de implementação:
+
+- `--largura-menu: 244px` e `--altura-cabecalho` (76/70/66px) em `:root` controlam
+  a largura da coluna e o deslocamento do menu fixo;
+- as seções recolhíveis funcionam nas duas versões (`aria-expanded` + atributo
+  `hidden`), então no celular a gaveta fica curta e fácil de percorrer;
+- o item da página atual é destacado com `aria-current="page"` (fundo verde,
+  texto creme);
+- em telas de 1100px a 1320px as grades mais largas (`.grade--assimetrica`,
+  `.contato-grade`, rodapé) se empilham para o texto não ficar apertado ao lado
+  do menu;
+- ao imprimir, o menu lateral, a sobreposição e o botão hambúrguer são ocultados.
+
+---
+
 ## Como rodar localmente
 
 O site é 100% estático, então qualquer servidor HTTP funciona.
@@ -130,12 +155,20 @@ Depois abra `http://localhost:3000`.
 Cada página é um arquivo HTML independente. Os blocos estão comentados com
 `<!-- ... -->` para facilitar a localização.
 
-### Cabeçalho e rodapé
+### Cabeçalho, menu lateral e rodapé
 
-São repetidos em todas as páginas (site estático sem build). Ao alterar um item de
-menu, faça a troca nos arquivos `index.html`, `sobre.html`, `jogo.html`,
-`certificados.html`, `contato.html` e `privacidade.html`, mantendo
-`aria-current="page"` apenas no link da página atual.
+São repetidos em todas as páginas (site estático sem build). O menu lateral fica
+logo depois do `<header>` e antes do `<main>`, dentro do bloco
+`<div class="layout">`. Ao alterar um item de menu, faça a troca nos arquivos
+`index.html`, `sobre.html`, `jogo.html`, `certificados.html`, `contato.html`,
+`privacidade.html` e `404.html`, mantendo `aria-current="page"` apenas no link da
+página atual.
+
+O menu tem quatro seções recolhíveis (`Portfólio`, `Meus estudos`, `Projetos`,
+`Sobre o site`). Para editar uma seção, procure o `<div class="menu-lateral__grupo">`
+correspondente: o botão (`.menu-lateral__titulo`) controla a lista
+(`.menu-lateral__lista`) pelo `aria-controls`. Para deixar uma seção já recolhida,
+use `aria-expanded="false"` no botão e `hidden` na lista.
 
 ### Contato
 
@@ -240,6 +273,9 @@ Para trocar a fonte, edite o `<link>` do Google Fonts e as variáveis
 - Link "Pular para o conteúdo" e foco visível em todos os elementos interativos;
 - `aria-expanded`, `aria-controls`, `aria-pressed`, `aria-live` e `aria-label` nos
   componentes que mudam de estado;
+- menu lateral: `nav` nomeado, seções recolhíveis anunciadas, gaveta com foco
+  preso, `Esc` para fechar e devolução do foco ao botão;
+- `aria-current="page"` indica a página atual também no menu lateral;
 - Contraste mínimo AA para textos e botões;
 - Respeito a `prefers-reduced-motion`;
 - Textos alternativos descritivos em todas as imagens.

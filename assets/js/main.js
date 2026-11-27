@@ -3,7 +3,7 @@
    main.js — comportamento global do site
    --------------------------------------------------------------------------
    • Estado do cabeçalho ao rolar a página
-   • Menu de navegação responsivo (acessível via teclado)
+   • Menu lateral responsivo: gaveta no celular, seções recolhíveis
    • Animações de entrada progressivas (IntersectionObserver)
    • Botão "voltar ao topo"
    • Ano automático no rodapé
@@ -30,6 +30,7 @@
   document.addEventListener("DOMContentLoaded", function () {
     iniciarCabecalho();
     iniciarMenu();
+    iniciarGruposMenu();
     iniciarRevelacao();
     iniciarVoltarAoTopo();
     iniciarAnoAtual();
@@ -52,46 +53,99 @@
   }
 
   /* ------------------------------------------------------------------ */
-  /* Menu responsivo                                                    */
+  /* Menu lateral: gaveta no celular e seções recolhíveis               */
   /* ------------------------------------------------------------------ */
+  var LIMITE_MENU_DESKTOP = 1100;
+
   function iniciarMenu() {
     var botao = document.querySelector("[data-menu-botao]");
-    var navegacao = document.querySelector("[data-menu]");
+    var menu = document.querySelector("[data-menu]");
+    var overlay = document.querySelector("[data-menu-overlay]");
 
-    if (!botao || !navegacao) return;
+    if (!botao || !menu) return;
 
-    var definirEstado = function (aberto) {
+    var estaAberto = function () {
+      return botao.getAttribute("aria-expanded") === "true";
+    };
+
+    var focaveis = function () {
+      return Array.prototype.slice.call(
+        menu.querySelectorAll("a[href], button:not([disabled])")
+      );
+    };
+
+    var definirEstado = function (aberto, devolverFoco) {
       botao.setAttribute("aria-expanded", String(aberto));
       botao.setAttribute(
         "aria-label",
         aberto ? "Fechar menu de navegação" : "Abrir menu de navegação"
       );
-      navegacao.classList.toggle("is-aberta", aberto);
+      menu.classList.toggle("is-aberto", aberto);
+      document.body.classList.toggle("menu-aberto", aberto);
+      if (overlay) overlay.classList.toggle("is-visivel", aberto);
+      if (!aberto && devolverFoco) botao.focus();
     };
 
     botao.addEventListener("click", function () {
-      definirEstado(botao.getAttribute("aria-expanded") !== "true");
+      definirEstado(!estaAberto());
     });
 
-    navegacao.addEventListener("click", function (evento) {
+    if (overlay) {
+      overlay.addEventListener("click", function () {
+        definirEstado(false, true);
+      });
+    }
+
+    menu.addEventListener("click", function (evento) {
+      if (!evento.target || typeof evento.target.closest !== "function") return;
       if (evento.target.closest("a")) definirEstado(false);
     });
 
     document.addEventListener("keydown", function (evento) {
-      if (evento.key !== "Escape") return;
-      if (botao.getAttribute("aria-expanded") !== "true") return;
-      definirEstado(false);
-      botao.focus();
-    });
+      if (!estaAberto()) return;
 
-    document.addEventListener("click", function (evento) {
-      if (botao.getAttribute("aria-expanded") !== "true") return;
-      if (navegacao.contains(evento.target) || botao.contains(evento.target)) return;
-      definirEstado(false);
+      if (evento.key === "Escape") {
+        definirEstado(false, true);
+        return;
+      }
+
+      if (evento.key !== "Tab") return;
+
+      var itens = focaveis();
+      if (!itens.length) return;
+
+      var primeiro = itens[0];
+      var ultimo = itens[itens.length - 1];
+
+      if (evento.shiftKey && document.activeElement === primeiro) {
+        evento.preventDefault();
+        ultimo.focus();
+      } else if (!evento.shiftKey && document.activeElement === ultimo) {
+        evento.preventDefault();
+        primeiro.focus();
+      }
     });
 
     window.addEventListener("resize", function () {
-      if (window.innerWidth > 920) definirEstado(false);
+      if (window.innerWidth >= LIMITE_MENU_DESKTOP) definirEstado(false);
+    });
+  }
+
+  /* Seções recolhíveis do menu lateral (funcionam no PC e no celular)  */
+  function iniciarGruposMenu() {
+    var grupos = Array.prototype.slice.call(
+      document.querySelectorAll("[data-grupo-botao]")
+    );
+
+    grupos.forEach(function (grupo) {
+      var lista = document.getElementById(grupo.getAttribute("aria-controls"));
+      if (!lista) return;
+
+      grupo.addEventListener("click", function () {
+        var expandido = grupo.getAttribute("aria-expanded") === "true";
+        grupo.setAttribute("aria-expanded", String(!expandido));
+        lista.hidden = expandido;
+      });
     });
   }
 

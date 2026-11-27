@@ -40,23 +40,82 @@
         </span>
       </a>
 
-      <button class="menu-toggle" type="button" data-menu-botao aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu de navegação">
+      <button class="menu-toggle" type="button" data-menu-botao aria-expanded="false" aria-controls="menu-lateral" aria-label="Abrir menu de navegação">
         <svg class="menu-toggle__abrir" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
         <svg class="menu-toggle__fechar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
       </button>
-
-      <nav class="navegacao" id="menu-principal" data-menu aria-label="Navegação principal">
-        <ul class="navegacao__lista">
-          <li><a class="navegacao__link" href="index.html">Início</a></li>
-          <li><a class="navegacao__link" href="sobre.html">Sobre</a></li>
-          <li><a class="navegacao__link" href="jogo.html">Jogo</a></li>
-          <li><a class="navegacao__link" href="certificados.html" aria-current="page">Certificados</a></li>
-          <li><a class="navegacao__link" href="contato.html">Contato</a></li>
-        </ul>
+      <div class="cabecalho__acoes">
         <a class="btn btn--primario btn--pequeno" href="contato.html">Fale comigo</a>
-      </nav>
+      </div>
     </div>
   </header>
+
+  <div class="menu-lateral__overlay" data-menu-overlay aria-hidden="true"></div>
+
+  <div class="layout">
+    <nav class="menu-lateral" id="menu-lateral" data-menu aria-label="Navegação do site">
+      <div class="menu-lateral__interno">
+        <p class="menu-lateral__rotulo">Navegação</p>
+
+        <div class="menu-lateral__grupo">
+          <button class="menu-lateral__titulo" type="button" data-grupo-botao aria-expanded="true" aria-controls="grupo-portfolio">
+            Portfólio
+            <svg class="menu-lateral__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+          </button>
+          <ul class="menu-lateral__lista" id="grupo-portfolio">
+            <li><a class="menu-lateral__link" href="index.html">Início</a></li>
+            <li><a class="menu-lateral__link" href="sobre.html">Sobre mim</a></li>
+            <li><a class="menu-lateral__link" href="jogo.html">Jogo Tetris</a></li>
+            <li><a class="menu-lateral__link" href="certificados.html" aria-current="page">Certificados</a></li>
+            <li><a class="menu-lateral__link" href="contato.html">Contato</a></li>
+          </ul>
+        </div>
+        <div class="menu-lateral__grupo">
+          <button class="menu-lateral__titulo" type="button" data-grupo-botao aria-expanded="true" aria-controls="grupo-estudos">
+            Meus estudos
+            <svg class="menu-lateral__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+          </button>
+          <ul class="menu-lateral__lista" id="grupo-estudos">
+            <li><a class="menu-lateral__link" href="sobre.html#quem-sou-eu">Quem sou eu</a></li>
+            <li><a class="menu-lateral__link" href="sobre.html#trajetoria">Linha do tempo</a></li>
+            <li><a class="menu-lateral__link" href="sobre.html#habilidades">Habilidades</a></li>
+            <li><a class="menu-lateral__link" href="sobre.html#objetivos">Objetivos</a></li>
+            <li><a class="menu-lateral__link" href="sobre.html#paixao">Paixão pelo Palmeiras</a></li>
+          </ul>
+        </div>
+        <div class="menu-lateral__grupo">
+          <button class="menu-lateral__titulo" type="button" data-grupo-botao aria-expanded="true" aria-controls="grupo-projetos">
+            Projetos
+            <svg class="menu-lateral__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+          </button>
+          <ul class="menu-lateral__lista" id="grupo-projetos">
+            <li><a class="menu-lateral__link" href="jogo.html">Tetris jogável</a></li>
+            <li><a class="menu-lateral__link" href="jogo.html#projeto">Como foi feito</a></li>
+            <li><a class="menu-lateral__link" href="certificados.html">Formações</a></li>
+          </ul>
+        </div>
+        <div class="menu-lateral__grupo">
+          <button class="menu-lateral__titulo" type="button" data-grupo-botao aria-expanded="false" aria-controls="grupo-site">
+            Sobre o site
+            <svg class="menu-lateral__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+          </button>
+          <ul class="menu-lateral__lista" id="grupo-site" hidden>
+            <li><a class="menu-lateral__link" href="privacidade.html">Política de privacidade</a></li>
+            <li><a class="menu-lateral__link" href="contato.html#canais">Contato e canais</a></li>
+          </ul>
+        </div>
+
+        <div class="menu-lateral__rodape">
+          <div class="menu-lateral__cartao">
+            <strong>Dúvidas ou sugestões?</strong>
+            <span>Fale comigo pelo WhatsApp ou pelo formulário de contato.</span>
+            <a class="btn btn--primario btn--pequeno btn--bloco" href="contato.html">Fale comigo</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="layout__principal">
 
   <main id="conteudo">
     <section class="pagina-topo">
@@ -327,6 +386,8 @@
       </div>
     </div>
   </footer>
+    </div>
+  </div>
 
   <button class="voltar-topo" type="button" data-voltar-topo aria-label="Voltar ao topo">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
