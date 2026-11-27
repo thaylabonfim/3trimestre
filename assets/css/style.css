@@ -596,6 +596,13 @@ p {
   font-size: 0.85rem;
 }
 
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none;
+}
+
 .btn--bloco {
   width: 100%;
 }
