@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Página não encontrada · Thayla Amaral</title>
+  <meta name="description" content="A página que você tentou acessar não existe ou mudou de endereço.">
+  <meta name="author" content="Thayla Amaral">
+  <meta name="theme-color" content="#062a20">
+  <meta name="robots" content="noindex, follow">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/icone-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="pular-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="cabecalho" data-cabecalho>
+    <div class="container cabecalho__interno">
+      <a class="marca" href="index.html" aria-label="Thayla Amaral — página inicial">
+        <span class="marca__selo" aria-hidden="true">TA</span>
+        <span class="marca__texto">
+          <strong>Thayla Amaral</strong>
+          <small>Desenvolvimento de Sistemas</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" data-menu-botao aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu de navegação">
+        <svg class="menu-toggle__abrir" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="menu-toggle__fechar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+
+      <nav class="navegacao" id="menu-principal" data-menu aria-label="Navegação principal">
+        <ul class="navegacao__lista">
+          <li><a class="navegacao__link" href="index.html">Início</a></li>
+          <li><a class="navegacao__link" href="sobre.html">Sobre</a></li>
+          <li><a class="navegacao__link" href="jogo.html">Jogo</a></li>
+          <li><a class="navegacao__link" href="certificados.html">Certificados</a></li>
+          <li><a class="navegacao__link" href="contato.html">Contato</a></li>
+        </ul>
+        <a class="btn btn--primario btn--pequeno" href="contato.html">Fale comigo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" class="pagina-erro">
+    <div class="container">
+      <p class="pagina-erro__codigo" aria-hidden="true">404</p>
+      <h1>Essa página saiu do tabuleiro</h1>
+      <p>
+        O endereço que você tentou abrir não existe ou foi movido. Que tal voltar ao
+        início ou conhecer os projetos?
+      </p>
+      <div class="pagina-erro__acoes">
+        <a class="btn btn--primario" href="index.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+          Voltar ao início
+        </a>
+        <a class="btn btn--secundario" href="jogo.html">Jogar o Tetris</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <div class="rodape__base rodape__base--simples">
+        <p>© <span data-ano>2026</span> Thayla Amaral. Todos os direitos reservados.</p>
+        <ul class="rodape__links">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="privacidade.html">Privacidade</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

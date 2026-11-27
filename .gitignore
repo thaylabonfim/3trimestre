@@ -1,0 +1,23 @@
+# Dependências e artefatos de build
+node_modules/
+dist/
+build/
+.cache/
+
+# Sistema operacional e editores
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+
+# Logs e arquivos temporários
+*.log
+npm-debug.log*
+.env
+.env.*
+
+# Arquivos locais de configuração de ferramentas
+.eslintcache
+.stylelintcache

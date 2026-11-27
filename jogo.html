@@ -1,50 +1,372 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jogo | Thayla</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tetris · Jogo em JavaScript | Thayla Amaral</title>
+  <meta name="description" content="Jogue o Tetris feito do zero por Thayla Amaral com HTML, CSS e JavaScript. Placar, níveis, recorde salvo e controles para celular.">
+  <meta name="author" content="Thayla Amaral">
+  <meta name="theme-color" content="#062a20">
+  <link rel="canonical" href="https://thaylabonfim.github.io/3trimestre/jogo.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Thayla Amaral">
+  <meta property="og:title" content="Tetris · Jogo em JavaScript | Thayla Amaral">
+  <meta property="og:description" content="Um Tetris completo feito do zero com HTML, CSS e JavaScript. Jogue no navegador, inclusive no celular.">
+  <meta property="og:url" content="https://thaylabonfim.github.io/3trimestre/jogo.html">
+  <meta property="og:image" content="https://thaylabonfim.github.io/3trimestre/assets/img/og-thayla.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/icone-180.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-<!--header é a parte do cabeçalho do site, é o topo da página-->
-<header class="cabecalho-itens">
-<img class="cabecalho_imagem" src="logo.png" alt="Logo da
-Página">
-<h1 class="titulo_site">Jogo</h1>
-<div class="sociais">
-<img class="sociais" src="WhatsApp Image 2026-11-06 at 11.25.32.jpeg" alt="Logo do Whats da
-Escola">
-<img class="sociais" src="WhatsApp Image 2026-11-06 at 11.25.25.jpeg" alt="Facebook da
-Escola">
-<img class="sociais" src="WhatsApp Image 2026-11-06 at 11.25.23.jpeg" alt="instagram da
-Escola">
-</div>
-</header>
+  <a class="pular-link" href="#conteudo">Pular para o conteúdo</a>
 
- <header>
-    
+  <header class="cabecalho" data-cabecalho>
+    <div class="container cabecalho__interno">
+      <a class="marca" href="index.html" aria-label="Thayla Amaral — página inicial">
+        <span class="marca__selo" aria-hidden="true">TA</span>
+        <span class="marca__texto">
+          <strong>Thayla Amaral</strong>
+          <small>Desenvolvimento de Sistemas</small>
+        </span>
+      </a>
 
-      <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="sobre.html">Sobre</a></li>
-        <li><a href="jogo.html">Jogo</a></li>
-        <li><a href="certificados.html">certificados</a></li>
-        <li><a href="contato.html">Contato</a></li>
-      </ul>
+      <button class="menu-toggle" type="button" data-menu-botao aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu de navegação">
+        <svg class="menu-toggle__abrir" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="menu-toggle__fechar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
 
-<header>
-</header>
-<!--Seção rodapé é a parte final da paragrafo 3 da página-->
-<footer class="escola">
-<img class="logo_rodape" src="WhatsApp Image 2026-11-06 at 11.25.25.jpeg" alt="Logo da Escola">
-<h2 class="escola-título">Mais informações entre em contato<a class="link"
+      <nav class="navegacao" id="menu-principal" data-menu aria-label="Navegação principal">
+        <ul class="navegacao__lista">
+          <li><a class="navegacao__link" href="index.html">Início</a></li>
+          <li><a class="navegacao__link" href="sobre.html">Sobre</a></li>
+          <li><a class="navegacao__link" href="jogo.html" aria-current="page">Jogo</a></li>
+          <li><a class="navegacao__link" href="certificados.html">Certificados</a></li>
+          <li><a class="navegacao__link" href="contato.html">Contato</a></li>
+        </ul>
+        <a class="btn btn--primario btn--pequeno" href="contato.html">Fale comigo</a>
+      </nav>
+    </div>
+  </header>
 
-href="https://wa.me/5541999999999"> 41 9.9927-7308 </a></h2>
-<p></p>
-<p>©2026 | Curso de DS | Todos os Direitos Reservados.
-Política de Privacidade | Proteção de dados | Encarregado de dados</p>
-<p> </p>
-</footer>
+  <main id="conteudo">
+    <section class="pagina-topo">
+      <div class="container">
+        <div class="largura-texto" data-reveal>
+          <p class="tag-eyebrow">Projeto prático · 2026</p>
+          <h1>Tetris, do zero ao jogável</h1>
+          <p class="descricao-secao texto-destaque">
+            Um dos primeiros jogos que eu joguei na vida virou projeto de escola:
+            construí esta versão com HTML, CSS e JavaScript puro, sem bibliotecas e
+            sem atalhos. Pode jogar aqui mesmo.
+          </p>
+          <div class="chips mt-5" role="group" aria-label="Tecnologias usadas">
+            <span class="chip chip--verde">HTML</span>
+            <span class="chip chip--verde">CSS</span>
+            <span class="chip chip--rosa">JavaScript</span>
+            <span class="chip">Canvas 2D</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         Jogo
+    ------------------------------------------------------------------- -->
+    <section class="secao secao--compacta" aria-labelledby="titulo-jogar">
+      <div class="container">
+        <h2 class="sr-only" id="titulo-jogar">Jogar Tetris</h2>
+
+        <div class="jogo-painel" data-reveal>
+          <div class="jogo-tabuleiro">
+            <div class="jogo-tabuleiro__moldura">
+              <canvas id="tabuleiro" width="300" height="600" tabindex="0"
+                      aria-label="Tabuleiro de Tetris com 10 colunas e 20 linhas" role="img"></canvas>
+
+              <div class="jogo-overlay is-ativo" data-overlay>
+                <strong data-overlay-titulo>Pronto para jogar?</strong>
+                <p data-overlay-texto>Use as setas do teclado ou os botões na tela para mover e girar as peças.</p>
+                <button class="btn btn--claro btn--pequeno" type="button" data-overlay-acao>Começar</button>
+              </div>
+            </div>
+
+            <div class="controles-toque" role="group" aria-label="Controles do jogo no celular">
+              <button type="button" data-controle="esquerda" aria-label="Mover peça para a esquerda">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+              </button>
+              <button type="button" data-controle="girar" aria-label="Girar peça">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3.2-6.9"/><path d="M21 3v6h-6"/></svg>
+              </button>
+              <button type="button" data-controle="direita" aria-label="Mover peça para a direita">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </button>
+              <button type="button" data-controle="descer" aria-label="Descer peça mais rápido">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+              </button>
+              <button type="button" class="controles-toque__largo" data-controle="soltar" aria-label="Soltar peça até o fim">
+                Soltar peça
+              </button>
+              <p class="controles-toque__rotulo">Toque nos botões para jogar</p>
+            </div>
+          </div>
+
+          <aside class="jogo-lateral" aria-label="Informações da partida">
+            <div class="metrica">
+              <span>Placar</span>
+              <strong data-placar>0</strong>
+            </div>
+
+            <div class="metrica">
+              <span>Recorde</span>
+              <strong data-recorde>0</strong>
+            </div>
+
+            <div class="metrica">
+              <span>Linhas</span>
+              <strong data-linhas>0</strong>
+            </div>
+
+            <div class="metrica">
+              <span>Nível</span>
+              <strong data-nivel>1</strong>
+            </div>
+
+            <div class="metrica metrica--proxima">
+              <span>Próxima peça</span>
+              <canvas id="proxima-peca" width="96" height="96" aria-hidden="true"></canvas>
+            </div>
+
+            <div class="jogo-lateral__acoes">
+              <button class="btn btn--primario btn--pequeno" type="button" data-acao="pausar">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>
+                Pausar
+              </button>
+              <button class="btn btn--secundario btn--pequeno" type="button" data-acao="reiniciar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3.2-6.9"/><path d="M21 3v6h-6"/></svg>
+                Reiniciar
+              </button>
+            </div>
+
+            <div class="jogo-ajuda" role="group" aria-label="Atalhos de teclado">
+              <span><kbd>←</kbd> <kbd>→</kbd> mover</span>
+              <span><kbd>↑</kbd> girar</span>
+              <span><kbd>↓</kbd> descer</span>
+              <span><kbd>espaço</kbd> soltar</span>
+              <span><kbd>P</kbd> pausar</span>
+            </div>
+
+            <p class="sr-only" role="status" aria-live="polite" data-status></p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         Como jogar
+    ------------------------------------------------------------------- -->
+    <section class="secao secao--creme-2" aria-labelledby="titulo-como-jogar">
+      <div class="container">
+        <div class="cabecalho-secao" data-reveal>
+          <p class="tag-eyebrow">Instruções</p>
+          <h2 class="titulo-secao" id="titulo-como-jogar">Como jogar</h2>
+          <p class="descricao-secao">
+            A regra é a clássica: encaixar as peças sem deixar buracos e completar
+            linhas inteiras para ganhar espaço.
+          </p>
+        </div>
+
+        <div class="grade grade--3">
+          <article class="cartao" data-reveal>
+            <div class="cartao__icone" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/><path d="M9 3v18"/></svg>
+            </div>
+            <h3>O objetivo</h3>
+            <p>
+              Cada linha horizontal completa desaparece e rende pontos. Se as peças
+              chegarem ao topo do tabuleiro, a partida termina.
+            </p>
+          </article>
+
+          <article class="cartao cartao--rosa" data-reveal data-atraso="2">
+            <div class="cartao__icone" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="12" rx="3"/><path d="M7 9v6M5 12h4M15 12h.01M18 10h.01M18 14h.01"/></svg>
+            </div>
+            <h3>Os controles</h3>
+            <p>
+              Setas laterais movem a peça, a seta para cima gira, a seta para baixo
+              acelera e a barra de espaço solta a peça de uma vez.
+            </p>
+          </article>
+
+          <article class="cartao cartao--dourado" data-reveal data-atraso="5">
+            <div class="cartao__icone" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M4.2 7.5l2.6 1.5M17.2 15l2.6 1.5M4.2 16.5l2.6-1.5M17.2 9l2.6-1.5"/><circle cx="12" cy="12" r="3.2"/></svg>
+            </div>
+            <h3>A pontuação</h3>
+            <p>
+              Uma linha vale 100 pontos, duas valem 300, três valem 500 e quatro
+              valem 800 — sempre multiplicados pelo nível atual.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         Sobre o projeto
+    ------------------------------------------------------------------- -->
+    <section class="secao" aria-labelledby="titulo-projeto">
+      <div class="container grade grade--assimetrica grade--topo">
+        <div data-reveal>
+          <p class="tag-eyebrow">Bastidores do código</p>
+          <h2 class="titulo-secao" id="titulo-projeto">O que existe por trás do jogo</h2>
+          <div class="bloco-sobre mt-5">
+            <p>
+              A ideia surgiu nas aulas de Desenvolvimento de Sistemas: criar algo que
+              as pessoas pudessem realmente usar, e não só olhar. Escolhi o Tetris
+              porque as regras são simples de explicar e desafiadoras de programar.
+            </p>
+            <p>
+              Todo o jogo roda no navegador, sem servidor e sem bibliotecas. As peças,
+              a colisão, a rotação e o placar foram escritos à mão em JavaScript; o
+              desenho usa a API de Canvas; o visual segue a mesma identidade deste
+              portfólio.
+            </p>
+          </div>
+
+          <ul class="lista-check mt-7">
+            <li>Lógica de matrizes para representar peças e tabuleiro</li>
+            <li>Detecção de colisão e rotação com ajuste de posição</li>
+            <li>Sorteio equilibrado de peças (sistema 7-bag)</li>
+            <li>Laço de animação com <span class="texto-pequeno">requestAnimationFrame</span></li>
+            <li>Recorde salvo no navegador com localStorage</li>
+            <li>Controles de teclado e de toque, com acessibilidade</li>
+          </ul>
+        </div>
+
+        <div class="pilha" data-reveal data-atraso="2">
+          <div class="cartao">
+            <p class="cartao__numero">Ficha do projeto</p>
+            <dl class="lista-definicao mt-4">
+              <div><dt>Tipo</dt><dd>Projeto escolar · jogo web</dd></div>
+              <div><dt>Ano</dt><dd>2026 · 3º trimestre</dd></div>
+              <div><dt>Tecnologias</dt><dd>HTML, CSS, JavaScript e Canvas</dd></div>
+              <div><dt>Dependências</dt><dd>Nenhuma</dd></div>
+              <div><dt>Onde rodar</dt><dd>Qualquer navegador moderno</dd></div>
+            </dl>
+          </div>
+
+          <div class="painel-destaque">
+            <div>
+              <h3>Quer ver outros projetos?</h3>
+              <p>
+                O portfólio reúne também a minha trajetória de estudos e os
+                certificados que já conquistei.
+              </p>
+            </div>
+            <div class="painel-destaque__rodape">
+              <a class="btn btn--claro btn--pequeno" href="sobre.html">Ver trajetória</a>
+              <a class="btn btn--fantasma btn--pequeno" href="certificados.html">Certificados</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <div class="rodape__grade">
+        <div class="rodape__marca-coluna">
+          <a class="rodape__marca" href="index.html">
+            <span class="marca__selo" aria-hidden="true">TA</span>
+            <span>
+              <strong>Thayla Amaral</strong>
+              <span>Portfólio pessoal</span>
+            </span>
+          </a>
+          <p class="rodape__sobre">
+            Estudante de Desenvolvimento de Sistemas apaixonada por aprender na
+            prática e por transformar ideias em projetos reais.
+          </p>
+          <div class="social" role="group" aria-label="Redes sociais">
+            <a href="https://wa.me/5541999277308" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.2-.2.2-.3.3-.5.1-.2.1-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.4m-5.4 7.4h-.1a9.9 9.9 0 0 1-5-1.4l-.4-.2-3.7 1 .9-3.6-.2-.4a9.9 9.9 0 0 1-1.5-5.3c0-5.4 4.4-9.9 9.9-9.9 2.6 0 5.1 1 7 2.9a9.8 9.8 0 0 1 2.9 7c0 5.4-4.5 9.9-9.9 9.9m8.4-18.3A11.8 11.8 0 0 0 12 0C5.5 0 .2 5.3.2 11.9c0 2.1.5 4.1 1.6 5.9L0 24l6.3-1.7c1.7 1 3.7 1.5 5.7 1.5h.1c6.5 0 11.9-5.3 11.9-11.9 0-3.2-1.3-6.2-3.5-8.4"/></svg>
+              </a>
+            <a href="https://www.instagram.com/thaylabonfim" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
+              </a>
+            <a href="https://www.facebook.com/thaylabonfim" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.2-1.5 1.5-1.5h1.6V4.4c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.1v2.1H7.5v3h2.7V21h3.3Z"/></svg>
+              </a>
+            </div>
+        </div>
+
+        <nav aria-label="Navegação do rodapé">
+          <h3>Navegação</h3>
+          <ul class="rodape__lista">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="sobre.html">Sobre mim</a></li>
+            <li><a href="jogo.html">Jogo</a></li>
+            <li><a href="certificados.html">Certificados</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <h3>Projetos</h3>
+          <ul class="rodape__lista">
+            <li><a href="jogo.html">Tetris em JavaScript</a></li>
+            <li><a href="sobre.html#trajetoria">Trajetória de estudos</a></li>
+            <li><a href="certificados.html">Formações</a></li>
+            <li><a href="privacidade.html">Política de privacidade</a></li>
+          </ul>
+        </div>
+
+        <div class="rodape__coluna--contato">
+          <h3>Contato</h3>
+          <ul class="rodape__lista">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Curitiba · Paraná</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="3"/><path d="M8 3v3M16 3v3M3 10h18"/></svg>
+              <span>Disponível para estágio</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>
+              <span>E. E. Prof. Júlio Szymanski</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="rodape__base">
+        <p>© <span data-ano>2026</span> Thayla Amaral. Todos os direitos reservados.</p>
+        <ul class="rodape__links">
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="privacidade.html">Privacidade</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <button class="voltar-topo" type="button" data-voltar-topo aria-label="Voltar ao topo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+  </button>
+
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/tetris.js" defer></script>
 </body>
 </html>

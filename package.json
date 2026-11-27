@@ -1,0 +1,23 @@
+{
+  "name": "portfolio-thayla-amaral",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfólio pessoal de Thayla Amaral — site estático com HTML, CSS e JavaScript puros.",
+  "author": "Thayla Amaral",
+  "license": "MIT",
+  "keywords": [
+    "portfolio",
+    "html",
+    "css",
+    "javascript",
+    "tetris"
+  ],
+  "scripts": {
+    "dev": "python3 -m http.server 3000",
+    "validate": "html-validate \"*.html\"",
+    "check:js": "node --check assets/js/main.js && node --check assets/js/tetris.js && node --check assets/js/certificados.js"
+  },
+  "devDependencies": {
+    "html-validate": "^8.24.1"
+  }
+}

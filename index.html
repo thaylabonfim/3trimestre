@@ -1,104 +1,498 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Home | Thayla</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thayla Amaral · Portfólio de Desenvolvimento de Sistemas</title>
+  <meta name="description" content="Portfólio de Thayla Amaral, estudante do curso técnico em Desenvolvimento de Sistemas em Curitiba. Projetos em HTML, CSS e JavaScript, trajetória e certificados.">
+  <meta name="author" content="Thayla Amaral">
+  <meta name="theme-color" content="#062a20">
+  <link rel="canonical" href="https://thaylabonfim.github.io/3trimestre/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Thayla Amaral">
+  <meta property="og:title" content="Thayla Amaral · Portfólio de Desenvolvimento de Sistemas">
+  <meta property="og:description" content="Estudante de Desenvolvimento de Sistemas em Curitiba. Projetos em HTML, CSS e JavaScript — incluindo um Tetris feito do zero.">
+  <meta property="og:url" content="https://thaylabonfim.github.io/3trimestre/">
+  <meta property="og:image" content="https://thaylabonfim.github.io/3trimestre/assets/img/og-thayla.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Cartão de apresentação do portfólio de Thayla Amaral">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/icone-180.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>document.documentElement.classList.add('js');</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Thayla Amaral",
+    "jobTitle": "Estudante de Desenvolvimento de Sistemas",
+    "description": "Estudante do curso técnico em Desenvolvimento de Sistemas, com projetos em HTML, CSS e JavaScript.",
+    "url": "https://thaylabonfim.github.io/3trimestre/",
+    "image": "https://thaylabonfim.github.io/3trimestre/assets/img/retrato-thayla.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Curitiba",
+      "addressRegion": "PR",
+      "addressCountry": "BR"
+    },
+    "alumniOf": {
+      "@type": "School",
+      "name": "Escola Estadual Professor Júlio Szymanski"
+    },
+    "knowsAbout": ["HTML", "CSS", "JavaScript", "Desenvolvimento web"]
+  }
+  </script>
 </head>
 <body>
-<!--header é a parte do cabeçalho do site, é o topo da página-->
-<header class="cabecalho-itens">
-<img class="cabecalho_imagem" src="logo.png" alt="Logo da Página">
-<h1 class="titulo_site">Thayla Amaral</h1>
-<div class="sociais">
-<img class="sociais" src="WhatsApp Image 2026-11-06 at 11.25.32.jpeg" alt="Logo do Whats da
-Escola">
-<img class="sociais" src="WhatsApp Image 2026-11-06 at 11.25.25.jpeg" alt="Facebook da
-Escola">
-<img class="sociais" src="WhatsApp Image 2026-11-06 at 11.25.23.jpeg" alt="instagram da
-Escola">
-</div>
-</header>
+  <a class="pular-link" href="#conteudo">Pular para o conteúdo</a>
 
- <header>
-    
+  <header class="cabecalho" data-cabecalho>
+    <div class="container cabecalho__interno">
+      <a class="marca" href="index.html" aria-label="Thayla Amaral — página inicial">
+        <span class="marca__selo" aria-hidden="true">TA</span>
+        <span class="marca__texto">
+          <strong>Thayla Amaral</strong>
+          <small>Desenvolvimento de Sistemas</small>
+        </span>
+      </a>
 
-      <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="sobre.html">Sobre</a></li>
-        <li><a href="jogo.html">Jogo</a></li>
-        <li><a href="certificados.html">certificados</a></li>
-        <li><a href="contato.html">Contato</a></li>
-      </ul>
+      <button class="menu-toggle" type="button" data-menu-botao aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu de navegação">
+        <svg class="menu-toggle__abrir" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="menu-toggle__fechar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
 
+      <nav class="navegacao" id="menu-principal" data-menu aria-label="Navegação principal">
+        <ul class="navegacao__lista">
+          <li><a class="navegacao__link" href="index.html" aria-current="page">Início</a></li>
+          <li><a class="navegacao__link" href="sobre.html">Sobre</a></li>
+          <li><a class="navegacao__link" href="jogo.html">Jogo</a></li>
+          <li><a class="navegacao__link" href="certificados.html">Certificados</a></li>
+          <li><a class="navegacao__link" href="contato.html">Contato</a></li>
+        </ul>
+        <a class="btn btn--primario btn--pequeno" href="contato.html">Fale comigo</a>
+      </nav>
+    </div>
   </header>
-<!--Seção banner 1 é a parte do paragrafo 1 da página-->
-<section class="banner1">
-<img class="escola.image" src="banner.png" alt="Banner da Escola">
-</section>
-<!--Seção estudantes é a parte do paragrafo 2 da página -- "Meninos"-->
-<!--altere em "src="estudante_menino_1.png" para src"nome da imagem do menino em
-todos abaixo-->
-<!--altere em "src="site_school.png" para src"nome da logo em todos abaixo-->
-<!--para aumentar os alunos copie a div no edidor que corresponda desde a foto
-até os icones abaixo - dúvidas chame o professor-->
-<section class="estudante">
-<h1 class="estudante_titulo">Meus Amigos</h1>
-<p> </p>
-<div class="estudantes_todos">
-<div class="estudante-div">
-<img class="estudante-imagem" src="WhatsApp Image 2026-11-06 at 11.22.33.jpeg" alt="Foto da
-turma do 1CDS do ano de 2026">
-<h3 class="estudante-nome">Bella</h3>
-<a href="https://cursos.alura.com.br/dashboard">
-<p> </p>
-<img class="estudante-icone" src="WhatsApp Image 2026-11-06 at 11.25.32.jpeg" alt="Link do Site da
-escola"></a>
-<img class="estudante-icone" src="WhatsApp Image 2026-11-06 at 11.25.25.jpeg" alt="Link do
-Instagram">
-<img class="estudante-icone" src="WhatsApp Image 2026-11-06 at 11.25.23.jpeg" alt="Link do Facebook">
-</div>
 
-<div class="estudante-div">
-<img class="estudante-imagem" src="WhatsApp Image 2026-11-06 at 11.22.32.jpeg" alt="Foto da
-turma do 1CDS do ano de 2026">
-<h3 class="estudante-nome">Caca</h3>
-<a href="https://cursos.alura.com.br/dashboard">
-<p> </p>
-<img class="estudante-icone" src="WhatsApp Image 2026-11-06 at 11.25.32.jpeg" alt="Link do
-Site da escola"></a>
-<img class="estudante-icone" src="WhatsApp Image 2026-11-06 at 11.25.25.jpeg" alt="Link do
-Instagram">
-<img class="estudante-icone" src="WhatsApp Image 2026-11-06 at 11.25.23.jpeg" alt="Link do
-Facebook">
-</div>
+  <main id="conteudo">
+    <!-- ------------------------------------------------------------------
+         Hero
+    ------------------------------------------------------------------- -->
+    <section class="hero">
+      <div class="container hero__grade">
+        <div class="hero__conteudo" data-reveal>
+          <p class="tag-eyebrow">Portfólio · 2026</p>
+          <h1 class="hero__titulo">
+            Thayla Amaral
+            <span>estudante de tecnologia</span>
+          </h1>
+          <p class="hero__subtitulo">
+            Estou no 2º ano do curso técnico em Desenvolvimento de Sistemas e venho
+            aprendendo a transformar ideias em páginas que funcionam. Este é o meu
+            espaço para mostrar o que já construí — e o que ainda vou construir.
+          </p>
 
-<div class="estudante-div">
-<img class="estudante-imagem" src="WhatsApp Image 2026-11-06 at 11.22.29.jpeg" alt="Foto da
-turma do 1CDS do ano de 2026">
-<h3 class="estudante-nome">As mais mais</h3>
-<a href="https://cursos.alura.com.br/dashboard">
-<p> </p>
-<img class="estudante-icone" src="WhatsApp Image 2026-11-06 at 11.25.32.jpeg" alt="Link do
-Site da escola"></a>
-<img class="estudante-icone" src="WhatsApp Image 2026-11-06 at 11.25.25.jpeg" alt="Link do
-Instagram">
-<img class="estudante-icone" src="WhatsApp Image 2026-11-06 at 11.25.23.jpeg" alt="Link do
-Facebook">
-</div>
-</div>
-</section>
-<!--Seção rodapé é a parte final da paragrafo 3 da página-->
-<footer class="escola">
-<img class="logo_rodape" src="WhatsApp Image 2026-11-06 at 11.25.25.jpeg" alt="Logo da Escola">
-<h2 class="escola-título">Mais informações entre em contato<a class="link"
+          <div class="hero__acoes">
+            <a class="btn btn--primario" href="sobre.html">
+              Conhecer minha trajetória
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn--secundario" href="jogo.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 11h4M8 9v4"/><path d="M15 11h.01M18 13h.01"/><path d="M17.3 5H6.7a4 4 0 0 0-3.9 3.1L1.6 15a3 3 0 0 0 5.1 2.6L8.4 16h7.2l1.7 1.6A3 3 0 0 0 22.4 15l-1.2-6.9A4 4 0 0 0 17.3 5Z"/></svg>
+              Jogar o Tetris
+            </a>
+          </div>
 
-href="https://wa.me/5541999999999"> 41 9.9927-7308 </a></h2>
-<p></p>
-<p>©2026 | Curso de DS | Todos os Direitos Reservados.
-Política de Privacidade | Proteção de dados | Encarregado de dados</p>
-<p> </p>
-</footer>
+          <div class="hero__estatisticas">
+            <div>
+              <strong>2º ano</strong>
+              <span>Ensino médio técnico</span>
+            </div>
+            <div>
+              <strong>3º</strong>
+              <span>Trimestre atual</span>
+            </div>
+            <div>
+              <strong>03</strong>
+              <span>Tecnologias em estudo</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="retrato" data-reveal data-atraso="3">
+          <div class="retrato__anel" aria-hidden="true"></div>
+          <div class="retrato__moldura">
+            <img src="assets/img/retrato-thayla.jpg"
+                 alt="Thayla Amaral sorrindo, encostada na janela iluminada da escola"
+                 width="900" height="1600" fetchpriority="high" decoding="async">
+          </div>
+
+          <a class="retrato__cartao" href="jogo.html">
+            <div class="retrato__cartao-icone" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 11h4M8 9v4"/><path d="M15 11h.01M18 13h.01"/><path d="M17.3 5H6.7a4 4 0 0 0-3.9 3.1L1.6 15a3 3 0 0 0 5.1 2.6L8.4 16h7.2l1.7 1.6A3 3 0 0 0 22.4 15l-1.2-6.9A4 4 0 0 0 17.3 5Z"/></svg>
+            </div>
+            <div class="retrato__cartao-texto">
+              <span>Projeto em destaque</span>
+              <strong>Tetris em JavaScript</strong>
+            </div>
+          </a>
+
+          <span class="retrato__ponto" aria-hidden="true"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         Sobre (resumo)
+    ------------------------------------------------------------------- -->
+    <section class="secao" aria-labelledby="titulo-sobre">
+      <div class="container grade grade--assimetrica">
+        <div data-reveal>
+          <p class="tag-eyebrow">Quem sou eu</p>
+          <h2 class="titulo-secao" id="titulo-sobre">Curiosidade, prática e vontade de aprender</h2>
+          <div class="bloco-sobre mt-6">
+            <p>
+              Sou estudante da Escola Estadual Professor Júlio Szymanski, onde curso
+              Desenvolvimento de Sistemas. Comecei a programar nas aulas de tecnologia
+              e desde então venho juntando o que aprendo em páginas pessoais,
+              exercícios e pequenos projetos.
+            </p>
+            <p>
+              Gosto de entender como as coisas funcionam por dentro: prefiro testar,
+              errar e ajustar até o resultado ficar do jeito que imaginei. Este site é
+              justamente isso — um projeto que cresce junto com o meu aprendizado.
+            </p>
+          </div>
+
+          <div class="chips mt-7" role="group" aria-label="Tecnologias e áreas de interesse">
+            <span class="chip chip--verde">HTML</span>
+            <span class="chip chip--verde">CSS</span>
+            <span class="chip chip--rosa">JavaScript</span>
+            <span class="chip">Lógica de programação</span>
+            <span class="chip">Design de interfaces</span>
+            <span class="chip">Trabalho em equipe</span>
+          </div>
+
+          <div class="mt-8">
+            <a class="link-seta" href="sobre.html">
+              Ler minha história completa
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <aside class="cartao" data-reveal aria-label="Ficha rápida" data-atraso="3">
+          <p class="cartao__numero">Ficha rápida</p>
+          <h3 class="mt-2">Informações essenciais</h3>
+
+          <dl class="lista-definicao mt-6">
+            <div>
+              <dt>Escola</dt>
+              <dd>E. E. Prof. Júlio Szymanski</dd>
+            </div>
+            <div>
+              <dt>Curso</dt>
+              <dd>Técnico em Desenvolvimento de Sistemas</dd>
+            </div>
+            <div>
+              <dt>Série</dt>
+              <dd>2º ano · 2026</dd>
+            </div>
+            <div>
+              <dt>Cidade</dt>
+              <dd>Curitiba · Paraná</dd>
+            </div>
+            <div>
+              <dt>Time</dt>
+              <dd>Palmeiras</dd>
+            </div>
+            <div>
+              <dt>Objetivo</dt>
+              <dd>Fisioterapia, com base sólida em tecnologia</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         Destaques
+    ------------------------------------------------------------------- -->
+    <section class="secao secao--creme-2" aria-labelledby="titulo-destaques">
+      <div class="container">
+        <div class="cabecalho-secao cabecalho-secao--linha">
+          <div data-reveal>
+            <p class="tag-eyebrow">Explore o portfólio</p>
+            <h2 class="titulo-secao" id="titulo-destaques">Três caminhos para me conhecer</h2>
+            <p class="descricao-secao">
+              Cada página reúne uma parte do meu trabalho: a história, o projeto
+              prático e as formações que sustentam tudo isso.
+            </p>
+          </div>
+        </div>
+
+        <div class="grade grade--3">
+          <a class="cartao cartao--hover" href="sobre.html" data-reveal>
+            <div class="cartao__icone" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/><path d="M22 10v5"/></svg>
+            </div>
+            <h3>Minha trajetória</h3>
+            <p>
+              Como cheguei à programação, o que aprendi em cada trimestre e o que
+              quero conquistar daqui para frente.
+            </p>
+            <div class="cartao__rodape">
+              <span class="link-seta">
+                Ver trajetória
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </span>
+            </div>
+          </a>
+
+          <a class="cartao cartao--hover cartao--rosa" href="jogo.html" data-reveal data-atraso="2">
+            <div class="cartao__icone" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 11h4M8 9v4"/><path d="M15 11h.01M18 13h.01"/><path d="M17.3 5H6.7a4 4 0 0 0-3.9 3.1L1.6 15a3 3 0 0 0 5.1 2.6L8.4 16h7.2l1.7 1.6A3 3 0 0 0 22.4 15l-1.2-6.9A4 4 0 0 0 17.3 5Z"/></svg>
+            </div>
+            <h3>Tetris jogável</h3>
+            <p>
+              Um jogo completo construído com HTML, CSS e JavaScript — com placar,
+              níveis, prévia da próxima peça e controle no celular.
+            </p>
+            <div class="cartao__rodape">
+              <span class="link-seta">
+                Abrir o jogo
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </span>
+            </div>
+          </a>
+
+          <a class="cartao cartao--hover cartao--dourado" href="certificados.html" data-reveal data-atraso="5">
+            <div class="cartao__icone" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5.5"/><path d="M8.5 13.6 7 21l5-3 5 3-1.5-7.4"/></svg>
+            </div>
+            <h3>Certificados</h3>
+            <p>
+              Cursos, formações e projetos concluídos que registram a evolução do meu
+              aprendizado na área de tecnologia.
+            </p>
+            <div class="cartao__rodape">
+              <span class="link-seta">
+                Ver certificados
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         Paixão / Palmeiras
+    ------------------------------------------------------------------- -->
+    <section class="secao" aria-labelledby="titulo-paixao">
+      <div class="container">
+        <div class="faixa-paixao" data-reveal>
+          <img src="assets/img/banner-palmeiras.jpg"
+               alt="Arte em verde com o escudo do Palmeiras, o nome Thayla e o lema Mais que um time"
+               width="1584" height="396" loading="lazy" decoding="async">
+          <div class="faixa-paixao__conteudo">
+            <p class="tag-eyebrow">Além da tela</p>
+            <h2 id="titulo-paixao">Mais que um time</h2>
+            <p>
+              O Palmeiras acompanha a minha história desde sempre. O verde e o branco
+              aparecem aqui como identidade, do mesmo jeito que aparecem na arquibancada:
+              com orgulho e com a certeza de que o time nunca desiste.
+            </p>
+            <a class="btn btn--claro" href="sobre.html#paixao">
+              Conhecer esse lado
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         Galeria
+    ------------------------------------------------------------------- -->
+    <section class="secao secao--creme-2" aria-labelledby="titulo-bastidores">
+      <div class="container">
+        <div class="cabecalho-secao cabecalho-secao--linha">
+          <div data-reveal>
+            <p class="tag-eyebrow">Bastidores</p>
+            <h2 class="titulo-secao" id="titulo-bastidores">Quem faz parte do caminho</h2>
+            <p class="descricao-secao">
+              A escola é feita de gente. Estas são algumas das pessoas e dos momentos
+              que deixam os dias de aula mais leves.
+            </p>
+          </div>
+        </div>
+
+        <div class="galeria">
+          <figure class="galeria__item" data-reveal>
+            <img src="assets/img/galeria-turma.jpg"
+                 alt="Grupo de cinco amigas posando em frente ao espelho da escola"
+                 width="900" height="1200" loading="lazy" decoding="async">
+            <figcaption class="galeria__legenda">
+              <small>Turma</small>
+              Intervalo com a galera
+            </figcaption>
+          </figure>
+
+          <figure class="galeria__item" data-reveal data-atraso="1">
+            <img src="assets/img/galeria-amigas.jpg"
+                 alt="Duas amigas sorrindo em uma selfie com filtro de corações"
+                 width="788" height="1400" loading="lazy" decoding="async">
+            <figcaption class="galeria__legenda">
+              <small>Amizade</small>
+              Parceria de todos os dias
+            </figcaption>
+          </figure>
+
+          <figure class="galeria__item" data-reveal data-atraso="4">
+            <img src="assets/img/galeria-dupla.jpg"
+                 alt="Duas amigas fazendo careta em uma selfie com filtro divertido"
+                 width="788" height="1400" loading="lazy" decoding="async">
+            <figcaption class="galeria__legenda">
+              <small>Risada</small>
+              Nada de pose séria
+            </figcaption>
+          </figure>
+
+          <figure class="galeria__item" data-reveal data-atraso="6">
+            <img src="assets/img/galeria-canecas.jpg"
+                 alt="Canecas e latas colecionáveis de times, com destaque para a do Palmeiras"
+                 width="900" height="1200" loading="lazy" decoding="async">
+            <figcaption class="galeria__legenda">
+              <small>Paixão</small>
+              Coleção alviverde
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         Chamada final
+    ------------------------------------------------------------------- -->
+    <section class="secao" aria-labelledby="titulo-contato">
+      <div class="container">
+        <div class="painel-contato" data-reveal>
+          <p class="tag-eyebrow tag-eyebrow--centro">Vamos conversar</p>
+          <h2 id="titulo-contato">Gostou do que viu?</h2>
+          <p>
+            Estou sempre aberta a aprender com novas pessoas, trocar ideias sobre
+            tecnologia e receber sugestões para os meus projetos.
+          </p>
+          <div class="painel-contato__acoes">
+            <a class="btn btn--rosa" href="contato.html">
+              Enviar uma mensagem
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn--fantasma" href="https://wa.me/5541999277308" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.2-.2.2-.3.3-.5.1-.2.1-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.4m-5.4 7.4h-.1a9.9 9.9 0 0 1-5-1.4l-.4-.2-3.7 1 .9-3.6-.2-.4a9.9 9.9 0 0 1-1.5-5.3c0-5.4 4.4-9.9 9.9-9.9 2.6 0 5.1 1 7 2.9a9.8 9.8 0 0 1 2.9 7c0 5.4-4.5 9.9-9.9 9.9m8.4-18.3A11.8 11.8 0 0 0 12 0C5.5 0 .2 5.3.2 11.9c0 2.1.5 4.1 1.6 5.9L0 24l6.3-1.7c1.7 1 3.7 1.5 5.7 1.5h.1c6.5 0 11.9-5.3 11.9-11.9 0-3.2-1.3-6.2-3.5-8.4"/></svg>
+              WhatsApp
+            </a>
+          </div>
+          <p class="painel-contato__nota">Resposta em até 2 dias úteis.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <div class="rodape__grade">
+        <div class="rodape__marca-coluna">
+          <a class="rodape__marca" href="index.html">
+            <span class="marca__selo" aria-hidden="true">TA</span>
+            <span>
+              <strong>Thayla Amaral</strong>
+              <span>Portfólio pessoal</span>
+            </span>
+          </a>
+          <p class="rodape__sobre">
+            Estudante de Desenvolvimento de Sistemas apaixonada por aprender na
+            prática e por transformar ideias em projetos reais.
+          </p>
+          <div class="social" role="group" aria-label="Redes sociais">
+            <a href="https://wa.me/5541999277308" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.2-.2.2-.3.3-.5.1-.2.1-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.4m-5.4 7.4h-.1a9.9 9.9 0 0 1-5-1.4l-.4-.2-3.7 1 .9-3.6-.2-.4a9.9 9.9 0 0 1-1.5-5.3c0-5.4 4.4-9.9 9.9-9.9 2.6 0 5.1 1 7 2.9a9.8 9.8 0 0 1 2.9 7c0 5.4-4.5 9.9-9.9 9.9m8.4-18.3A11.8 11.8 0 0 0 12 0C5.5 0 .2 5.3.2 11.9c0 2.1.5 4.1 1.6 5.9L0 24l6.3-1.7c1.7 1 3.7 1.5 5.7 1.5h.1c6.5 0 11.9-5.3 11.9-11.9 0-3.2-1.3-6.2-3.5-8.4"/></svg>
+              </a>
+            <a href="https://www.instagram.com/thaylabonfim" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
+              </a>
+            <a href="https://www.facebook.com/thaylabonfim" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.2-1.5 1.5-1.5h1.6V4.4c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.1v2.1H7.5v3h2.7V21h3.3Z"/></svg>
+              </a>
+            </div>
+        </div>
+
+        <nav aria-label="Navegação do rodapé">
+          <h3>Navegação</h3>
+          <ul class="rodape__lista">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="sobre.html">Sobre mim</a></li>
+            <li><a href="jogo.html">Jogo</a></li>
+            <li><a href="certificados.html">Certificados</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <h3>Projetos</h3>
+          <ul class="rodape__lista">
+            <li><a href="jogo.html">Tetris em JavaScript</a></li>
+            <li><a href="sobre.html#trajetoria">Trajetória de estudos</a></li>
+            <li><a href="certificados.html">Formações</a></li>
+            <li><a href="privacidade.html">Política de privacidade</a></li>
+          </ul>
+        </div>
+
+        <div class="rodape__coluna--contato">
+          <h3>Contato</h3>
+          <ul class="rodape__lista">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Curitiba · Paraná</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="3"/><path d="M8 3v3M16 3v3M3 10h18"/></svg>
+              <span>Disponível para estágio</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>
+              <span>E. E. Prof. Júlio Szymanski</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="rodape__base">
+        <p>© <span data-ano>2026</span> Thayla Amaral. Todos os direitos reservados.</p>
+        <ul class="rodape__links">
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="privacidade.html">Privacidade</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <button class="voltar-topo" type="button" data-voltar-topo aria-label="Voltar ao topo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+  </button>
+
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>

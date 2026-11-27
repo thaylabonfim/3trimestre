@@ -1,84 +1,498 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sobre | Thayla</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sobre mim · Thayla Amaral</title>
+  <meta name="description" content="Conheça a trajetória de Thayla Amaral: estudante de Desenvolvimento de Sistemas em Curitiba, suas habilidades, projetos e objetivos.">
+  <meta name="author" content="Thayla Amaral">
+  <meta name="theme-color" content="#062a20">
+  <link rel="canonical" href="https://thaylabonfim.github.io/3trimestre/sobre.html">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Thayla Amaral">
+  <meta property="og:title" content="Sobre mim · Thayla Amaral">
+  <meta property="og:description" content="Trajetória, habilidades e objetivos de uma estudante de Desenvolvimento de Sistemas.">
+  <meta property="og:url" content="https://thaylabonfim.github.io/3trimestre/sobre.html">
+  <meta property="og:image" content="https://thaylabonfim.github.io/3trimestre/assets/img/og-thayla.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/icone-180.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-<!--header é a parte do cabeçalho do site, é o topo da página-->
-<header class="cabecalho-itens">
-<img class="cabecalho_imagem" src="logo.png" alt="Logo da
-Página">
-<h1 class="titulo_site">Sobre</h1>
-<div class="sociais">
-<img class="sociais" src="WhatsApp Image 2026-11-06 at 11.25.32.jpeg" alt="Logo do Whats da
-Escola">
-<img class="sociais" src="WhatsApp Image 2026-11-06 at 11.25.25.jpeg" alt="Facebook da
-Escola">
-<img class="sociais" src="WhatsApp Image 2026-11-06 at 11.25.23.jpeg" alt="instagram da
-Escola">
-</div>
-</header>
+  <a class="pular-link" href="#conteudo">Pular para o conteúdo</a>
 
- <header>
-    
+  <header class="cabecalho" data-cabecalho>
+    <div class="container cabecalho__interno">
+      <a class="marca" href="index.html" aria-label="Thayla Amaral — página inicial">
+        <span class="marca__selo" aria-hidden="true">TA</span>
+        <span class="marca__texto">
+          <strong>Thayla Amaral</strong>
+          <small>Desenvolvimento de Sistemas</small>
+        </span>
+      </a>
 
-      <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="sobre.html">Sobre</a></li>
-        <li><a href="jogo.html">Jogo</a></li>
-        <li><a href="certificados.html">certificados</a></li>
-        <li><a href="contato.html">Contato</a></li>
-      </ul>
+      <button class="menu-toggle" type="button" data-menu-botao aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu de navegação">
+        <svg class="menu-toggle__abrir" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="menu-toggle__fechar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
 
-<main class="pagina-sobre">
+      <nav class="navegacao" id="menu-principal" data-menu aria-label="Navegação principal">
+        <ul class="navegacao__lista">
+          <li><a class="navegacao__link" href="index.html">Início</a></li>
+          <li><a class="navegacao__link" href="sobre.html" aria-current="page">Sobre</a></li>
+          <li><a class="navegacao__link" href="jogo.html">Jogo</a></li>
+          <li><a class="navegacao__link" href="certificados.html">Certificados</a></li>
+          <li><a class="navegacao__link" href="contato.html">Contato</a></li>
+        </ul>
+        <a class="btn btn--primario btn--pequeno" href="contato.html">Fale comigo</a>
+      </nav>
+    </div>
+  </header>
 
-   <main class="conteudo-principal">
-  
-  <section class="apresentacao">
-    <h1>THAYLA</h1>
-    <h2>Quem sou eu</h2>
-    <p>
-      Olá! Meu nome é Thayla, sou estudante da escola Professor Júlio Szymanski e estou cursando Desenvolvimento de Sistemas. Estou no 2º ano e espero passar para o terceiro. Estou começando minha caminhada na programação e aprendendo a criar páginas com HTML e CSS nas aulas da escola.
-    </p>
-  </section>
-
-  <div class="grade-cards">
-    
-    <section class="card">
-      <h2>Meus Projetos</h2>
-      <p>
-        Ao longo dessa caminhada, já fiz vários trabalhos da escola, como páginas pessoais e joguinhos. Um deles foi um jogo de Tetris que criei usando HTML, CSS e JavaScript.
-      </p>
+  <main id="conteudo">
+    <section class="pagina-topo">
+      <div class="container">
+        <div class="largura-texto" data-reveal>
+          <p class="tag-eyebrow">Sobre mim</p>
+          <h1>Curiosidade que virou prática</h1>
+          <p class="descricao-secao texto-destaque">
+            Tenho 16 anos, estudo na Escola Estadual Professor Júlio Szymanski e
+            descobri na programação uma forma de dar vida às ideias. Aqui conto de
+            onde vim, o que já aprendi e para onde quero ir.
+          </p>
+        </div>
+      </div>
     </section>
 
-    <section class="card">
-      <h2>Meus Objetivos</h2>
-      <p>
-        Meu principal objetivo é ser fisioterapeuta.
-      </p>
+    <!-- ------------------------------------------------------------------
+         Quem sou eu
+    ------------------------------------------------------------------- -->
+    <section class="secao secao--compacta" aria-labelledby="titulo-quem">
+      <div class="container grade grade--assimetrica">
+        <div data-reveal>
+          <img src="assets/img/avatar-thayla.jpg"
+               alt="Retrato de Thayla Amaral em uma sala iluminada pela luz da janela"
+               width="900" height="900" loading="lazy" decoding="async"
+               class="imagem-moldura imagem-moldura--quadrada">
+        </div>
+
+        <div data-reveal data-atraso="2">
+          <p class="tag-eyebrow">Quem sou eu</p>
+          <h2 id="titulo-quem">Do primeiro contato ao portfólio</h2>
+          <div class="bloco-sobre mt-5">
+            <p>
+              Meu nome é Thayla Amaral. Entrei no curso técnico em Desenvolvimento de
+              Sistemas sem saber exatamente o que ia encontrar — e acabei gostando de
+              ver as coisas funcionando depois de escrever algumas linhas de código.
+            </p>
+            <p>
+              Hoje estou no 2º ano e consigo montar páginas completas com HTML e CSS,
+              além de dar os primeiros passos em JavaScript. Sei que ainda tenho muito
+              a aprender, e é justamente isso que me mantém interessada: cada projeto
+              termina com alguma coisa nova que eu não sabia fazer antes.
+            </p>
+            <p>
+              Meu maior objetivo é cursar Fisioterapia. A tecnologia, para mim, não é
+              um caminho separado disso: é a ferramenta que me ajuda a estudar melhor,
+              organizar ideias e, quem sabe, criar soluções que aproximem saúde e
+              cuidado.
+            </p>
+          </div>
+
+          <div class="chips mt-6" role="group" aria-label="Características">
+            <span class="chip chip--verde">Aprendizado contínuo</span>
+            <span class="chip chip--rosa">Atenção aos detalhes</span>
+            <span class="chip">Colaboração</span>
+            <span class="chip">Organização</span>
+          </div>
+        </div>
+      </div>
     </section>
 
-  </div>
+    <!-- ------------------------------------------------------------------
+         Trajetória
+    ------------------------------------------------------------------- -->
+    <section class="secao secao--creme-2" id="trajetoria" aria-labelledby="titulo-trajetoria">
+      <div class="container">
+        <div class="grade grade--assimetrica grade--topo">
+          <div data-reveal>
+            <p class="tag-eyebrow">Linha do tempo</p>
+            <h2 id="titulo-trajetoria">Minha trajetória até aqui</h2>
+            <p class="descricao-secao">
+              Um resumo do que cada etapa do curso trouxe para o meu repertório — do
+              primeiro arquivo HTML ao jogo que hoje está publicado neste site.
+            </p>
 
-</main>
+            <div class="cartao mt-8">
+              <p class="cartao__numero">Em resumo</p>
+              <p class="mt-2">
+                Cada trimestre acrescentou uma camada: primeiro a estrutura, depois o
+                visual, agora a interação. O próximo passo é aprofundar JavaScript e
+                continuar publicando projetos.
+              </p>
+            </div>
+          </div>
 
+          <ol class="trajetoria sem-marcadores">
+            <li class="trajetoria__item" data-reveal>
+              <span class="trajetoria__periodo">O começo</span>
+              <h3>Descobrindo o curso</h3>
+              <p>
+                Primeiras aulas de informática, contato com editores de código e a
+                descoberta de que uma página na internet é feita de arquivos que eu
+                mesma posso escrever.
+              </p>
+            </li>
 
+            <li class="trajetoria__item" data-reveal data-atraso="1">
+              <span class="trajetoria__periodo">1º trimestre · 2026</span>
+              <h3>HTML e CSS na prática</h3>
+              <p>
+                Estrutura de páginas, títulos, listas, imagens e links. Depois, cores,
+                tipografia e espaçamento — até as páginas começarem a ter identidade.
+              </p>
+            </li>
 
-<header>
-</header>
-<!--Seção rodapé é a parte final da paragrafo 3 da página-->
-<footer class="escola">
-<img class="logo_rodape" src="WhatsApp Image 2026-11-06 at 11.25.25.jpeg" alt="Logo da Escola">
-<h2 class="escola-título">Mais informações entre em contato<a class="link"
+            <li class="trajetoria__item" data-reveal data-atraso="4">
+              <span class="trajetoria__periodo">2º trimestre · 2026</span>
+              <h3>Layout, responsividade e organização</h3>
+              <p>
+                Grid, flexbox e media queries para o site funcionar no celular.
+                Também aprendi a importância de código limpo, nomes claros e
+                acessibilidade.
+              </p>
+            </li>
 
-href="https://wa.me/5541999999999"> 41 9.9927-7308 </a></h2>
-<p></p>
-<p>©2026 | Curso de DS | Todos os Direitos Reservados.
-Política de Privacidade | Proteção de dados | Encarregado de dados</p>
-<p> </p>
-</footer>
+            <li class="trajetoria__item trajetoria__item--atual" data-reveal data-atraso="6">
+              <span class="trajetoria__periodo">3º trimestre · 2026 — agora</span>
+              <h3>JavaScript e projetos completos</h3>
+              <p>
+                Lógica, eventos e manipulação do DOM. O resultado está nas páginas que
+                você está navegando: um Tetris funcional e este portfólio, ambos feitos
+                do zero.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         Habilidades e valores
+    ------------------------------------------------------------------- -->
+    <section class="secao" aria-labelledby="titulo-habilidades">
+      <div class="container grade grade--2 grade--topo grade--espacosa">
+        <div class="cartao" data-reveal>
+          <p class="cartao__numero">Autoavaliação</p>
+          <h2 class="mt-2 titulo-medio" id="titulo-habilidades">
+            O que já consigo fazer
+          </h2>
+          <p class="texto-apoio">
+            Uma leitura honesta do meu momento: o que já domino, o que estou
+            praticando e o que ainda está no começo.
+          </p>
+
+          <div class="habilidades mt-7" data-reveal>
+            <div class="habilidade">
+              <div class="habilidade__topo">
+                <span>HTML · estrutura semântica</span>
+                <span>85%</span>
+              </div>
+              <div class="habilidade__barra" role="img" aria-label="HTML: 85% de domínio">
+                <span data-percentual="85"></span>
+              </div>
+            </div>
+
+            <div class="habilidade">
+              <div class="habilidade__topo">
+                <span>CSS · layout e responsividade</span>
+                <span>75%</span>
+              </div>
+              <div class="habilidade__barra" role="img" aria-label="CSS: 75% de domínio">
+                <span data-percentual="75"></span>
+              </div>
+            </div>
+
+            <div class="habilidade habilidade--rosa">
+              <div class="habilidade__topo">
+                <span>JavaScript · lógica e interação</span>
+                <span>50%</span>
+              </div>
+              <div class="habilidade__barra" role="img" aria-label="JavaScript: 50% de domínio">
+                <span data-percentual="50"></span>
+              </div>
+            </div>
+
+            <div class="habilidade habilidade--dourada">
+              <div class="habilidade__topo">
+                <span>Design de interfaces</span>
+                <span>65%</span>
+              </div>
+              <div class="habilidade__barra" role="img" aria-label="Design de interfaces: 65% de domínio">
+                <span data-percentual="65"></span>
+              </div>
+            </div>
+
+            <div class="habilidade">
+              <div class="habilidade__topo">
+                <span>Git e versionamento</span>
+                <span>35%</span>
+              </div>
+              <div class="habilidade__barra" role="img" aria-label="Git e versionamento: 35% de domínio">
+                <span data-percentual="35"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div data-reveal data-atraso="2">
+          <p class="tag-eyebrow">Jeito de trabalhar</p>
+          <h2 class="titulo-medio">O que eu valorizo</h2>
+
+          <ul class="lista-numerada mt-7">
+            <li>
+              <h3>Curiosidade antes da pressa</h3>
+              <p>Prefiro entender o porquê de cada linha a copiar uma solução pronta.</p>
+            </li>
+            <li>
+              <h3>Consistência</h3>
+              <p>
+                Pequenos avanços toda semana valem mais do que um esforço enorme que
+                não se repete.
+              </p>
+            </li>
+            <li>
+              <h3>Colaboração</h3>
+              <p>
+                Trocar ideia com colegas e professores é a forma mais rápida de
+                aprender — e a mais divertida.
+              </p>
+            </li>
+          </ul>
+
+          <div class="cartao mt-8">
+            <h3 class="titulo-menor">Ferramentas do dia a dia</h3>
+            <div class="chips mt-4">
+              <span class="chip">VS Code</span>
+              <span class="chip">GitHub</span>
+              <span class="chip">Figma</span>
+              <span class="chip">Navegador + DevTools</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         Paixão pelo Palmeiras
+    ------------------------------------------------------------------- -->
+    <section class="secao secao--creme-2" id="paixao" aria-labelledby="titulo-paixao-sobre">
+      <div class="container">
+        <div class="grade grade--assimetrica">
+          <div data-reveal>
+            <p class="tag-eyebrow">Além da tela</p>
+            <h2 id="titulo-paixao-sobre">O verde faz parte de quem eu sou</h2>
+            <div class="bloco-sobre mt-5">
+              <p>
+                Sou palmeirense de coração. O time aparece nas canecas da cozinha, nas
+                conversas de domingo e, claro, nas cores deste site — que misturam o
+                verde da camisa com o rosa que sempre esteve presente nos meus
+                projetos.
+              </p>
+              <p>
+                Gosto do que o futebol ensina: jogar em equipe, insistir até o fim e
+                comemorar cada conquista. Levo isso para os estudos também.
+              </p>
+            </div>
+
+            <div class="mt-7">
+              <a class="link-seta" href="jogo.html">
+                Ver o projeto que mais me orgulha
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <figure data-reveal data-atraso="2">
+            <img src="assets/img/galeria-canecas.jpg"
+                 alt="Canecas e latas colecionáveis de times de futebol, com a caneca do Palmeiras em destaque"
+                 width="900" height="1200" loading="lazy" decoding="async"
+                 class="imagem-moldura imagem-moldura--retrato">
+            <figcaption class="legenda-figura">
+              Coleção de canecas e latas — o verde sempre em primeiro lugar.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         Objetivos
+    ------------------------------------------------------------------- -->
+    <section class="secao" aria-labelledby="titulo-objetivos">
+      <div class="container">
+        <div class="cabecalho-secao cabecalho-secao--centro" data-reveal>
+          <p class="tag-eyebrow">Planos</p>
+          <h2 class="titulo-secao" id="titulo-objetivos">Para onde estou indo</h2>
+          <p class="descricao-secao">
+            Metas claras ajudam a manter o foco — estas são as minhas, do próximo
+            semestre aos próximos anos.
+          </p>
+        </div>
+
+        <div class="grade grade--3">
+          <article class="cartao" data-reveal>
+            <p class="selo-linha">
+              <span class="selo selo--concluido">Curto prazo</span>
+            </p>
+            <h3>Concluir o curso técnico</h3>
+            <p>
+              Terminar o 2º ano com os projetos em dia, seguir para o 3º e entregar um
+              trabalho final do qual eu tenha orgulho.
+            </p>
+          </article>
+
+          <article class="cartao cartao--rosa" data-reveal data-atraso="2">
+            <p class="selo-linha">
+              <span class="selo selo--andamento">Médio prazo</span>
+            </p>
+            <h3>Entrar em Fisioterapia</h3>
+            <p>
+              Meu objetivo principal. Quero me preparar com dedicação para o vestibular
+              e começar a graduação com uma base de estudo sólida.
+            </p>
+          </article>
+
+          <article class="cartao cartao--dourado" data-reveal data-atraso="5">
+            <p class="selo-linha">
+              <span class="selo selo--projeto">Longo prazo</span>
+            </p>
+            <h3>Unir saúde e tecnologia</h3>
+            <p>
+              Usar o que aprendi programando para criar soluções simples que ajudem
+              pacientes e profissionais da saúde no dia a dia.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         Chamada final
+    ------------------------------------------------------------------- -->
+    <section class="secao secao--sem-topo" aria-labelledby="titulo-convite">
+      <div class="container">
+        <div class="painel-contato" data-reveal>
+          <p class="tag-eyebrow tag-eyebrow--centro">Próximo passo</p>
+          <h2 id="titulo-convite">Vamos trocar uma ideia?</h2>
+          <p>
+            Se você tem uma sugestão de projeto, uma dica de estudo ou só quer dizer
+            olá, minha caixa de mensagens está aberta.
+          </p>
+          <div class="painel-contato__acoes">
+            <a class="btn btn--rosa" href="contato.html">
+              Entrar em contato
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn--fantasma" href="certificados.html">Ver certificados</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <div class="rodape__grade">
+        <div class="rodape__marca-coluna">
+          <a class="rodape__marca" href="index.html">
+            <span class="marca__selo" aria-hidden="true">TA</span>
+            <span>
+              <strong>Thayla Amaral</strong>
+              <span>Portfólio pessoal</span>
+            </span>
+          </a>
+          <p class="rodape__sobre">
+            Estudante de Desenvolvimento de Sistemas apaixonada por aprender na
+            prática e por transformar ideias em projetos reais.
+          </p>
+          <div class="social" role="group" aria-label="Redes sociais">
+            <a href="https://wa.me/5541999277308" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.2-.2.2-.3.3-.5.1-.2.1-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.4m-5.4 7.4h-.1a9.9 9.9 0 0 1-5-1.4l-.4-.2-3.7 1 .9-3.6-.2-.4a9.9 9.9 0 0 1-1.5-5.3c0-5.4 4.4-9.9 9.9-9.9 2.6 0 5.1 1 7 2.9a9.8 9.8 0 0 1 2.9 7c0 5.4-4.5 9.9-9.9 9.9m8.4-18.3A11.8 11.8 0 0 0 12 0C5.5 0 .2 5.3.2 11.9c0 2.1.5 4.1 1.6 5.9L0 24l6.3-1.7c1.7 1 3.7 1.5 5.7 1.5h.1c6.5 0 11.9-5.3 11.9-11.9 0-3.2-1.3-6.2-3.5-8.4"/></svg>
+              </a>
+            <a href="https://www.instagram.com/thaylabonfim" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
+              </a>
+            <a href="https://www.facebook.com/thaylabonfim" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.2-1.5 1.5-1.5h1.6V4.4c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.1v2.1H7.5v3h2.7V21h3.3Z"/></svg>
+              </a>
+            </div>
+        </div>
+
+        <nav aria-label="Navegação do rodapé">
+          <h3>Navegação</h3>
+          <ul class="rodape__lista">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="sobre.html">Sobre mim</a></li>
+            <li><a href="jogo.html">Jogo</a></li>
+            <li><a href="certificados.html">Certificados</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <h3>Projetos</h3>
+          <ul class="rodape__lista">
+            <li><a href="jogo.html">Tetris em JavaScript</a></li>
+            <li><a href="sobre.html#trajetoria">Trajetória de estudos</a></li>
+            <li><a href="certificados.html">Formações</a></li>
+            <li><a href="privacidade.html">Política de privacidade</a></li>
+          </ul>
+        </div>
+
+        <div class="rodape__coluna--contato">
+          <h3>Contato</h3>
+          <ul class="rodape__lista">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Curitiba · Paraná</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="3"/><path d="M8 3v3M16 3v3M3 10h18"/></svg>
+              <span>Disponível para estágio</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>
+              <span>E. E. Prof. Júlio Szymanski</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="rodape__base">
+        <p>© <span data-ano>2026</span> Thayla Amaral. Todos os direitos reservados.</p>
+        <ul class="rodape__links">
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="privacidade.html">Privacidade</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <button class="voltar-topo" type="button" data-voltar-topo aria-label="Voltar ao topo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+  </button>
+
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>
