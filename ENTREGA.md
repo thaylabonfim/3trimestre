@@ -45,7 +45,7 @@ apontam para `index.html#localizacao`, porque a seção está na página inicial
 A barra é toda `flex`, o que deixa os itens lado a lado no computador:
 
 ```css
-.menu-lista {
+.itens-menu {
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
@@ -60,8 +60,8 @@ do elemento, sem precisar de JavaScript e sem clique. Quando o mouse sai, o
 estilo volta ao normal.
 
 ```css
-.menu-lista a:hover,
-.btn-dropdown:hover {
+.itens-menu li a:hover,
+.botao-dropdown:hover {
   background-color: #D81B60;  /* rosa mais forte */
   color: #FFFFFF;
 }
@@ -71,8 +71,8 @@ Para o efeito não ser seco, coloquei uma `transition` no estado normal do link,
 que faz a cor "misturar" em 0,25 s:
 
 ```css
-.menu-lista a {
-  transition: background-color 0.25s ease, color 0.25s ease;
+.itens-menu li a {
+  transition: 0.3s;
 }
 ```
 
@@ -87,25 +87,25 @@ O submenu fica dentro de uma `<li class="dropdown">`. A lista começa escondida 
 aparece quando o mouse passa em cima do pai:
 
 ```css
-.submenu {
+.dropdown-content {
   display: none;        /* escondido */
-  position: absolute;   /* flutua abaixo do menu, sem empurrar o conteúdo */
+  position: absolute;   /* flutua abaixo do menu, sem empurrar o conteudo */
   top: 100%;
   left: 0;
 }
-.dropdown:hover .submenu {
+.dropdown:hover .dropdown-content {
   display: block;       /* aparece no hover */
 }
 ```
 
 A parte que **realmente faz o menu suspenso funcionar** é o seletor
-`.dropdown:hover .submenu`: o `.dropdown` é o pai (o item "Projetos") e o
-`.submenu` é o filho. O `position: absolute` + `top: 100%` é o que faz o
-submenu aparecer exatamente embaixo do item, por cima da página.
+`.dropdown:hover .dropdown-content`: o `.dropdown` é o pai (o item "Projetos") e o
+`.dropdown-content` é o filho. O `position: absolute` + `top: 100%` é o que faz o
+submenu aparecer bem embaixo do item, por cima da página.
 
-No celular não existe mouse, então o `script.js` resolve com clique: ele
-alterna a classe `.aberto` no item e atualiza o `aria-expanded`, e também fecha
-o submenu quando a pessoa clica fora ou aperta `Esc`.
+No celular não existe mouse, então o `script.js` resolve com clique: ele coloca
+a classe `.aberto` no item (o CSS mostra o submenu), e também fecha quando a
+pessoa clica fora, aperta `Esc` ou escolhe uma opção.
 
 ## 4. Seção de localização (Etapa 2)
 
@@ -143,10 +143,10 @@ A solução foi usar a **miniatura oficial do vídeo como imagem clicável**: o
 elemento `<a>` em volta da imagem já abre o vídeo no YouTube em outra aba.
 
 ```html
-<a class="video-capa" href="https://www.youtube.com/watch?v=4QGZk_PrQ1o" target="_blank" rel="noopener">
+<a class="capa-video" href="https://www.youtube.com/watch?v=4QGZk_PrQ1o" target="_blank" rel="noopener">
   <img src="https://i.ytimg.com/vi/4QGZk_PrQ1o/hqdefault.jpg"
        alt="Miniatura do vídeo 5 coisas que você precisa saber sobre a Fisioterapia">
-  <span class="video-play">▶</span>
+  <span class="botao-play">▶</span>
 </a>
 ```
 
@@ -154,7 +154,7 @@ elemento `<a>` em volta da imagem já abre o vídeo no YouTube em outra aba.
   guarda para cada vídeo - só troca o `ID` para usar outro vídeo;
 - `target="_blank"` abre em outra aba e `rel="noopener"` é a boa prática de
   segurança para links externos;
-- o `<span class="video-play">▶</span>` é o botão de play desenhado com CSS
+- o `<span class="botao-play">▶</span>` é o botão de play desenhado com CSS
   (`border-radius: 50%` + `position: absolute` centralizado), sem imagem extra;
 - como é um `<a>` normal, funciona em qualquer navegador, sem depender de player.
 

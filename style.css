@@ -1,8 +1,8 @@
-/* ===== style.css - site pessoal da Thayla =====
-   Menus feitos a partir dos exemplos do W3Schools:
-   - barra horizontal: https://www.w3schools.com/css/css_navbar.asp
-   - menu suspenso: https://www.w3schools.com/css/css_dropdowns.asp
-   ============================================== */
+/* style.css
+   os menus foram feitos com base nos exemplos do w3schools
+   navbar: https://www.w3schools.com/css/css_navbar.asp
+   dropdown: https://www.w3schools.com/css/css_dropdowns.asp
+*/
 
 * {
   margin: 0;
@@ -23,17 +23,17 @@ main {
   flex: 1;
 }
 
-/* rolagem suave para os links de ancora */
+/* rolagem suave */
 html {
   scroll-behavior: smooth;
 }
 
-/* o menu fica preso no topo, entao a secao para um pouco antes */
+/* o menu fica fixo, entao a secao para antes */
 section[id] {
   scroll-margin-top: 90px;
 }
 
-/* ================= topo ================= */
+/* topo */
 
 .topo {
   background-color: #f48fb1;
@@ -77,10 +77,8 @@ section[id] {
   transform: scale(1.15);
 }
 
-/* ================= menu =================
-   .menu = a barra toda - base: css_navbar.asp
-   .itens-menu li a = os links
-   .active = pagina que esta aberta no momento */
+/* menu - barra horizontal (w3schools css_navbar.asp)
+   .active marca a pagina que esta aberta */
 
 .menu {
   background-color: #8e1b4f;
@@ -114,7 +112,7 @@ section[id] {
   transition: 0.3s;
 }
 
-/* efeito de passar o mouse */
+/* hover do menu */
 .itens-menu li a:hover,
 .botao-dropdown:hover {
   background-color: #d81b60;
@@ -126,9 +124,8 @@ section[id] {
   font-weight: bold;
 }
 
-/* ================= submenu =================
-   base: css_dropdowns.asp
-   o dropdown esconde o conteudo e mostra no hover */
+/* dropdown - esconde o conteudo e mostra no hover
+   (w3schools css_dropdowns.asp) */
 
 .dropdown {
   overflow: visible;
@@ -150,7 +147,7 @@ section[id] {
   display: block;
 }
 
-/* no celular nao tem mouse, entao o clique abre com a classe .aberto */
+/* no celular abre com clique (classe .aberto) */
 .dropdown.aberto .dropdown-content {
   display: block;
 }
@@ -165,7 +162,7 @@ section[id] {
   color: #d81b60;
 }
 
-/* ================= banner ================= */
+/* banner */
 
 .banner {
   display: flex;
@@ -179,7 +176,7 @@ section[id] {
   display: block;
 }
 
-/* ================= secoes ================= */
+/* secoes */
 
 .secao {
   max-width: 1000px;
@@ -203,7 +200,7 @@ section[id] {
   line-height: 1.6;
 }
 
-/* ================= sobre mim ================= */
+/* sobre mim */
 
 .perfil {
   display: flex;
@@ -228,7 +225,7 @@ section[id] {
   text-align: justify;
 }
 
-/* ================= localizacao ================= */
+/* localizacao */
 
 .caixa-local {
   display: flex;
@@ -289,8 +286,7 @@ section[id] {
   font-size: 14px;
 }
 
-/* ================= videos =================
-   no lugar do player, a miniatura do video e o link */
+/* videos - uso a miniatura como link, sem player */
 
 .lista-videos {
   display: flex;
@@ -366,7 +362,7 @@ section[id] {
   line-height: 1.6;
 }
 
-/* ================= amigos ================= */
+/* amigos */
 
 .lista-amigos {
   display: flex;
@@ -409,7 +405,7 @@ section[id] {
   line-height: 1.5;
 }
 
-/* ================= contato ================= */
+/* contato */
 
 .caixa-contato {
   background-color: #fff0f5;
@@ -455,7 +451,7 @@ section[id] {
   text-decoration: underline;
 }
 
-/* ================= rodape ================= */
+/* rodape */
 
 .rodape {
   background-image: linear-gradient(#f48fb1, #d81b60);
@@ -474,7 +470,7 @@ section[id] {
   line-height: 1.6;
 }
 
-/* ================= paginas internas ================= */
+/* paginas internas */
 
 .conteudo-pagina {
   max-width: 900px;
@@ -507,7 +503,7 @@ section[id] {
   text-decoration: underline;
 }
 
-/* ================= jogo da memoria ================= */
+/* jogo da memoria */
 
 .placar {
   display: flex;
@@ -583,7 +579,7 @@ section[id] {
   color: #8e1b4f;
 }
 
-/* ================= certificados ================= */
+/* certificados */
 
 .lista-certificados {
   display: flex;
@@ -617,9 +613,9 @@ section[id] {
   margin-bottom: 10px;
 }
 
-/* ================= celular ================= */
+/* celular */
 
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
   .topo {
     flex-wrap: wrap;
     text-align: center;
@@ -669,7 +665,7 @@ section[id] {
   }
 }
 
-@media screen and (max-width: 480px) {
+@media (max-width: 480px) {
   .secao {
     padding: 36px 14px;
   }

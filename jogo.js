@@ -1,5 +1,5 @@
 // jogo.js - jogo da memoria
-// cada simbolo aparece duas vezes e o objetivo e achar os pares
+// cada simbolo aparece duas vezes, tem que achar os pares
 
 var simbolos = ["🌸", "💖", "⭐", "🎀", "🦋", "🍓", "🎮", "🎓"];
 
@@ -49,7 +49,6 @@ function criarTabuleiro() {
     carta.className = "carta";
     carta.setAttribute("data-simbolo", baralho[i]);
     carta.textContent = "?";
-    carta.setAttribute("aria-label", "Carta fechada");
 
     carta.addEventListener("click", virarCarta);
     tabuleiro.appendChild(carta);
@@ -68,7 +67,6 @@ function virarCarta() {
 
   carta.classList.add("virada");
   carta.textContent = simbolo;
-  carta.setAttribute("aria-label", "Carta " + simbolo);
   cartasViradas.push(carta);
 
   if (cartasViradas.length == 2) {
@@ -104,8 +102,6 @@ function verificarPar() {
       segunda.classList.remove("virada");
       primeira.textContent = "?";
       segunda.textContent = "?";
-      primeira.setAttribute("aria-label", "Carta fechada");
-      segunda.setAttribute("aria-label", "Carta fechada");
 
       cartasViradas = [];
       bloqueado = false;

@@ -7,25 +7,24 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- topo do site: logo, nome e redes sociais -->
+  <!-- topo -->
   <header class="topo">
     <img class="imagem-logo" src="logo.png" alt="Logo do site">
     <h1 class="titulo-site">Thayla Amaral</h1>
     <div class="sociais">
-      <a href="https://www.facebook.com" target="_blank" rel="noopener">
+      <a href="https://www.facebook.com" target="_blank">
         <img class="icone-social" src="icone-facebook.jpeg" alt="Facebook">
       </a>
-      <a href="https://www.instagram.com" target="_blank" rel="noopener">
+      <a href="https://www.instagram.com" target="_blank">
         <img class="icone-social" src="icone-instagram.jpeg" alt="Instagram">
       </a>
-      <a href="https://wa.me/5541999277308" target="_blank" rel="noopener">
+      <a href="https://wa.me/5541999277308" target="_blank">
         <img class="icone-social" src="icone-whatsapp.jpeg" alt="WhatsApp">
       </a>
     </div>
   </header>
 
-  <!-- menu principal: Início, Sobre mim, Localização, Vídeos, Contato
-       e o menu suspenso (dropdown) com Jogo e Certificados -->
+  <!-- menu com o dropdown -->
   <nav class="menu">
     <ul class="itens-menu">
       <li><a href="index.html" class="active">Início</a></li>
@@ -34,10 +33,10 @@
       <li><a href="#videos">Vídeos</a></li>
       <li><a href="#contato">Contato</a></li>
       <li class="dropdown">
-        <button type="button" class="botao-dropdown" id="botao-dropdown" aria-expanded="false" aria-controls="dropdown-conteudo">
+        <button type="button" class="botao-dropdown" id="botao-dropdown">
           Projetos ▾
         </button>
-        <ul class="dropdown-content" id="dropdown-conteudo">
+        <ul class="dropdown-content">
           <li><a href="jogo.html">Jogo da Memória</a></li>
           <li><a href="certificados.html">Certificados</a></li>
         </ul>
@@ -46,12 +45,12 @@
   </nav>
 
   <main>
-    <!-- banner da página -->
+    <!-- banner -->
     <section class="banner">
       <img class="imagem-banner" src="banner.png" alt="Banner do site">
     </section>
 
-    <!-- Sobre mim -->
+    <!-- sobre -->
     <section class="secao" id="sobre">
       <h2>Sobre mim</h2>
       <div class="perfil">
@@ -72,7 +71,7 @@
       </div>
     </section>
 
-    <!-- Localização fictícia -->
+    <!-- localizacao -->
     <section class="secao" id="localizacao">
       <h2>Localização</h2>
       <div class="caixa-local">
@@ -87,7 +86,7 @@
             Rua das Acácias, 245 - Portão<br>
             Curitiba - PR, 81070-000
           </p>
-          <a class="botao" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+das+Ac%C3%A1cias+245+Port%C3%A3o+Curitiba+PR" target="_blank" rel="noopener">
+          <a class="botao" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+das+Ac%C3%A1cias+245+Port%C3%A3o+Curitiba+PR" target="_blank">
             Abrir no Google Maps
           </a>
         </div>
@@ -95,8 +94,7 @@
       </div>
     </section>
 
-    <!-- Vídeos: a miniatura é um link, então o vídeo abre no YouTube.
-         Assim a página não depende do player incorporado para funcionar. -->
+    <!-- videos (a imagem e o link pro youtube) -->
     <section class="secao" id="videos">
       <h2>Vídeos</h2>
       <p class="texto-intro">
@@ -108,7 +106,7 @@
       <div class="lista-videos">
         <article class="cartao-video">
           <h3>5 coisas que você precisa saber sobre a Fisioterapia</h3>
-          <a class="capa-video" href="https://www.youtube.com/watch?v=4QGZk_PrQ1o" target="_blank" rel="noopener">
+          <a class="capa-video" href="https://www.youtube.com/watch?v=4QGZk_PrQ1o" target="_blank">
             <img
               src="https://i.ytimg.com/vi/4QGZk_PrQ1o/hqdefault.jpg"
               alt="Miniatura do vídeo 5 coisas que você precisa saber sobre a Fisioterapia"
@@ -124,7 +122,7 @@
 
         <article class="cartao-video">
           <h3>Como criar um site com HTML, CSS e JavaScript</h3>
-          <a class="capa-video" href="https://www.youtube.com/watch?v=g51whzji0h4" target="_blank" rel="noopener">
+          <a class="capa-video" href="https://www.youtube.com/watch?v=g51whzji0h4" target="_blank">
             <img
               src="https://i.ytimg.com/vi/g51whzji0h4/hqdefault.jpg"
               alt="Miniatura do vídeo Como criar um site fácil com HTML, CSS e JavaScript"
@@ -140,7 +138,7 @@
       </div>
     </section>
 
-    <!-- Amigos -->
+    <!-- amigos -->
     <section class="secao" id="amigos">
       <h2>Meus Amigos</h2>
       <div class="lista-amigos">
@@ -162,7 +160,7 @@
       </div>
     </section>
 
-    <!-- Contato -->
+    <!-- contato -->
     <section class="secao" id="contato">
       <h2>Contato</h2>
       <div class="caixa-contato">
@@ -173,22 +171,22 @@
         <ul class="lista-contato">
           <li>
             <img class="icone-contato" src="icone-whatsapp.jpeg" alt="Ícone do WhatsApp">
-            <a href="https://wa.me/5541999277308" target="_blank" rel="noopener">(41) 9.9927-7308</a>
+            <a href="https://wa.me/5541999277308" target="_blank">(41) 9.9927-7308</a>
           </li>
           <li>
             <img class="icone-contato" src="icone-instagram.jpeg" alt="Ícone do Instagram">
-            <a href="https://www.instagram.com" target="_blank" rel="noopener">@thaylaamaral</a>
+            <a href="https://www.instagram.com" target="_blank">@thaylaamaral</a>
           </li>
           <li>
             <img class="icone-contato" src="icone-facebook.jpeg" alt="Ícone do Facebook">
-            <a href="https://www.facebook.com" target="_blank" rel="noopener">Thayla Amaral</a>
+            <a href="https://www.facebook.com" target="_blank">Thayla Amaral</a>
           </li>
         </ul>
       </div>
     </section>
   </main>
 
-  <!-- rodapé -->
+  <!-- rodape -->
   <footer class="rodape">
     <h2 class="titulo-rodape">Thayla Amaral</h2>
     <p class="texto-rodape">Site pessoal desenvolvido nas aulas de Desenvolvimento de Sistemas</p>
