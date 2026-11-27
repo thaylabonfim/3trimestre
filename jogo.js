@@ -1,26 +1,31 @@
 // jogo.js - jogo da memoria
+// cada simbolo aparece duas vezes e o objetivo e achar os pares
 
-const simbolos = ["🌸", "💖", "⭐", "🎀", "🦋", "🍓", "🎮", "🎓"];
+var simbolos = ["🌸", "💖", "⭐", "🎀", "🦋", "🍓", "🎮", "🎓"];
 
-const tabuleiro = document.getElementById("tabuleiro");
-const tentativasEl = document.getElementById("tentativas");
-const paresEl = document.getElementById("pares");
-const totalParesEl = document.getElementById("total-pares");
-const mensagemEl = document.getElementById("mensagem-vitoria");
-const btnReiniciar = document.getElementById("btn-reiniciar");
+var tabuleiro = document.getElementById("tabuleiro");
+var tentativasEl = document.getElementById("tentativas");
+var paresEl = document.getElementById("pares");
+var totalParesEl = document.getElementById("total-pares");
+var mensagemEl = document.getElementById("mensagem-vitoria");
+var btnReiniciar = document.getElementById("btn-reiniciar");
 
-let cartasViradas = [];
-let bloqueado = false;
-let tentativas = 0;
-let paresEncontrados = 0;
+var cartasViradas = [];
+var bloqueado = false;
+var tentativas = 0;
+var paresEncontrados = 0;
 
 // mistura as cartas
 function embaralhar(lista) {
-  const copia = [...lista];
-  for (let i = copia.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [copia[i], copia[j]] = [copia[j], copia[i]];
+  var copia = lista.slice();
+
+  for (var i = copia.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var auxiliar = copia[i];
+    copia[i] = copia[j];
+    copia[j] = auxiliar;
   }
+
   return copia;
 }
 
@@ -36,77 +41,78 @@ function criarTabuleiro() {
   paresEl.textContent = "0";
   mensagemEl.textContent = "";
 
-  const baralho = embaralhar([...simbolos, ...simbolos]);
+  var baralho = embaralhar(simbolos.concat(simbolos));
 
-  baralho.forEach((simbolo) => {
-    const carta = document.createElement("button");
+  for (var i = 0; i < baralho.length; i++) {
+    var carta = document.createElement("button");
     carta.type = "button";
     carta.className = "carta";
-    carta.dataset.simbolo = simbolo;
+    carta.setAttribute("data-simbolo", baralho[i]);
     carta.textContent = "?";
     carta.setAttribute("aria-label", "Carta fechada");
 
-    carta.addEventListener("click", () => virarCarta(carta));
+    carta.addEventListener("click", virarCarta);
     tabuleiro.appendChild(carta);
-  });
+  }
 }
 
-// vira a carta
-function virarCarta(carta) {
-  if (
-    bloqueado ||
-    carta.classList.contains("virada") ||
-    carta.classList.contains("combinada")
-  ) {
+// vira a carta que foi clicada
+function virarCarta() {
+  var carta = this;
+
+  if (bloqueado || carta.classList.contains("virada") || carta.classList.contains("combinada")) {
     return;
   }
 
+  var simbolo = carta.getAttribute("data-simbolo");
+
   carta.classList.add("virada");
-  carta.textContent = carta.dataset.simbolo;
-  carta.setAttribute("aria-label", "Carta " + carta.dataset.simbolo);
+  carta.textContent = simbolo;
+  carta.setAttribute("aria-label", "Carta " + simbolo);
   cartasViradas.push(carta);
 
-  if (cartasViradas.length === 2) {
-    tentativas += 1;
-    tentativasEl.textContent = String(tentativas);
+  if (cartasViradas.length == 2) {
+    tentativas = tentativas + 1;
+    tentativasEl.textContent = tentativas;
     verificarPar();
   }
 }
 
-// confere o par
+// confere se as duas cartas formam um par
 function verificarPar() {
-  const primeira = cartasViradas[0];
-  const segunda = cartasViradas[1];
-  const deuMatch = primeira.dataset.simbolo === segunda.dataset.simbolo;
+  var primeira = cartasViradas[0];
+  var segunda = cartasViradas[1];
 
-  if (deuMatch) {
+  if (primeira.getAttribute("data-simbolo") == segunda.getAttribute("data-simbolo")) {
     primeira.classList.add("combinada");
     segunda.classList.add("combinada");
     primeira.disabled = true;
     segunda.disabled = true;
-    cartasViradas = [];
-    paresEncontrados += 1;
-    paresEl.textContent = String(paresEncontrados);
 
-    if (paresEncontrados === simbolos.length) {
-      mensagemEl.textContent =
-        "Parabéns! Você encontrou todos os pares em " + tentativas + " tentativas!";
+    cartasViradas = [];
+    paresEncontrados = paresEncontrados + 1;
+    paresEl.textContent = paresEncontrados;
+
+    if (paresEncontrados == simbolos.length) {
+      mensagemEl.textContent = "Parabens! Voce encontrou todos os pares em " + tentativas + " tentativas!";
     }
   } else {
     bloqueado = true;
-    setTimeout(() => {
+
+    setTimeout(function () {
       primeira.classList.remove("virada");
       segunda.classList.remove("virada");
       primeira.textContent = "?";
       segunda.textContent = "?";
       primeira.setAttribute("aria-label", "Carta fechada");
       segunda.setAttribute("aria-label", "Carta fechada");
+
       cartasViradas = [];
       bloqueado = false;
     }, 750);
   }
 }
 
-totalParesEl.textContent = String(simbolos.length);
+totalParesEl.textContent = simbolos.length;
 btnReiniciar.addEventListener("click", criarTabuleiro);
 criarTabuleiro();

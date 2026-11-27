@@ -8,18 +8,18 @@
 </head>
 <body>
   <!-- topo do site: logo, nome e redes sociais -->
-  <header class="cabecalho-itens">
-    <img class="cabecalho_imagem" src="logo.png" alt="Logo do site">
-    <h1 class="titulo_site">Thayla Amaral</h1>
+  <header class="topo">
+    <img class="imagem-logo" src="logo.png" alt="Logo do site">
+    <h1 class="titulo-site">Thayla Amaral</h1>
     <div class="sociais">
       <a href="https://www.facebook.com" target="_blank" rel="noopener">
-        <img class="sociais-icone" src="icone-facebook.jpeg" alt="Facebook">
+        <img class="icone-social" src="icone-facebook.jpeg" alt="Facebook">
       </a>
       <a href="https://www.instagram.com" target="_blank" rel="noopener">
-        <img class="sociais-icone" src="icone-instagram.jpeg" alt="Instagram">
+        <img class="icone-social" src="icone-instagram.jpeg" alt="Instagram">
       </a>
       <a href="https://wa.me/5541999277308" target="_blank" rel="noopener">
-        <img class="sociais-icone" src="icone-whatsapp.jpeg" alt="WhatsApp">
+        <img class="icone-social" src="icone-whatsapp.jpeg" alt="WhatsApp">
       </a>
     </div>
   </header>
@@ -27,17 +27,17 @@
   <!-- menu principal: Início, Sobre mim, Localização, Vídeos, Contato
        e o menu suspenso (dropdown) com Jogo e Certificados -->
   <nav class="menu">
-    <ul class="menu-lista">
-      <li><a href="index.html" aria-current="page">Início</a></li>
+    <ul class="itens-menu">
+      <li><a href="index.html" class="active">Início</a></li>
       <li><a href="#sobre">Sobre mim</a></li>
       <li><a href="#localizacao">Localização</a></li>
       <li><a href="#videos">Vídeos</a></li>
       <li><a href="#contato">Contato</a></li>
       <li class="dropdown">
-        <button type="button" class="btn-dropdown" id="btn-dropdown" aria-expanded="false" aria-controls="submenu">
+        <button type="button" class="botao-dropdown" id="botao-dropdown" aria-expanded="false" aria-controls="dropdown-conteudo">
           Projetos ▾
         </button>
-        <ul class="submenu" id="submenu">
+        <ul class="dropdown-content" id="dropdown-conteudo">
           <li><a href="jogo.html">Jogo da Memória</a></li>
           <li><a href="certificados.html">Certificados</a></li>
         </ul>
@@ -47,8 +47,8 @@
 
   <main>
     <!-- banner da página -->
-    <section class="banner1">
-      <img class="banner-imagem" src="banner.png" alt="Banner do site">
+    <section class="banner">
+      <img class="imagem-banner" src="banner.png" alt="Banner do site">
     </section>
 
     <!-- Sobre mim -->
@@ -56,7 +56,7 @@
       <h2>Sobre mim</h2>
       <div class="perfil">
         <img class="foto-perfil" src="eu.png" alt="Foto da Thayla">
-        <div class="perfil-texto">
+        <div class="texto-perfil">
           <p>
             Olá! Meu nome é Thayla Amaral, sou estudante da escola Professor Júlio
             Szymanski e estou cursando Desenvolvimento de Sistemas no 2º ano.
@@ -75,8 +75,8 @@
     <!-- Localização fictícia -->
     <section class="secao" id="localizacao">
       <h2>Localização</h2>
-      <div class="localizacao-caixa">
-        <div class="localizacao-texto">
+      <div class="caixa-local">
+        <div class="texto-local">
           <h3>Onde eu estudo</h3>
           <p>
             O endereço abaixo é fictício e foi criado apenas para esta atividade.
@@ -91,7 +91,7 @@
             Abrir no Google Maps
           </a>
         </div>
-        <img class="localizacao-imagem" src="foto-turma.jpeg" alt="Foto da turma na escola">
+        <img class="imagem-local" src="foto-turma.jpeg" alt="Foto da turma na escola">
       </div>
     </section>
 
@@ -99,21 +99,21 @@
          Assim a página não depende do player incorporado para funcionar. -->
     <section class="secao" id="videos">
       <h2>Vídeos</h2>
-      <p class="texto-secao">
+      <p class="texto-intro">
         Separei dois vídeos do YouTube que têm a ver com o que eu quero para o
         futuro: um fala sobre a profissão de fisioterapeuta e o outro ensina a
         criar sites com HTML e CSS. Clique na imagem para assistir.
       </p>
 
-      <div class="videos-grade">
-        <article class="video-card">
+      <div class="lista-videos">
+        <article class="cartao-video">
           <h3>5 coisas que você precisa saber sobre a Fisioterapia</h3>
-          <a class="video-capa" href="https://www.youtube.com/watch?v=4QGZk_PrQ1o" target="_blank" rel="noopener">
+          <a class="capa-video" href="https://www.youtube.com/watch?v=4QGZk_PrQ1o" target="_blank" rel="noopener">
             <img
               src="https://i.ytimg.com/vi/4QGZk_PrQ1o/hqdefault.jpg"
               alt="Miniatura do vídeo 5 coisas que você precisa saber sobre a Fisioterapia"
             >
-            <span class="video-play">▶</span>
+            <span class="botao-play">▶</span>
           </a>
           <p>
             Vídeo do canal Anatomia e etc. que fala das especializações da
@@ -122,14 +122,14 @@
           </p>
         </article>
 
-        <article class="video-card">
+        <article class="cartao-video">
           <h3>Como criar um site com HTML, CSS e JavaScript</h3>
-          <a class="video-capa" href="https://www.youtube.com/watch?v=g51whzji0h4" target="_blank" rel="noopener">
+          <a class="capa-video" href="https://www.youtube.com/watch?v=g51whzji0h4" target="_blank" rel="noopener">
             <img
               src="https://i.ytimg.com/vi/g51whzji0h4/hqdefault.jpg"
               alt="Miniatura do vídeo Como criar um site fácil com HTML, CSS e JavaScript"
             >
-            <span class="video-play">▶</span>
+            <span class="botao-play">▶</span>
           </a>
           <p>
             Aula do canal Tech Daniel's com os primeiros passos para montar um
@@ -143,19 +143,19 @@
     <!-- Amigos -->
     <section class="secao" id="amigos">
       <h2>Meus Amigos</h2>
-      <div class="amigos-lista">
-        <div class="amigo-card">
-          <img class="amigo-foto" src="foto-bella.jpeg" alt="Foto da Bella">
+      <div class="lista-amigos">
+        <div class="cartao-amigo">
+          <img class="foto-amigo" src="foto-bella.jpeg" alt="Foto da Bella">
           <h3>Bella</h3>
           <p>Minha amiga de turma e companheira nos trabalhos em grupo.</p>
         </div>
-        <div class="amigo-card">
-          <img class="amigo-foto" src="foto-caca.jpeg" alt="Foto da Caca">
+        <div class="cartao-amigo">
+          <img class="foto-amigo" src="foto-caca.jpeg" alt="Foto da Caca">
           <h3>Caca</h3>
           <p>Sempre me ajuda quando o código não quer funcionar.</p>
         </div>
-        <div class="amigo-card">
-          <img class="amigo-foto" src="foto-amigas.jpeg" alt="Foto das amigas">
+        <div class="cartao-amigo">
+          <img class="foto-amigo" src="foto-amigas.jpeg" alt="Foto das amigas">
           <h3>As mais mais</h3>
           <p>Nossa turma do 2º ano de Desenvolvimento de Sistemas.</p>
         </div>
@@ -165,22 +165,22 @@
     <!-- Contato -->
     <section class="secao" id="contato">
       <h2>Contato</h2>
-      <div class="contato-caixa">
+      <div class="caixa-contato">
         <p>
           Para falar comigo sobre os trabalhos do curso, me chama em uma das
           redes abaixo:
         </p>
-        <ul class="contato-lista">
+        <ul class="lista-contato">
           <li>
-            <img class="contato-icone" src="icone-whatsapp.jpeg" alt="Ícone do WhatsApp">
+            <img class="icone-contato" src="icone-whatsapp.jpeg" alt="Ícone do WhatsApp">
             <a href="https://wa.me/5541999277308" target="_blank" rel="noopener">(41) 9.9927-7308</a>
           </li>
           <li>
-            <img class="contato-icone" src="icone-instagram.jpeg" alt="Ícone do Instagram">
+            <img class="icone-contato" src="icone-instagram.jpeg" alt="Ícone do Instagram">
             <a href="https://www.instagram.com" target="_blank" rel="noopener">@thaylaamaral</a>
           </li>
           <li>
-            <img class="contato-icone" src="icone-facebook.jpeg" alt="Ícone do Facebook">
+            <img class="icone-contato" src="icone-facebook.jpeg" alt="Ícone do Facebook">
             <a href="https://www.facebook.com" target="_blank" rel="noopener">Thayla Amaral</a>
           </li>
         </ul>
@@ -190,9 +190,9 @@
 
   <!-- rodapé -->
   <footer class="rodape">
-    <h2 class="rodape-titulo">Thayla Amaral</h2>
-    <p class="rodape-texto">Site pessoal desenvolvido nas aulas de Desenvolvimento de Sistemas</p>
-    <p class="rodape-texto">©2026 | Curso de DS | Todos os Direitos Reservados</p>
+    <h2 class="titulo-rodape">Thayla Amaral</h2>
+    <p class="texto-rodape">Site pessoal desenvolvido nas aulas de Desenvolvimento de Sistemas</p>
+    <p class="texto-rodape">©2026 | Curso de DS | Todos os Direitos Reservados</p>
   </footer>
 
   <script src="script.js"></script>

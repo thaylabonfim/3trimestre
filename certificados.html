@@ -8,65 +8,65 @@
 </head>
 <body>
   <!-- topo do site -->
-  <header class="cabecalho-itens">
-    <img class="cabecalho_imagem" src="logo.png" alt="Logo do site">
-    <h1 class="titulo_site">Certificados</h1>
+  <header class="topo">
+    <img class="imagem-logo" src="logo.png" alt="Logo do site">
+    <h1 class="titulo-site">Certificados</h1>
     <div class="sociais">
       <a href="https://www.facebook.com" target="_blank" rel="noopener">
-        <img class="sociais-icone" src="icone-facebook.jpeg" alt="Facebook">
+        <img class="icone-social" src="icone-facebook.jpeg" alt="Facebook">
       </a>
       <a href="https://www.instagram.com" target="_blank" rel="noopener">
-        <img class="sociais-icone" src="icone-instagram.jpeg" alt="Instagram">
+        <img class="icone-social" src="icone-instagram.jpeg" alt="Instagram">
       </a>
       <a href="https://wa.me/5541999277308" target="_blank" rel="noopener">
-        <img class="sociais-icone" src="icone-whatsapp.jpeg" alt="WhatsApp">
+        <img class="icone-social" src="icone-whatsapp.jpeg" alt="WhatsApp">
       </a>
     </div>
   </header>
 
   <!-- menu principal (igual em todas as páginas) -->
   <nav class="menu">
-    <ul class="menu-lista">
+    <ul class="itens-menu">
       <li><a href="index.html">Início</a></li>
       <li><a href="index.html#sobre">Sobre mim</a></li>
       <li><a href="index.html#localizacao">Localização</a></li>
       <li><a href="index.html#videos">Vídeos</a></li>
       <li><a href="index.html#contato">Contato</a></li>
       <li class="dropdown">
-        <button type="button" class="btn-dropdown" id="btn-dropdown" aria-expanded="false" aria-controls="submenu">
+        <button type="button" class="botao-dropdown" id="botao-dropdown" aria-expanded="false" aria-controls="dropdown-conteudo">
           Projetos ▾
         </button>
-        <ul class="submenu" id="submenu">
+        <ul class="dropdown-content" id="dropdown-conteudo">
           <li><a href="jogo.html">Jogo da Memória</a></li>
-          <li><a href="certificados.html" aria-current="page">Certificados</a></li>
+          <li><a href="certificados.html" class="active">Certificados</a></li>
         </ul>
       </li>
     </ul>
   </nav>
 
-  <main class="pagina-conteudo">
+  <main class="conteudo-pagina">
     <h2>Meus Certificados</h2>
 
-    <div class="certificados-lista">
-      <article class="certificado-card">
+    <div class="lista-certificados">
+      <article class="cartao-certificado">
         <h3>Acessibilidade web: crie designs inclusivos</h3>
-        <p class="certificado-info">Alura · 6 horas</p>
+        <p class="info-certificado">Alura · 6 horas</p>
         <a class="botao botao-pequeno" href="https://cursos.alura.com.br/certificate/thayla-bonfim/acessibilidade-web-design-inclusivos" target="_blank" rel="noopener">
           Ver certificado
         </a>
       </article>
 
-      <article class="certificado-card">
+      <article class="cartao-certificado">
         <h3>JavaScript: explorando a linguagem</h3>
-        <p class="certificado-info">Alura · 10 horas</p>
+        <p class="info-certificado">Alura · 10 horas</p>
         <a class="botao botao-pequeno" href="https://cursos.alura.com.br/certificate/thayla-bonfim/javascript-introducao" target="_blank" rel="noopener">
           Ver certificado
         </a>
       </article>
 
-      <article class="certificado-card">
+      <article class="cartao-certificado">
         <h3>JavaScript: programando na linguagem da web</h3>
-        <p class="certificado-info">Alura · 20 horas</p>
+        <p class="info-certificado">Alura · 20 horas</p>
         <a class="botao botao-pequeno" href="https://cursos.alura.com.br/certificate/thayla-bonfim/javascript-programando-na-linguagem-web" target="_blank" rel="noopener">
           Ver certificado
         </a>
@@ -78,9 +78,9 @@
 
   <!-- rodapé -->
   <footer class="rodape">
-    <h2 class="rodape-titulo">Thayla Amaral</h2>
-    <p class="rodape-texto">Site pessoal desenvolvido nas aulas de Desenvolvimento de Sistemas</p>
-    <p class="rodape-texto">©2026 | Curso de DS | Todos os Direitos Reservados</p>
+    <h2 class="titulo-rodape">Thayla Amaral</h2>
+    <p class="texto-rodape">Site pessoal desenvolvido nas aulas de Desenvolvimento de Sistemas</p>
+    <p class="texto-rodape">©2026 | Curso de DS | Todos os Direitos Reservados</p>
   </footer>
 
   <script src="script.js"></script>

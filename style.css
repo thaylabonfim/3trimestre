@@ -1,12 +1,8 @@
-/* =========================================================
-   style.css - estilos do site pessoal da Thayla
-   Cores principais:
-     rosa escuro (títulos e menu) .... #8E1B4F
-     rosa médio (destaques) .......... #D81B60
-     rosa claro (fundo das seções) ... #FFF0F5
-     branco (cartões) ................ #FFFFFF
-     cinza escuro (texto) ............ #444444
-   ========================================================= */
+/* ===== style.css - site pessoal da Thayla =====
+   Menus feitos a partir dos exemplos do W3Schools:
+   - barra horizontal: https://www.w3schools.com/css/css_navbar.asp
+   - menu suspenso: https://www.w3schools.com/css/css_dropdowns.asp
+   ============================================== */
 
 * {
   margin: 0;
@@ -14,54 +10,53 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;   /* faz o link "#secao" deslizar até a seção */
-}
-
-/* o menu é fixo no topo, então o scroll precisa parar um pouco antes
-   para o título da seção não ficar escondido atrás dele */
-section[id] {
-  scroll-margin-top: 90px;
-}
-
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
   color: #444444;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 }
 
 main {
   flex: 1;
 }
 
-/* ---------------- cabeçalho ---------------- */
+/* rolagem suave para os links de ancora */
+html {
+  scroll-behavior: smooth;
+}
 
-.cabecalho-itens {
-  background-color: #F48FB1;
-  color: #FFFFFF;
+/* o menu fica preso no topo, entao a secao para um pouco antes */
+section[id] {
+  scroll-margin-top: 90px;
+}
+
+/* ================= topo ================= */
+
+.topo {
+  background-color: #f48fb1;
+  color: #ffffff;
   padding: 16px 20px;
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 16px;
 }
 
-.cabecalho_imagem {
+.imagem-logo {
   width: 64px;
   height: 64px;
   object-fit: cover;
   border-radius: 10px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
-.titulo_site {
-  font-size: 28px;
-  letter-spacing: 1px;
+.titulo-site {
   flex: 1;
   text-align: center;
+  font-size: 28px;
+  letter-spacing: 1px;
 }
 
 .sociais {
@@ -69,126 +64,122 @@ main {
   gap: 10px;
 }
 
-.sociais a {
-  display: inline-flex;
-}
-
-.sociais-icone {
+.icone-social {
   width: 36px;
   height: 36px;
   object-fit: cover;
   border-radius: 8px;
-  border: 2px solid #FFFFFF;
-  transition: transform 0.2s ease;
+  border: 2px solid #ffffff;
+  transition: transform 0.2s;
 }
 
-.sociais-icone:hover {
+.icone-social:hover {
   transform: scale(1.15);
 }
 
-/* ---------------- menu de navegação ----------------
-   Base feita com o tutorial do W3Schools:
-   https://www.w3schools.com/css/css_navbar.asp
-   (menu horizontal) e
-   https://www.w3schools.com/css/css_dropdowns.asp
-   (menu suspenso)                                          */
+/* ================= menu =================
+   .menu = a barra toda - base: css_navbar.asp
+   .itens-menu li a = os links
+   .active = pagina que esta aberta no momento */
 
 .menu {
-  background-color: #8E1B4F;
-  position: sticky;   /* o menu acompanha a rolagem da página */
+  background-color: #8e1b4f;
+  position: sticky;
   top: 0;
   z-index: 10;
 }
 
-.menu-lista {
+.itens-menu {
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: stretch;
 }
 
-.menu-lista > li {
+.itens-menu li {
   position: relative;
 }
 
-.menu-lista a,
-.btn-dropdown {
+.itens-menu li a,
+.botao-dropdown {
   display: block;
-  color: #FFFFFF;
+  padding: 15px 24px;
+  color: #ffffff;
   background: none;
   border: none;
   font-family: inherit;
   font-size: 16px;
-  padding: 14px 22px;
   text-decoration: none;
   cursor: pointer;
-  transition: background-color 0.25s ease, color 0.25s ease;
+  transition: 0.3s;
 }
 
-/* efeito :hover dos itens do menu */
-.menu-lista a:hover,
-.btn-dropdown:hover {
-  background-color: #D81B60;
-  color: #FFFFFF;
+/* efeito de passar o mouse */
+.itens-menu li a:hover,
+.botao-dropdown:hover {
+  background-color: #d81b60;
 }
 
-/* link da página atual fica destacado */
-.menu-lista a[aria-current="page"] {
-  background-color: #FFFFFF;
-  color: #8E1B4F;
-  font-weight: 600;
+.itens-menu li a.active {
+  background-color: #ffffff;
+  color: #8e1b4f;
+  font-weight: bold;
 }
 
-/* ---------------- menu suspenso (dropdown) ---------------- */
+/* ================= submenu =================
+   base: css_dropdowns.asp
+   o dropdown esconde o conteudo e mostra no hover */
 
-.submenu {
-  display: none;              /* fica escondido até o mouse passar por cima */
+.dropdown {
+  overflow: visible;
+}
+
+.dropdown-content {
+  display: none;
   position: absolute;
   top: 100%;
   left: 0;
-  min-width: 200px;
+  min-width: 210px;
   list-style-type: none;
-  background-color: #FFFFFF;
-  border: 1px solid #F48FB1;
+  background-color: #ffffff;
+  border: 1px solid #f48fb1;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.dropdown:hover .submenu {
-  display: block;             /* mostra o submenu no hover */
-}
-
-/* no celular (sem mouse) o submenu abre pelo clique, com a classe .aberto */
-.dropdown.aberto .submenu {
+.dropdown:hover .dropdown-content {
   display: block;
 }
 
-.submenu li a {
-  color: #8E1B4F;
+/* no celular nao tem mouse, entao o clique abre com a classe .aberto */
+.dropdown.aberto .dropdown-content {
+  display: block;
+}
+
+.dropdown-content li a {
+  color: #8e1b4f;
   padding: 12px 18px;
-  text-align: left;
 }
 
-.submenu li a:hover {
-  background-color: #FFF0F5;
-  color: #D81B60;
+.dropdown-content li a:hover {
+  background-color: #fff0f5;
+  color: #d81b60;
 }
 
-/* ---------------- banner ---------------- */
+/* ================= banner ================= */
 
-.banner1 {
+.banner {
   display: flex;
   justify-content: center;
 }
 
-.banner-imagem {
+.imagem-banner {
   width: 100%;
   max-width: 1200px;
   height: auto;
   display: block;
 }
 
-/* ---------------- seções em geral ---------------- */
+/* ================= secoes ================= */
 
 .secao {
   max-width: 1000px;
@@ -197,29 +188,29 @@ main {
 }
 
 .secao h2 {
-  color: #8E1B4F;
+  color: #8e1b4f;
   font-size: 28px;
   text-align: center;
   margin-bottom: 26px;
   padding-bottom: 8px;
-  border-bottom: 3px solid #F48FB1;
+  border-bottom: 3px solid #f48fb1;
 }
 
-.texto-secao {
-  text-align: center;
+.texto-intro {
   max-width: 720px;
   margin: 0 auto 30px auto;
+  text-align: center;
   line-height: 1.6;
 }
 
-/* ---------------- sobre mim ---------------- */
+/* ================= sobre mim ================= */
 
 .perfil {
   display: flex;
   align-items: center;
   gap: 28px;
-  background-color: #FFF0F5;
-  border-left: 6px solid #D81B60;
+  background-color: #fff0f5;
+  border-left: 6px solid #d81b60;
   border-radius: 12px;
   padding: 26px;
 }
@@ -228,106 +219,107 @@ main {
   width: 180px;
   height: auto;
   border-radius: 12px;
-  border: 3px solid #F48FB1;
-  flex-shrink: 0;
+  border: 3px solid #f48fb1;
 }
 
-.perfil-texto p {
+.texto-perfil p {
   line-height: 1.7;
   margin-bottom: 12px;
   text-align: justify;
 }
 
-/* ---------------- localização ---------------- */
+/* ================= localizacao ================= */
 
-.localizacao-caixa {
+.caixa-local {
   display: flex;
-  gap: 24px;
   align-items: center;
-  background-color: #FFF0F5;
+  gap: 24px;
+  background-color: #fff0f5;
   border-radius: 12px;
   padding: 24px;
 }
 
-.localizacao-texto {
+.texto-local {
   flex: 1;
 }
 
-.localizacao-texto h3 {
-  color: #D81B60;
+.texto-local h3 {
+  color: #d81b60;
   margin-bottom: 10px;
 }
 
-.localizacao-texto p {
+.texto-local p {
   line-height: 1.6;
   margin-bottom: 12px;
 }
 
 .endereco {
-  background-color: #FFFFFF;
-  border-left: 4px solid #F48FB1;
-  padding: 10px 14px;
+  background-color: #ffffff;
+  border-left: 4px solid #f48fb1;
   border-radius: 6px;
-  font-weight: 600;
-  color: #8E1B4F;
+  padding: 10px 14px;
+  color: #8e1b4f;
+  font-weight: bold;
 }
 
-.localizacao-imagem {
+.imagem-local {
   width: 320px;
   max-width: 100%;
   border-radius: 12px;
-  border: 3px solid #F48FB1;
+  border: 3px solid #f48fb1;
 }
 
 .botao {
   display: inline-block;
-  background-color: #D81B60;
-  color: #FFFFFF;
+  background-color: #d81b60;
+  color: #ffffff;
   padding: 12px 22px;
   border-radius: 8px;
   text-decoration: none;
-  font-weight: 600;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
 .botao:hover {
-  background-color: #8E1B4F;
-  transform: translateY(-2px);
+  background-color: #8e1b4f;
 }
 
-/* ---------------- vídeos ---------------- */
+.botao-pequeno {
+  padding: 8px 16px;
+  font-size: 14px;
+}
 
-.videos-grade {
+/* ================= videos =================
+   no lugar do player, a miniatura do video e o link */
+
+.lista-videos {
   display: flex;
   flex-wrap: wrap;
-  gap: 26px;
   justify-content: center;
+  gap: 26px;
 }
 
-.video-card {
+.cartao-video {
   flex: 1 1 380px;
   max-width: 460px;
-  background-color: #FFFFFF;
-  border: 1px solid #F48FB1;
+  background-color: #ffffff;
+  border: 1px solid #f48fb1;
   border-radius: 12px;
   padding: 16px;
-  box-shadow: 0 4px 10px rgba(216, 27, 96, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: 0.3s;
 }
 
-.video-card:hover {
-  transform: translateY(-3px);
+.cartao-video:hover {
   box-shadow: 0 8px 18px rgba(216, 27, 96, 0.16);
 }
 
-.video-card h3 {
-  color: #8E1B4F;
+.cartao-video h3 {
+  color: #8e1b4f;
   font-size: 18px;
   margin-bottom: 12px;
 }
 
-/* a capa é a imagem do vídeo com um "play" em cima, e a imagem é o link */
-.video-capa {
+.capa-video {
   display: block;
   position: relative;
   border-radius: 8px;
@@ -335,20 +327,19 @@ main {
   background-color: #000000;
 }
 
-.video-capa img {
+.capa-video img {
   width: 100%;
   height: auto;
   display: block;
   opacity: 0.9;
-  transition: opacity 0.2s ease, transform 0.3s ease;
+  transition: 0.3s;
 }
 
-.video-capa:hover img {
+.capa-video:hover img {
   opacity: 1;
-  transform: scale(1.03);
 }
 
-.video-play {
+.botao-play {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -357,85 +348,82 @@ main {
   height: 58px;
   border-radius: 50%;
   background-color: rgba(216, 27, 96, 0.9);
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 22px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding-left: 4px;
-  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-.video-capa:hover .video-play {
-  background-color: #8E1B4F;
-  transform: translate(-50%, -50%) scale(1.1);
+.capa-video:hover .botao-play {
+  background-color: #8e1b4f;
 }
 
-.video-card p {
+.cartao-video p {
   margin-top: 12px;
-  line-height: 1.6;
   font-size: 15px;
+  line-height: 1.6;
 }
 
-/* ---------------- amigos ---------------- */
+/* ================= amigos ================= */
 
-.amigos-lista {
+.lista-amigos {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
   justify-content: center;
+  gap: 24px;
 }
 
-.amigo-card {
+.cartao-amigo {
   flex: 1 1 240px;
   max-width: 280px;
-  background-color: #FFF0F5;
-  border: 1px solid #F8BBD0;
+  background-color: #fff0f5;
+  border: 1px solid #f8bbd0;
   border-radius: 12px;
   padding: 18px;
   text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: 0.3s;
 }
 
-.amigo-card:hover {
-  transform: translateY(-4px);
+.cartao-amigo:hover {
   box-shadow: 0 8px 18px rgba(216, 27, 96, 0.16);
 }
 
-.amigo-foto {
+.foto-amigo {
   width: 130px;
   height: 130px;
   object-fit: cover;
   border-radius: 50%;
-  border: 3px solid #F48FB1;
+  border: 3px solid #f48fb1;
   margin-bottom: 10px;
 }
 
-.amigo-card h3 {
-  color: #8E1B4F;
+.cartao-amigo h3 {
+  color: #8e1b4f;
   margin-bottom: 6px;
 }
 
-.amigo-card p {
+.cartao-amigo p {
   font-size: 15px;
   line-height: 1.5;
 }
 
-/* ---------------- contato ---------------- */
+/* ================= contato ================= */
 
-.contato-caixa {
-  background-color: #FFF0F5;
+.caixa-contato {
+  background-color: #fff0f5;
   border-radius: 12px;
   padding: 24px;
   text-align: center;
 }
 
-.contato-caixa p {
+.caixa-contato p {
   margin-bottom: 18px;
   line-height: 1.6;
 }
 
-.contato-lista {
+.lista-contato {
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
@@ -443,66 +431,66 @@ main {
   gap: 28px;
 }
 
-.contato-lista li {
+.lista-contato li {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-.contato-icone {
+.icone-contato {
   width: 26px;
   height: 26px;
   object-fit: cover;
   border-radius: 6px;
 }
 
-.contato-lista a {
-  color: #8E1B4F;
-  font-weight: 600;
+.lista-contato a {
+  color: #8e1b4f;
+  font-weight: bold;
   text-decoration: none;
 }
 
-.contato-lista a:hover {
+.lista-contato a:hover {
+  color: #d81b60;
   text-decoration: underline;
-  color: #D81B60;
 }
 
-/* ---------------- rodapé ---------------- */
+/* ================= rodape ================= */
 
 .rodape {
-  background-image: linear-gradient(#F48FB1, #D81B60);
-  color: #FFFFFF;
+  background-image: linear-gradient(#f48fb1, #d81b60);
+  color: #ffffff;
   text-align: center;
   padding: 26px 16px;
 }
 
-.rodape-titulo {
+.titulo-rodape {
   font-size: 22px;
   margin-bottom: 8px;
 }
 
-.rodape-texto {
+.texto-rodape {
   font-size: 14px;
   line-height: 1.6;
 }
 
-/* ---------------- páginas internas (jogo e certificados) ---------------- */
+/* ================= paginas internas ================= */
 
-.pagina-conteudo {
+.conteudo-pagina {
   max-width: 900px;
   margin: 40px auto;
   padding: 28px;
-  background-color: #FFF0F5;
+  background-color: #fff0f5;
+  border-left: 6px solid #d81b60;
   border-radius: 12px;
-  border-left: 6px solid #D81B60;
 }
 
-.pagina-conteudo h2 {
-  color: #8E1B4F;
+.conteudo-pagina h2 {
+  color: #8e1b4f;
   margin-bottom: 14px;
 }
 
-.pagina-conteudo p {
+.conteudo-pagina p {
   line-height: 1.7;
   margin-bottom: 12px;
 }
@@ -510,8 +498,8 @@ main {
 .voltar {
   display: inline-block;
   margin-top: 18px;
-  color: #8E1B4F;
-  font-weight: 600;
+  color: #8e1b4f;
+  font-weight: bold;
   text-decoration: none;
 }
 
@@ -519,38 +507,39 @@ main {
   text-decoration: underline;
 }
 
-/* ---------------- jogo da memória ---------------- */
+/* ================= jogo da memoria ================= */
 
-.jogo-placar {
+.placar {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   gap: 12px;
-  background-color: #FFFFFF;
-  border: 1px solid #F8BBD0;
+  background-color: #ffffff;
+  border: 1px solid #f8bbd0;
   border-radius: 10px;
   padding: 14px 18px;
   margin-bottom: 22px;
 }
 
-.jogo-botao {
-  background-color: #D81B60;
-  color: #FFFFFF;
+.botao-jogo {
+  background-color: #d81b60;
+  color: #ffffff;
   border: none;
   border-radius: 8px;
   padding: 10px 18px;
+  font-family: inherit;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: 0.3s;
 }
 
-.jogo-botao:hover {
-  background-color: #8E1B4F;
+.botao-jogo:hover {
+  background-color: #8e1b4f;
 }
 
-.jogo-tabuleiro {
+.tabuleiro {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 12px;
@@ -560,149 +549,132 @@ main {
 
 .carta {
   aspect-ratio: 1 / 1;
-  background-color: #FFFFFF;
-  border: 2px solid #F48FB1;
+  background-color: #ffffff;
+  border: 2px solid #f48fb1;
   border-radius: 10px;
   font-size: 32px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.15s ease, background-color 0.2s ease;
+  transition: 0.2s;
 }
 
-.carta:hover:not(:disabled) {
-  transform: translateY(-2px);
-  border-color: #D81B60;
+.carta:hover {
+  border-color: #d81b60;
 }
 
 .carta.virada {
-  background-color: #FFF0F5;
-  border-color: #D81B60;
+  background-color: #fff0f5;
+  border-color: #d81b60;
 }
 
 .carta.combinada {
-  background-color: #F8BBD0;
-  border-color: #8E1B4F;
+  background-color: #f8bbd0;
+  border-color: #8e1b4f;
   cursor: default;
 }
 
-.jogo-mensagem {
+.mensagem {
   margin-top: 18px;
-  text-align: center;
-  font-weight: 700;
-  color: #8E1B4F;
   min-height: 1.7em;
+  text-align: center;
+  font-weight: bold;
+  color: #8e1b4f;
 }
 
-/* ---------------- certificados ---------------- */
+/* ================= certificados ================= */
 
-.certificados-lista {
+.lista-certificados {
   display: flex;
   flex-direction: column;
   gap: 18px;
   margin-top: 20px;
 }
 
-.certificado-card {
-  background-color: #FFFFFF;
-  border-left: 5px solid #D81B60;
+.cartao-certificado {
+  background-color: #ffffff;
+  border-left: 5px solid #d81b60;
   border-radius: 10px;
   padding: 18px 20px;
-  box-shadow: 0 3px 8px rgba(216, 27, 96, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: 0.3s;
 }
 
-.certificado-card:hover {
-  transform: translateY(-3px);
+.cartao-certificado:hover {
   box-shadow: 0 8px 18px rgba(216, 27, 96, 0.16);
 }
 
-.certificado-card h3 {
-  color: #8E1B4F;
+.cartao-certificado h3 {
+  color: #8e1b4f;
   font-size: 19px;
   margin-bottom: 6px;
 }
 
-.certificado-info {
+.info-certificado {
+  color: #d81b60;
   font-size: 14px;
-  font-weight: 600;
-  color: #D81B60;
+  font-weight: bold;
   margin-bottom: 10px;
 }
 
-.certificado-card p {
-  margin-bottom: 12px;
-}
+/* ================= celular ================= */
 
-.botao-pequeno {
-  padding: 8px 16px;
-  font-size: 14px;
-}
-
-/* ---------------- celular ---------------- */
-
-@media (max-width: 768px) {
-  .cabecalho-itens {
+@media screen and (max-width: 768px) {
+  .topo {
     flex-wrap: wrap;
-    gap: 10px;
     text-align: center;
   }
 
-  .titulo_site {
-    font-size: 22px;
+  .titulo-site {
     flex: 1 1 100%;
     order: 3;
+    font-size: 22px;
   }
 
   .sociais {
     margin-left: auto;
   }
 
-  /* no celular os links do menu ficam um embaixo do outro */
-  .menu-lista {
+  /* no celular os links ficam um embaixo do outro */
+  .itens-menu {
     flex-direction: column;
   }
 
-  .menu-lista a,
-  .btn-dropdown {
+  .itens-menu li a,
+  .botao-dropdown {
     width: 100%;
     text-align: center;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
   }
 
-  /* o submenu passa a empurrar o conteúdo, em vez de flutuar */
-  .submenu {
+  .dropdown-content {
     position: static;
     width: 100%;
-    box-shadow: none;
     border: none;
+    box-shadow: none;
   }
 
-  .perfil {
+  .perfil,
+  .caixa-local {
     flex-direction: column;
     text-align: center;
   }
 
-  .perfil-texto p {
+  .texto-perfil p {
     text-align: left;
   }
 
-  .localizacao-caixa {
-    flex-direction: column;
-  }
-
-  .localizacao-imagem {
+  .imagem-local {
     width: 100%;
   }
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
   .secao {
     padding: 36px 14px;
   }
 
-  .jogo-tabuleiro {
+  .tabuleiro {
     gap: 8px;
   }
 
