@@ -22,12 +22,11 @@ O menu antigo só tinha Início, Sobre, Contato e um "☰" escondendo duas pági
 Foi refeito com base no tutorial de navbar do W3Schools
 (<https://www.w3schools.com/css/css_navbar.asp>) e agora tem:
 
-**Início · Sobre mim · Localização · Vídeos · Contato · Projetos ▾**
+**Início · Sobre mim · Localização · Contato · Projetos ▾**
 
 - **Início** → abre o arquivo `index.html`;
-- **Sobre mim / Localização / Vídeos / Contato** → são âncoras (`#sobre`,
-  `#localizacao`, `#videos`, `#contato`), que rolam até a seção dentro da
-  própria página;
+- **Sobre mim / Localização / Contato** → são âncoras (`#sobre`,
+  `#localizacao`, `#contato`), que rolam até a seção dentro da própria página;
 - **Projetos ▾** → é o menu suspenso (dropdown) com **Jogo da Memória** e
   **Certificados**, que abrem os arquivos `jogo.html` e `certificados.html`.
 
@@ -122,41 +121,17 @@ O botão "Abrir no Google Maps" é um link normal que usa a busca do Maps:
 Usar `search/?api=1&query=` funciona sem precisar de chave de API, e o
 `target="_blank"` abre em outra aba para não fazer o visitante perder o site.
 
-## 5. Seção de vídeos (Etapa 2)
+## 5. Testes feitos com a seção de vídeos
 
-Dois vídeos do YouTube incorporados com `<iframe>`, copiados do botão
-"Compartilhar → Incorporar" do próprio YouTube:
-
-1. **5 coisas que você precisa saber sobre a Fisioterapia** (Anatomia e etc.) -
-   `https://www.youtube.com/embed/4QGZk_PrQ1o`
-2. **Como criar um site fácil! HTML, CSS e JavaScript para iniciantes**
-   (Tech Daniel's) - `https://www.youtube.com/embed/g51whzji0h4`
-
-Na primeira tentativa usei um vídeo da UNIP sobre a profissão, mas ele era uma
-**live gravada** e o YouTube não libera a incorporação de transmissões ao vivo
-(o player mostrava "erro"). Por isso troquei por um vídeo normal sobre o mesmo
-assunto, e acrescentei `?rel=0` para o player não sugerir vídeos de outros
-canais no final.
-
-O `embed` é obrigatório na URL (a URL do `watch?v=` não funciona dentro do
-iframe). Para o vídeo não quebrar o layout e ficar sempre em 16:9, usei a
-"caixa" com `padding-bottom: 56.25%`:
-
-```css
-.video-moldura {
-  position: relative;
-  padding-bottom: 56.25%;   /* 9 / 16 = 56,25% */
-  height: 0;
-}
-.video-moldura iframe {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-}
-```
-
----
+Cheguei a montar uma seção com dois vídeos incorporados por `<iframe>`, mas nos
+testes os players apareciam como um retângulo cinza (o navegador não carregava o
+vídeo dentro da página). Descobri que o problema não estava no código de
+incorporação e sim no bloqueio do domínio do YouTube (bloqueador de anúncios,
+extensão de privacidade e a própria rede). Também tinha usado no começo um vídeo
+que era uma *live* gravada, e o YouTube não permite incorporar transmissões ao
+vivo. Como a seção não funcionava de forma confiável para quem abre o site,
+removi a seção e o item "Vídeos" do menu, e deixei a página com as seções que
+funcionam 100% do tempo: Sobre mim, Localização, Meus Amigos e Contato.
 
 ## Registro de três correções feitas nos testes
 
@@ -179,17 +154,12 @@ section[id] {
 }
 ```
 
-**Correção 3 - vídeo com erro de reprodução.**
-O primeiro vídeo escolhido (uma live da UNIP) aparecia com mensagem de erro
-dentro do iframe, porque o YouTube bloqueia a incorporação de transmissões ao
-vivo. Troquei por um vídeo comum sobre fisioterapia e testei os dois links no
-endereço `/embed/` antes de publicar.
-
-**Correção 4 - vídeo esticado no celular.**
-Na primeira versão o `<iframe>` tinha `width="560" height="315"` fixos e, em
-tela pequena, ele estourava a largura da página criando uma barra de rolagem
-horizontal. Troquei as medidas fixas pela "caixa" proporcional mostrada no item
-5 acima, com `width: 100%`.
+**Correção 3 - seção de vídeos removida.**
+Os vídeos incorporados apareciam como um retângulo cinza, porque o navegador
+estava bloqueando o carregamento do YouTube dentro da página. Testei o modo
+`youtube-nocookie.com` e o `loading="lazy"`, mas o resultado não era garantido em
+todos os navegadores. Para a página não ficar com um espaço quebrado, removi a
+seção de vídeos e o item do menu, e retirei o CSS que ficou sem uso.
 
 (Inclusive já corrigi também o contador do jogo, que mostrava "Pares: 0 / 8"
 escrito na mão no HTML; agora o total vem do próprio array de símbolos do
@@ -213,6 +183,5 @@ escrito na mão no HTML; agora o total vem do próprio array de símbolos do
 1. `01-menu.png` - menu completo com os 5 itens + Projetos
 2. `02-submenu.png` - menu suspenso aberto
 3. `03-localizacao.png` - seção de localização com o endereço e o botão
-4. `04-videos.png` - os dois vídeos incorporados
-5. `05-pagina-final.png` - página inteira (pode usar a opção "página inteira"
+4. `04-pagina-final.png` - página inteira (pode usar a opção "página inteira"
    do print do navegador)
