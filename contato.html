@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261127">
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -70,6 +70,7 @@
             <li><a class="menu-lateral__link" href="contato.html" aria-current="page">Contato</a></li>
           </ul>
         </div>
+
         <div class="menu-lateral__grupo">
           <button class="menu-lateral__titulo" type="button" data-grupo-botao aria-expanded="true" aria-controls="grupo-estudos">
             Meus estudos
@@ -83,27 +84,10 @@
             <li><a class="menu-lateral__link" href="sobre.html#paixao">Paixão pelo Palmeiras</a></li>
           </ul>
         </div>
-        <div class="menu-lateral__grupo">
-          <button class="menu-lateral__titulo" type="button" data-grupo-botao aria-expanded="true" aria-controls="grupo-projetos">
-            Projetos
-            <svg class="menu-lateral__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
-          </button>
-          <ul class="menu-lateral__lista" id="grupo-projetos">
-            <li><a class="menu-lateral__link" href="jogo.html">Tetris jogável</a></li>
-            <li><a class="menu-lateral__link" href="jogo.html#projeto">Como foi feito</a></li>
-            <li><a class="menu-lateral__link" href="certificados.html">Formações</a></li>
-          </ul>
-        </div>
-        <div class="menu-lateral__grupo">
-          <button class="menu-lateral__titulo" type="button" data-grupo-botao aria-expanded="false" aria-controls="grupo-site">
-            Sobre o site
-            <svg class="menu-lateral__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
-          </button>
-          <ul class="menu-lateral__lista" id="grupo-site" hidden>
-            <li><a class="menu-lateral__link" href="privacidade.html">Política de privacidade</a></li>
-            <li><a class="menu-lateral__link" href="contato.html#canais" aria-current="page">Contato e canais</a></li>
-          </ul>
-        </div>
+
+        <ul class="menu-lateral__lista menu-lateral__lista--avulsa">
+          <li><a class="menu-lateral__link" href="privacidade.html">Política de privacidade</a></li>
+        </ul>
 
         <div class="menu-lateral__rodape">
           <div class="menu-lateral__cartao">
@@ -385,6 +369,6 @@
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
   </button>
 
-  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/main.js?v=20261127" defer></script>
 </body>
 </html>

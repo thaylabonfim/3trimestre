@@ -55,7 +55,7 @@
   /* ------------------------------------------------------------------ */
   /* Menu lateral: gaveta no celular e seções recolhíveis               */
   /* ------------------------------------------------------------------ */
-  var LIMITE_MENU_DESKTOP = 1100;
+  var LIMITE_MENU_DESKTOP = 960;
 
   function iniciarMenu() {
     var botao = document.querySelector("[data-menu-botao]");

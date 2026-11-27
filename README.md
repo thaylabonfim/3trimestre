@@ -103,20 +103,23 @@ no cabeçalho:
 
 | Tela | Comportamento |
 | --- | --- |
-| **PC / notebook** (≥ 1100px) | Coluna fixa de 244px à esquerda, abaixo do cabeçalho, com rolagem própria (`position: sticky` + `overflow-y: auto`). O conteúdo ocupa o restante da largura. |
-| **Celular / tablet** (< 1100px) | O menu sai da tela e vira uma gaveta lateral aberta pelo botão hambúrguer, com fundo escurecido, trava de rolagem do corpo, foco preso dentro do menu e fechamento por `Esc`, toque fora ou clique em um link. |
+| **PC / notebook** (≥ 960px) | Coluna fixa à esquerda (212px de 960 a 1199px, 244px a partir de 1200px), alinhada ao cabeçalho e ao conteúdo, com rolagem própria (`position: sticky` + `overflow-y: auto`). |
+| **Celular / tablet** (< 960px) | O menu sai da tela e vira uma gaveta lateral aberta pelo botão hambúrguer, com fundo escurecido, trava de rolagem do corpo, foco preso dentro do menu e fechamento por `Esc`, toque fora ou clique em um link. |
 
 Detalhes de implementação:
 
-- `--largura-menu: 244px` e `--altura-cabecalho` (76/70/66px) em `:root` controlam
-  a largura da coluna e o deslocamento do menu fixo;
+- `--largura-menu` (212/244px) e `--altura-cabecalho` (76/70/66px) em `:root`
+  controlam a largura da coluna e o deslocamento do menu fixo;
+- o `.layout` usa a mesma largura máxima e o mesmo respiro do cabeçalho, por isso
+  a coluna do menu alinha com a marca e com o texto;
+- como a coluna de conteúdo fica ~880px, o hero e as grades em duas colunas se
+  empilham até 1140px (`@media (max-width: 1140px)`);
 - as seções recolhíveis funcionam nas duas versões (`aria-expanded` + atributo
   `hidden`), então no celular a gaveta fica curta e fácil de percorrer;
 - o item da página atual é destacado com `aria-current="page"` (fundo verde,
   texto creme);
-- em telas de 1100px a 1320px as grades mais largas (`.grade--assimetrica`,
-  `.contato-grade`, rodapé) se empilham para o texto não ficar apertado ao lado
-  do menu;
+- as estatísticas do hero ficam sempre em três colunas iguais
+  (`grid-template-columns: repeat(3, minmax(0, 1fr))`);
 - ao imprimir, o menu lateral, a sobreposição e o botão hambúrguer são ocultados.
 
 ---
@@ -164,11 +167,16 @@ logo depois do `<header>` e antes do `<main>`, dentro do bloco
 `privacidade.html` e `404.html`, mantendo `aria-current="page"` apenas no link da
 página atual.
 
-O menu tem quatro seções recolhíveis (`Portfólio`, `Meus estudos`, `Projetos`,
-`Sobre o site`). Para editar uma seção, procure o `<div class="menu-lateral__grupo">`
-correspondente: o botão (`.menu-lateral__titulo`) controla a lista
-(`.menu-lateral__lista`) pelo `aria-controls`. Para deixar uma seção já recolhida,
-use `aria-expanded="false"` no botão e `hidden` na lista.
+O menu tem duas seções recolhíveis (`Portfólio` e `Meus estudos`) e, no fim, um
+link avulso para a política de privacidade. Para editar uma seção, procure o
+`<div class="menu-lateral__grupo">` correspondente: o botão
+(`.menu-lateral__titulo`) controla a lista (`.menu-lateral__lista`) pelo
+`aria-controls`. Para deixar uma seção já recolhida, use `aria-expanded="false"`
+no botão e `hidden` na lista.
+
+> **Ao alterar CSS ou JS, troque o `?v=` no fim dos links de `style.css` e dos
+> arquivos `.js` nas 7 páginas** (ex.: `?v=20261127` → `?v=20261201`). É o que
+> garante que o navegador do visitante baixe a versão nova em vez do cache.
 
 ### Contato
 
